@@ -104,10 +104,8 @@ then
 pip install -r requirements.txt
 else
 apt-get update
-apt-get install python
 apt-get install git
 apt-get install wget
-apt-get install python2-pip
 apt-get install perl
 apt-get install libany-uri-escape-perl
 apt-get install libhtml-html5-entities-perl
@@ -143,10 +141,8 @@ then
 pip install -r requirements.txt
 else
 pkg update
-pkg install python
 pkg install git
 pkg install wget
-pkg install python2-pip
 pkg install perl
 pkg install libany-uri-escape-perl
 pkg install libhtml-html5-entities-perl
@@ -182,10 +178,8 @@ then
 pip install -r requirements.txt
 else
 apt-get update
-apt-get install python
 apt-get install git
 apt-get install wget
-apt-get install python2-pip
 apt-get install perl
 apt-get install libany-uri-escape-perl
 apt-get install libhtml-html5-entities-perl

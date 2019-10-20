@@ -99,14 +99,14 @@ if [[ "$CONF" = "amd" ]]
 then
 sleep 1
 clear
-cd install
 sleep 1
 if [[ -d /System/Library/CoreServices/Finder.app ]]
 then
-pip install -r requirements.txt
+sleep 1
 else
 apt-get update
 apt-get install git
+apt-get install python3.5
 apt-get install wget
 apt-get install perl
 apt-get install libany-uri-escape-perl
@@ -128,7 +128,6 @@ apt-get install python3.5-dev
 apt-get install hcitool
 apt-get install sslstrip
 sleep 0.5
-pip install -r requirements.txt
 fi
 fi
 
@@ -136,14 +135,14 @@ if [[ "$CONF" = "arm" ]]
 then
 sleep 1
 clear
-cd install
 sleep 1
 if [[ -d /System/Library/CoreServices/SpringBoard.app ]]
 then
-pip install -r requirements.txt
+sleep 1
 else
 pkg update
 pkg install git
+pkg install python3.5
 pkg install wget
 pkg install perl
 pkg install libany-uri-escape-perl
@@ -165,7 +164,6 @@ pkg install python3.5-dev
 pkg install hcitool
 pkg install sslstrip
 sleep 0.5
-pip install -r requirements.txt
 fi
 fi
 
@@ -173,14 +171,14 @@ if [[ "$CONF" = "intel" ]]
 then
 sleep 1
 clear
-cd install
 sleep 1
 if [[ -d /System/Library/CoreServices/Finder.app ]]
 then
-pip install -r requirements.txt
+sleep 1
 else
 apt-get update
 apt-get install git
+apt-get install python3.5
 apt-get install wget
 apt-get install perl
 apt-get install libany-uri-escape-perl
@@ -202,7 +200,6 @@ apt-get install python3.5-dev
 apt-get install hcitool
 apt-get install sslstrip
 sleep 0.5
-pip install -r requirements.txt
 fi
 fi
 

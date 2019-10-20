@@ -106,7 +106,7 @@ sleep 1
 else
 apt-get update
 apt-get install git
-apt-get install python3.5
+apt-get install python3
 apt-get install wget
 apt-get install perl
 apt-get install libany-uri-escape-perl
@@ -124,7 +124,7 @@ apt-get install xterm
 apt-get install driftnet
 apt-get install tcpdump
 apt-get install libnetfilter-queue-dev
-apt-get install python3.5-dev
+apt-get install python3-dev
 apt-get install hcitool
 apt-get install sslstrip
 sleep 0.5
@@ -142,7 +142,7 @@ sleep 1
 else
 pkg update
 pkg install git
-pkg install python3.5
+pkg install python3
 pkg install wget
 pkg install perl
 pkg install libany-uri-escape-perl
@@ -160,7 +160,7 @@ pkg install xterm
 pkg install driftnet
 pkg install tcpdump
 pkg install libnetfilter-queue-dev
-pkg install python3.5-dev
+pkg install python3-dev
 pkg install hcitool
 pkg install sslstrip
 sleep 0.5
@@ -178,7 +178,7 @@ sleep 1
 else
 apt-get update
 apt-get install git
-apt-get install python3.5
+apt-get install python3
 apt-get install wget
 apt-get install perl
 apt-get install libany-uri-escape-perl
@@ -196,7 +196,7 @@ apt-get install xterm
 apt-get install driftnet
 apt-get install tcpdump
 apt-get install libnetfilter-queue-dev
-apt-get install python3.5-dev
+apt-get install python3-dev
 apt-get install hcitool
 apt-get install sslstrip
 sleep 0.5

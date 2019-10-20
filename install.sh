@@ -109,7 +109,6 @@ apt-get install git
 apt-get install wget
 apt-get install python2-pip
 apt-get install perl
-apt-get install Build essential
 apt-get install libany-uri-escape-perl
 apt-get install libhtml-html5-entities-perl
 apt-get install libhtml-entities-numbered-perl
@@ -144,11 +143,16 @@ then
 pip install -r requirements.txt
 else
 pkg update
+pkg install python
 pkg install git
 pkg install wget
-pkg install python
-pkg install python2
+pkg install python2-pip
 pkg install perl
+pkg install libany-uri-escape-perl
+pkg install libhtml-html5-entities-perl
+pkg install libhtml-entities-numbered-perl
+pkg install libhtml-parser-perl
+pkg install libwww-perl
 pkg install php
 pkg install libdnet
 pkg install ethtool
@@ -183,7 +187,6 @@ apt-get install git
 apt-get install wget
 apt-get install python2-pip
 apt-get install perl
-apt-get install Build essential
 apt-get install libany-uri-escape-perl
 apt-get install libhtml-html5-entities-perl
 apt-get install libhtml-entities-numbered-perl

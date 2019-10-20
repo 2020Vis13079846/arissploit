@@ -86,6 +86,8 @@ sleep 1
 clear
 sleep 1
 echo -e "Is this a single board computer?("$YS"yes"$CE"/"$YS"no"$CE"):"
+echo -e "Single board computer like Raspberry PI!"
+echo -e "Arissploit supports Raspberry PI!"
 read -e -p $'(\033[4;93mconfirm\033[0m)> ' PI
 if [[ "$PI" = "yes" ]]
 then

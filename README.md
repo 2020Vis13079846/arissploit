@@ -32,9 +32,9 @@
 
 # About arissploit framework
 
-    INFO: Arissploit is simple framework that has been made for penetration 
-    testing tools. Arissploit Framework offers simple structure, basic CLI, 
-    and useful features for penetration testing tools development.
+    INFO: Arissploit Framework is a simple framework designed to master penetration 
+    testing tools. Arissploit Framework offers simple structure, basic CLI, and 
+    useful features for learning and developing penetration testing tools.
 
 # How to install arissploit
 

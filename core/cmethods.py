@@ -71,9 +71,6 @@ class Cmethods:
 			raise UnknownCommand("Unknown command!")
 
 	# Built-in commands
-
-	def sky(self, args):
-		core.sky.main()
 	
 	def exit(self, args):
 		if self.mm.moduleLoaded == 1:
@@ -394,14 +391,12 @@ class Cmethods:
 			curses.curs_set(1)
 			curses.reset_shell_mode()
 			curses.echo()
+			
+	def sky(self, args):
+		core.sky.main()
 
 	def cowsay(self, args):
-		try:
-			message = ' '.join(args)
-			print(core.cowsay.cowsay(message))
-			return
-		except ValueError:
-			print(core.cowsay.cowsay("Arissploit Framework"))
+		print(core.cowsay.cowsay("Arissploit Framework"))
 
 	def make(self, args):
 		try:

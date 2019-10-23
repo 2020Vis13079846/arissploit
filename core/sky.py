@@ -57,8 +57,10 @@ def main():
 		curses.endwin()
 
 	except KeyboardInterrupt:
+		screen.clear()
 		curses.endwin()
 
 	except:
+		screen.clear()
 		curses.endwin()
 		traceback.print_exc()

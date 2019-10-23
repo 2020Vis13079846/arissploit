@@ -210,6 +210,7 @@ def main():
         if SCREENSAVER_MODE:
             key_pressed = scr.getch() != -1
             if key_pressed:
+                scr.clear()
                 raise KeyboardInterrupt()
         steps += 1
 

@@ -207,7 +207,9 @@ sleep 0.5
 fi
 fi
 
+{
 pip3 install netfilterqueue
+} &> /dev/null
 
 clear
 printf '\033]2;Arissploit INSTALLER\a'

@@ -418,6 +418,9 @@ class Cmethods:
 
 			except Exception as error:
 				printError(str(error))
+				
+	def sky(self, args):
+		core.sky.main()
 
 	def loaded(self, args):
 		print(sys.modules.keys())

@@ -381,8 +381,7 @@ class Cmethods:
 		except IndexError:
 			raise UnknownCommand("Unkown command!")
 
-	def sky(self, args):
-		core.sky.main()
+	
 	
 	def matrix(self, args):
 		try:

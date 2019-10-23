@@ -107,6 +107,7 @@ else
 apt-get update
 apt-get install git
 apt-get install python3
+apt-get install python3-pip
 apt-get install wget
 apt-get install perl
 apt-get install libany-uri-escape-perl
@@ -127,6 +128,7 @@ apt-get install libnetfilter-queue-dev
 apt-get install python3-dev
 apt-get install hcitool
 apt-get install sslstrip
+
 sleep 0.5
 fi
 fi
@@ -143,6 +145,7 @@ else
 pkg update
 pkg install git
 pkg install python3
+pkg install python3-pip
 pkg install wget
 pkg install perl
 pkg install libany-uri-escape-perl
@@ -179,6 +182,7 @@ else
 apt-get update
 apt-get install git
 apt-get install python3
+apt-get install python3-pip
 apt-get install wget
 apt-get install perl
 apt-get install libany-uri-escape-perl
@@ -203,8 +207,9 @@ sleep 0.5
 fi
 fi
 
-clear
+pip3 install netfilterqueue
 
+clear
 printf '\033]2;Arissploit INSTALLER\a'
 sleep 3
 echo -e "Open a NEW terminal and type '"$YS"arissploit"$CE"' to launch the framework"

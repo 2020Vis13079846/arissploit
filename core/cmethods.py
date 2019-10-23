@@ -70,8 +70,11 @@ class Cmethods:
 		except AttributeError:
 			raise UnknownCommand("Unknown command!")
 
-	# Built in commands
+	# Built-in commands
 
+	def sky(self, args):
+		core.sky.main()
+	
 	def exit(self, args):
 		if self.mm.moduleLoaded == 1:
 			self.mm.moduleLoaded = 0
@@ -418,9 +421,6 @@ class Cmethods:
 
 			except Exception as error:
 				printError(str(error))
-				
-	def sky(self, args):
-		core.sky.main()
 
 	def loaded(self, args):
 		print(sys.modules.keys())

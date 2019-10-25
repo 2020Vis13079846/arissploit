@@ -167,18 +167,17 @@ def stop(args):
 	printInfo("Arp spoof ended!")
 
 def get(args):
-	if args[0] == "status":
-		if controller.error == None and controller.kill == False:
-			printInfo("Attack is running...")
-			return "Attack is running..."
-		elif controller.error == None and controller.kill == True:
-			printInfo("Attack ended.")
-			os.system('echo "0" >> /proc/sys/net/ipv4/ip_forward')
-			return "Attack ended."
-		elif controller.error != None:
-			printError("Faced error: "+controller.error)
-			os.system('echo "0" >> /proc/sys/net/ipv4/ip_forward')
-			return ModuleError(controller.error)
+	if controller.error == None and controller.kill == False:
+		printInfo("Attack is running...")
+		return "Attack is running..."
+	elif controller.error == None and controller.kill == True:
+		printInfo("Attack ended.")
+		os.system('echo "0" >> /proc/sys/net/ipv4/ip_forward')
+		return "Attack ended."
+	elif controller.error != None:
+		printError("Faced error: "+controller.error)
+		os.system('echo "0" >> /proc/sys/net/ipv4/ip_forward')
+		return ModuleError(controller.error)
 
-	else:
-		raise UnknownCommand("Unknown command!")
+else:
+	raise UnknownCommand("Unknown command!")

@@ -38,8 +38,8 @@ fi
 rm /bin/arissploit
 rm /usr/local/bin/arissploit
 rm -r ~/arissploit
+rm /data/data/com.termux/files/usr/bin/arissploit
 } &> /dev/null
-
 clear
 
 echo -e

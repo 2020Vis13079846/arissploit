@@ -72,7 +72,7 @@ cp bin/arissploit /bin
 chmod +x /bin/arissploit
 cp bin/arissploit /usr/local/bin
 chmod +x /usr/local/bin/arissploit
-cp bin/arissploit /data/data/com.termux/files/usr/bin/
+cp bin/arissploit /data/data/com.termux/files/usr/bin
 chmod +x /data/data/com.termux/files/usr/bin/arissploit
 } &> /dev/null
 

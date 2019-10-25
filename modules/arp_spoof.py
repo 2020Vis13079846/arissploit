@@ -34,7 +34,7 @@ option_notes = "Interface only required when option: all = true"
 
 customcommands = {
 	"stop": "End arp spoof.",
-	"get": "<status> get arp spoof status.",
+	"get": "Get arp spoof status.",
 }
 
 class SpoofController(threading.Thread):

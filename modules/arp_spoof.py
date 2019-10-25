@@ -179,5 +179,5 @@ def get(args):
 		os.system('echo "0" >> /proc/sys/net/ipv4/ip_forward')
 		return ModuleError(controller.error)
 
-else:
-	raise UnknownCommand("Unknown command!")
+	else:
+		raise UnknownCommand("Unknown command!")

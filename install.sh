@@ -105,30 +105,29 @@ then
 sleep 1
 else
 apt-get update
-apt-get install git
-apt-get install python3
-apt-get install python3-pip
-apt-get install wget
-apt-get install perl
-apt-get install libany-uri-escape-perl
-apt-get install libhtml-html5-entities-perl
-apt-get install libhtml-entities-numbered-perl
-apt-get install libhtml-parser-perl
-apt-get install libwww-perl
-apt-get install php
-apt-get install libdnet
-apt-get install ethtool
-apt-get install aircrack-ng
-apt-get install ettercap-text-only
-apt-get install dsniff
-apt-get install xterm
-apt-get install driftnet
-apt-get install tcpdump
-apt-get install libnetfilter-queue-dev
-apt-get install python3-dev
-apt-get install hcitool
-apt-get install sslstrip
-
+apt-get -y install git
+apt-get -y install python3
+apt-get -y install python3-pip
+apt-get -y install wget
+apt-get -y install perl
+apt-get -y install libany-uri-escape-perl
+apt-get -y install libhtml-html5-entities-perl
+apt-get -y install libhtml-entities-numbered-perl
+apt-get -y install libhtml-parser-perl
+apt-get -y install libwww-perl
+apt-get -y install php
+apt-get -y install libdnet
+apt-get -y install ethtool
+apt-get -y install aircrack-ng
+apt-get -y install ettercap-text-only
+apt-get -y install dsniff
+apt-get -y install xterm
+apt-get -y install driftnet
+apt-get -y install tcpdump
+apt-get -y install libnetfilter-queue-dev
+apt-get -y install python3-dev
+apt-get -y install hcitool
+apt-get -y install sslstrip
 sleep 0.5
 fi
 fi
@@ -143,29 +142,29 @@ then
 sleep 1
 else
 pkg update
-pkg install git
-pkg install python3
-pkg install python3-pip
-pkg install wget
-pkg install perl
-pkg install libany-uri-escape-perl
-pkg install libhtml-html5-entities-perl
-pkg install libhtml-entities-numbered-perl
-pkg install libhtml-parser-perl
-pkg install libwww-perl
-pkg install php
-pkg install libdnet
-pkg install ethtool
-pkg install aircrack-ng
-pkg install ettercap-text-only
-pkg install dsniff
-pkg install xterm
-pkg install driftnet
-pkg install tcpdump
-pkg install libnetfilter-queue-dev
-pkg install python3-dev
-pkg install hcitool
-pkg install sslstrip
+pkg -y install git
+pkg -y install python3
+pkg -y install python3-pip
+pkg -y install wget
+pkg -y install perl
+pkg -y install libany-uri-escape-perl
+pkg -y install libhtml-html5-entities-perl
+pkg -y install libhtml-entities-numbered-perl
+pkg -y install libhtml-parser-perl
+pkg -y install libwww-perl
+pkg -y install php
+pkg -y install libdnet
+pkg -y install ethtool
+pkg -y install aircrack-ng
+pkg -y install ettercap-text-only
+pkg -y install dsniff
+pkg -y install xterm
+pkg -y install driftnet
+pkg -y install tcpdump
+pkg -y install libnetfilter-queue-dev
+pkg -y install python3-dev
+pkg -y install hcitool
+pkg -y install sslstrip
 sleep 0.5
 fi
 fi
@@ -180,29 +179,29 @@ then
 sleep 1
 else
 apt-get update
-apt-get install git
-apt-get install python3
-apt-get install python3-pip
-apt-get install wget
-apt-get install perl
-apt-get install libany-uri-escape-perl
-apt-get install libhtml-html5-entities-perl
-apt-get install libhtml-entities-numbered-perl
-apt-get install libhtml-parser-perl
-apt-get install libwww-perl
-apt-get install php
-apt-get install libdnet
-apt-get install ethtool
-apt-get install aircrack-ng
-apt-get install ettercap-text-only
-apt-get install dsniff
-apt-get install xterm
-apt-get install driftnet
-apt-get install tcpdump
-apt-get install libnetfilter-queue-dev
-apt-get install python3-dev
-apt-get install hcitool
-apt-get install sslstrip
+apt-get -y install git
+apt-get -y install python3
+apt-get -y install python3-pip
+apt-get -y install wget
+apt-get -y install perl
+apt-get -y install libany-uri-escape-perl
+apt-get -y install libhtml-html5-entities-perl
+apt-get -y install libhtml-entities-numbered-perl
+apt-get -y install libhtml-parser-perl
+apt-get -y install libwww-perl
+apt-get -y install php
+apt-get -y install libdnet
+apt-get -y install ethtool
+apt-get -y install aircrack-ng
+apt-get -y install ettercap-text-only
+apt-get -y install dsniff
+apt-get -y install xterm
+apt-get -y install driftnet
+apt-get -y install tcpdump
+apt-get -y install libnetfilter-queue-dev
+apt-get -y install python3-dev
+apt-get -y install hcitool
+apt-get -y install sslstrip
 sleep 0.5
 fi
 fi

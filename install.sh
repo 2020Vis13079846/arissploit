@@ -105,6 +105,12 @@ sleep 1
 if [[ -d /System/Library/CoreServices/Finder.app ]]
 then
 sleep 1
+{
+if ! which pip3 > /dev/null; then
+	wget https://bootstrap.pypa.io/get-pip.py
+	python3 get-pip.py
+fi
+} &> /dev/null
 else
 apt-get update
 apt-get -y install git
@@ -142,6 +148,12 @@ sleep 1
 if [[ -d /System/Library/CoreServices/SpringBoard.app ]]
 then
 sleep 1
+{
+if ! which pip3 > /dev/null; then
+	wget https://bootstrap.pypa.io/get-pip.py
+	python3 get-pip.py
+fi
+} &> /dev/null
 else
 pkg update
 pkg -y install git
@@ -179,6 +191,12 @@ sleep 1
 if [[ -d /System/Library/CoreServices/Finder.app ]]
 then
 sleep 1
+{
+if ! which pip3 > /dev/null; then
+	wget https://bootstrap.pypa.io/get-pip.py
+	python3 get-pip.py
+fi
+} &> /dev/null
 else
 apt-get update
 apt-get -y install git

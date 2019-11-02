@@ -67,14 +67,6 @@ echo -e "Press \033[1;33many key\033[0m to install arissploit"
 read -n 1
 
 clear
-{
-cp bin/arissploit /bin
-chmod +x /bin/arissploit
-cp bin/arissploit /usr/local/bin
-chmod +x /usr/local/bin/arissploit
-cp bin/arissploit /data/data/com.termux/files/usr/bin
-chmod +x /data/data/com.termux/files/usr/bin/arissploit
-} &> /dev/null
 
 sleep 1
 echo -e "What is your architecture?("$YS"amd"$CE"/"$YS"intel"$CE"/"$YS"arm"$CE"):"
@@ -230,6 +222,15 @@ fi
 {
 pip3 install setuptools
 pip3 install netfilterqueue
+} &> /dev/null
+
+{
+cp bin/arissploit /bin
+chmod +x /bin/arissploit
+cp bin/arissploit /usr/local/bin
+chmod +x /usr/local/bin/arissploit
+cp bin/arissploit /data/data/com.termux/files/usr/bin
+chmod +x /data/data/com.termux/files/usr/bin/arissploit
 } &> /dev/null
 
 clear

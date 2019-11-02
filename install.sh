@@ -159,8 +159,7 @@ sleep 1
 else
 pkg update
 pkg -y install git
-pkg -y install python3
-pkg -y install python3-pip
+pkg -y install python
 pkg -y install wget
 pkg -y install perl
 pkg -y install libany-uri-escape-perl
@@ -178,7 +177,6 @@ pkg -y install xterm
 pkg -y install driftnet
 pkg -y install tcpdump
 pkg -y install libnetfilter-queue-dev
-pkg -y install python3-dev
 pkg -y install hcitool
 pkg -y install sslstrip
 sleep 0.5
@@ -230,6 +228,7 @@ fi
 fi
 
 {
+pip3 install setuptools
 pip3 install netfilterqueue
 } &> /dev/null
 

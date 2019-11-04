@@ -25,6 +25,7 @@
 import os
 
 os.system("printf '\033]2;Arissploit Framework\a'")
+os.system("clear")
 
 try:
 

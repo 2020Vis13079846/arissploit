@@ -26,7 +26,7 @@
  </a>
 </p>
 
-![arissploit](https://user-images.githubusercontent.com/54115104/68434433-ffce8400-01c9-11ea-96f4-90c9c3c4ae9c.png)
+![arissploit](https://user-images.githubusercontent.com/54115104/68434631-81261680-01ca-11ea-92e8-1b6c2f92df36.png)
 
 # About arissploit framework
 

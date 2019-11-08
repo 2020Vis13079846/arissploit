@@ -73,6 +73,11 @@ class Cmethods:
 	# Built-in commands
 	
 	def exit(self, args):
+                answer = input("Do you want to exit Arissploit Framework [yes/no]? ")
+	        if answer == "yes" or answer == "y":
+                        time.sleep(0)
+                else:
+                        return
 		if self.mm.moduleLoaded == 1:
 			self.mm.moduleLoaded = 0
 			self.mm.moduleName = ""

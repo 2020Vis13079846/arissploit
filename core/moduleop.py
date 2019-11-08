@@ -76,7 +76,7 @@ def addtodb(modadd):
 			if category.tag == "category":
 				print(category.attrib["key"])
 		print(colors.end, end="")
-		catkey = input("\ngive new or exist key? ")
+		catkey = input("\nGive new or exist key? ")
 
 		for category in root:
 			if category.tag == "category" and category.attrib["key"] == catkey:
@@ -88,13 +88,13 @@ def addtodb(modadd):
 				category.append(module)
 				writedb(root)
 				newcat = False
-				printSuccess("module added to "+category.attrib["name"])
+				printSuccess("Module added to "+category.attrib["name"])
 				break
 
 		if newcat == True:
-			printInfo("category not found")
-			printInfo("going to add new category")
-			catname = input("give new category name: ")
+			printInfo("Category not found!")
+			printInfo("Going to add new category...")
+			catname = input("Give new category name: ")
 			newcat = ElementTree.Element("category")
 			newcat.set("name", catname)
 			newcat.set("key", catkey)
@@ -106,5 +106,5 @@ def addtodb(modadd):
 			newcat.append(module)
 			root.append(newcat)
 			writedb(root)
-			printSuccess("new category created")
-			printSuccess("module added to "+newcat.attrib["name"])
+			printSuccess("New category created!")
+			printSuccess("Module added to "+newcat.attrib["name"])

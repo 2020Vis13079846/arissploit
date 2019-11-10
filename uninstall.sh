@@ -22,14 +22,14 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-RS="\033[1;31m"
+RS="\033[1;91m"
 YS="\033[1;33m"
 CE="\033[0m"
 
 if [[ $EUID -ne 0 ]]
 then
    sleep 1
-   echo -e "["$RS"*"$CE"] "$RS"This script must be run as "$YS"root"$C"" 1>&2
+   echo -e "["$RS"err"$CE"] This script must be run as root!" 1>&2
    sleep 1
    exit
 fi

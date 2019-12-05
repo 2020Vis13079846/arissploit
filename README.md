@@ -77,13 +77,13 @@
     
 ![modules](https://user-images.githubusercontent.com/54115104/66274002-a13c8000-e882-11e9-8d4e-5afd57af8776.png)
     
-# Terms of use
+# Arissploit framework disclaimer
 
-    This tool is only for educational purposes only.
-    Use this tool wisely and never without permission.
-    I am not responsible for anything you do with this tool.
+    INFO: Usage of the Arissploit Framework for attacking targets without prior mutual consent is illegal. 
+    It is the end user's responsibility to obey all applicable local, state, federal, and international laws. 
+    Developers assume no liability and are not responsible for any misuse or damage caused by this program.
     
-# Arissploit MIT license
+# Arissploit framework license
 
     MIT License
 

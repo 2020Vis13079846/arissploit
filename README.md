@@ -41,10 +41,6 @@
 > chmod +x install.sh
 
 > ./install.sh
-
-    INFO: After running install.sh you should
-    select your arch (amd/intel/arm), amd/intel - all 
-    computer OS, arm - android termux or jailbroken iOS.
     
 ![installer](https://user-images.githubusercontent.com/54115104/66913212-df713680-f01c-11e9-9311-c62ad4508333.png)
 

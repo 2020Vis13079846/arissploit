@@ -68,87 +68,7 @@ read -n 1
 
 clear
 
-sleep 1
-echo -e "What is your architecture?("$YS"amd"$CE"/"$YS"intel"$CE"/"$YS"arm"$CE"):"
-echo -e "Arissploit supports "$YS"amd"$CE", "$YS"intel"$CE" and "$YS"arm"$CE" architectures!"
-echo -e "Select your architecture to install compatible dependencies!"
-read -e -p $'(\033[4;93march\033[0m)> ' CONF
-
-if [[ "$CONF" = "arm" ]]
-then
-sleep 1
-clear
-sleep 1
-echo -e "Is this a single board computer?("$YS"yes"$CE"/"$YS"no"$CE"):"
-echo -e "Single board computer like Raspberry PI!"
-echo -e "Arissploit supports Raspberry PI!"
-read -e -p $'(\033[4;93mconfirm\033[0m)> ' PI
-if [[ "$PI" = "yes" ]]
-then
-CONF="amd"
-fi
-fi
-
-if [[ "$CONF" = "amd" ]]
-then
-sleep 1
-clear
-sleep 1
-if [[ -d /System/Library/CoreServices/Finder.app ]]
-then
-sleep 1
-clear
 {
-if ! which pip3 > /dev/null; then
-	curl https://bootstrap.pypa.io/get-pip.py | python3
-fi
-} &> /dev/null
-sleep 1
-else
-apt-get update
-apt-get -y install git
-apt-get -y install python3
-apt-get -y install python3-pip
-apt-get -y install wget
-apt-get -y install perl
-apt-get -y install libany-uri-escape-perl
-apt-get -y install libhtml-html5-entities-perl
-apt-get -y install libhtml-entities-numbered-perl
-apt-get -y install libhtml-parser-perl
-apt-get -y install libwww-perl
-apt-get -y install php
-apt-get -y install libdnet
-apt-get -y install ethtool
-apt-get -y install aircrack-ng
-apt-get -y install ettercap-text-only
-apt-get -y install dsniff
-apt-get -y install xterm
-apt-get -y install driftnet
-apt-get -y install tcpdump
-apt-get -y install libnetfilter-queue-dev
-apt-get -y install python3-dev
-apt-get -y install hcitool
-apt-get -y install sslstrip
-sleep 0.5
-fi
-fi
-
-if [[ "$CONF" = "arm" ]]
-then
-sleep 1
-clear
-sleep 1
-if [[ -d /System/Library/CoreServices/SpringBoard.app ]]
-then
-sleep 1
-clear
-{
-if ! which pip3 > /dev/null; then
-	curl https://bootstrap.pypa.io/get-pip.py | python3
-fi
-} &> /dev/null
-sleep 1
-else
 pkg update
 pkg -y install git
 pkg -y install python
@@ -171,26 +91,6 @@ pkg -y install tcpdump
 pkg -y install libnetfilter-queue-dev
 pkg -y install hcitool
 pkg -y install sslstrip
-sleep 0.5
-fi
-fi
-
-if [[ "$CONF" = "intel" ]]
-then
-sleep 1
-clear
-sleep 1
-if [[ -d /System/Library/CoreServices/Finder.app ]]
-then
-sleep 1
-clear
-{
-if ! which pip3 > /dev/null; then
-	curl https://bootstrap.pypa.io/get-pip.py | python3
-fi
-} &> /dev/null
-sleep 1
-else
 apt-get update
 apt-get -y install git
 apt-get -y install python3
@@ -215,9 +115,53 @@ apt-get -y install libnetfilter-queue-dev
 apt-get -y install python3-dev
 apt-get -y install hcitool
 apt-get -y install sslstrip
-sleep 0.5
-fi
-fi
+apk add git
+apk add python3
+apk add python3-pip
+apk add wget
+apk add perl
+apk add libany-uri-escape-perl
+apk add libhtml-html5-entities-perl
+apk add libhtml-entities-numbered-perl
+apk add libhtml-parser-perl
+apk add libwww-perl
+apk add php
+apk add install libdnet
+apk add ethtool
+apk add aircrack-ng
+apk add ettercap-text-only
+apk add dsniff
+apk add xterm
+apk add driftnet
+apk add tcpdump
+apk add libnetfilter-queue-dev
+apk add python3-dev
+apk add hcitool
+apk add install sslstrip
+pacman -S git
+pacman -S python3
+pacman -S python3-pip
+pacman -S wget
+pacman -S perl
+pacman -S libany-uri-escape-perl
+pacman -S libhtml-html5-entities-perl
+pacman -S libhtml-entities-numbered-perl
+pacman -S libhtml-parser-perl
+pacman -S libwww-perl
+pacman -S php
+pacman -S install libdnet
+pacman -S ethtool
+pacman -S aircrack-ng
+pacman -S ettercap-text-only
+pacman -S dsniff
+pacman -S xterm
+pacman -S driftnet
+pacman -S tcpdump
+pacman -S libnetfilter-queue-dev
+pacman -S python3-dev
+pacman -S hcitool
+pacman -S sslstrip
+} &> /dev/null
 
 {
 pip3 install setuptools

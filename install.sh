@@ -22,7 +22,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-NV="\033[1;37m"
+BS="\033[1;94m"
 RS="\033[1;91m"
 YS="\033[1;33m"
 CE="\033[0m"
@@ -56,7 +56,7 @@ read -n 1
 clear
 cat banner/banner.txt
 sleep 1
-echo -e "["$YS"inf"$CE"] Installing dependencies..."
+echo -e "["$BS"inf"$CE"] Installing dependencies..."
 sleep 1
 
 {

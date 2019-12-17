@@ -35,22 +35,9 @@ then
    exit
 fi
 
-cd ~ 
-if [[ -d arissploit ]]
-then
-clear
-cd arissploit
-else
-{
-git clone https://github.com/entynetproject/arissploit.git
-} &> /dev/null
-cd arissploit 
-chmod +x install.sh
-fi
-
 printf '\033]2;arissploit INSTALLER\a'
 clear
-cat ~/arissploit/banner/banner.txt
+cat banner/banner.txt
 echo -e "\033[1;33mBy Arissploit Team\033[0m"
 sleep 3
 echo -e "More on our site:"
@@ -67,6 +54,10 @@ echo -e "Press \033[1;33many key\033[0m to install arissploit"
 read -n 1
 
 clear
+cat banner/banner.txt
+sleep 1
+echo -e "["$YS"inf"$CE"] Installing dependencies..."
+sleep 1
 
 {
 pkg update
@@ -117,7 +108,7 @@ apt-get -y install hcitool
 apt-get -y install sslstrip
 apk add git
 apk add python3
-apk add python3-pip
+apk add py3-pip
 apk add wget
 apk add perl
 apk add libany-uri-escape-perl
@@ -138,29 +129,75 @@ apk add libnetfilter-queue-dev
 apk add python3-dev
 apk add hcitool
 apk add install sslstrip
-pacman -S git
-pacman -S python3
-pacman -S python3-pip
-pacman -S wget
-pacman -S perl
-pacman -S libany-uri-escape-perl
-pacman -S libhtml-html5-entities-perl
-pacman -S libhtml-entities-numbered-perl
-pacman -S libhtml-parser-perl
-pacman -S libwww-perl
-pacman -S php
-pacman -S install libdnet
-pacman -S ethtool
-pacman -S aircrack-ng
-pacman -S ettercap-text-only
-pacman -S dsniff
-pacman -S xterm
-pacman -S driftnet
-pacman -S tcpdump
-pacman -S libnetfilter-queue-dev
-pacman -S python3-dev
-pacman -S hcitool
-pacman -S sslstrip
+pacman -Sy
+yes | pacman -S git
+yes | pacman -S python3
+yes | pacman -S python3-pip
+yes | pacman -S wget
+yes | pacman -S perl
+yes | pacman -S libany-uri-escape-perl
+yes | pacman -S libhtml-html5-entities-perl
+yes | pacman -S libhtml-entities-numbered-perl
+yes | pacman -S libhtml-parser-perl
+yes | pacman -S libwww-perl
+yes | pacman -S php
+yes | pacman -S install libdnet
+yes | pacman -S ethtool
+yes | pacman -S aircrack-ng
+yes | pacman -S ettercap-text-only
+yes | pacman -S dsniff
+yes | pacman -S xterm
+yes | pacman -S driftnet
+yes | pacman -S tcpdump
+yes | pacman -S libnetfilter-queue-dev
+yes | pacman -S python3-dev
+yes | pacman -S hcitool
+yes | pacman -S sslstrip
+zypper refresh
+zypper install -y git
+zypper install -y python3
+zypper install -y python3-pip
+zypper install -y wget
+zypper install -y perl
+zypper install -y libany-uri-escape-perl
+zypper install -y libhtml-html5-entities-perl
+zypper install -y libhtml-entities-numbered-perl
+zypper install -y libhtml-parser-perl
+zypper install -y libwww-perl
+zypper install -y php
+zypper install -y libdnet
+zypper install -y ethtool
+zypper install -y aircrack-ng
+zypper install -y ettercap-text-only
+zypper install -y dsniff
+zypper install -y xterm
+zypper install -y driftnet
+zypper install -y tcpdump
+zypper install -y libnetfilter-queue-dev
+zypper install -y python3-dev
+zypper install -y hcitool
+zypper install -y sslstrip
+yum -y install git
+yum -y install python
+yum -y install wget
+yum -y install perl
+yum -y install libany-uri-escape-perl
+yum -y install libhtml-html5-entities-perl
+yum -y install libhtml-entities-numbered-perl
+yum -y install libhtml-parser-perl
+yum -y install libwww-perl
+yum -y install php
+yum -y install libdnet
+yum -y install ethtool
+yum -y install aircrack-ng
+yum -y install ettercap-text-only
+yum -y install dsniff
+yum -y install xterm
+yum -y install driftnet
+yum -y install tcpdump
+yum -y install libnetfilter-queue-dev
+yum -y install hcitool
+yum -y install sslstrip
 } &> /dev/null
 
 {

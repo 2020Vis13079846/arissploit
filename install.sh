@@ -132,7 +132,7 @@ apk add install sslstrip
 pacman -Sy
 yes | pacman -S git
 yes | pacman -S python3
-yes | pacman -S python3-pip
+yes | pacman -S python-pip
 yes | pacman -S wget
 yes | pacman -S perl
 yes | pacman -S libany-uri-escape-perl

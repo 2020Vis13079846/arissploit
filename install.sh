@@ -272,6 +272,7 @@ xbps-install -y python3-dev
 xbps-install -y hcitool
 xbps-install -y sslstrip
 } &> /dev/null
+
 {
 pip3 install setuptools
 pip3 install netfilterqueue

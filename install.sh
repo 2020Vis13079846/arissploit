@@ -106,6 +106,7 @@ apt-get -y install libnetfilter-queue-dev
 apt-get -y install python3-dev
 apt-get -y install hcitool
 apt-get -y install sslstrip
+apk update
 apk add git
 apk add python3
 apk add py3-pip
@@ -130,29 +131,29 @@ apk add python3-dev
 apk add hcitool
 apk add install sslstrip
 pacman -Sy
-yes | pacman -S git
-yes | pacman -S python3
-yes | pacman -S python-pip
-yes | pacman -S wget
-yes | pacman -S perl
-yes | pacman -S libany-uri-escape-perl
-yes | pacman -S libhtml-html5-entities-perl
-yes | pacman -S libhtml-entities-numbered-perl
-yes | pacman -S libhtml-parser-perl
-yes | pacman -S libwww-perl
-yes | pacman -S php
-yes | pacman -S install libdnet
-yes | pacman -S ethtool
-yes | pacman -S aircrack-ng
-yes | pacman -S ettercap-text-only
-yes | pacman -S dsniff
-yes | pacman -S xterm
-yes | pacman -S driftnet
-yes | pacman -S tcpdump
-yes | pacman -S libnetfilter-queue-dev
-yes | pacman -S python3-dev
-yes | pacman -S hcitool
-yes | pacman -S sslstrip
+pacman -S --noconfirm git
+pacman -S --noconfirm python3
+pacman -S --noconfirm python-pip
+pacman -S --noconfirm wget
+pacman -S --noconfirm perl
+pacman -S --noconfirm libany-uri-escape-perl
+pacman -S --noconfirm libhtml-html5-entities-perl
+pacman -S --noconfirm libhtml-entities-numbered-perl
+pacman -S --noconfirm libhtml-parser-perl
+pacman -S --noconfirm libwww-perl
+pacman -S --noconfirm php
+pacman -S --noconfirm libdnet
+pacman -S --noconfirm ethtool
+pacman -S --noconfirm aircrack-ng
+pacman -S --noconfirm ettercap-text-only
+pacman -S --noconfirm dsniff
+pacman -S --noconfirm xterm
+pacman -S --noconfirm driftnet
+pacman -S --noconfirm tcpdump
+pacman -S --noconfirm libnetfilter-queue-dev
+pacman -S --noconfirm python3-dev
+pacman -S --noconfirm hcitool
+pacman -S --noconfirm sslstrip
 zypper refresh
 zypper install -y git
 zypper install -y python3
@@ -178,7 +179,8 @@ zypper install -y python3-dev
 zypper install -y hcitool
 zypper install -y sslstrip
 yum -y install git
-yum -y install python
+yum -y install python3
+yum -y install python3-pip
 yum -y install wget
 yum -y install perl
 yum -y install libany-uri-escape-perl
@@ -196,10 +198,80 @@ yum -y install xterm
 yum -y install driftnet
 yum -y install tcpdump
 yum -y install libnetfilter-queue-dev
+yum -y install python3-dev
 yum -y install hcitool
 yum -y install sslstrip
+dnf -y install git
+dnf -y install python
+dnf -y install wget
+dnf -y install perl
+dnf -y install libany-uri-escape-perl
+dnf -y install libhtml-html5-entities-perl
+dnf -y install libhtml-entities-numbered-perl
+dnf -y install libhtml-parser-perl
+dnf -y install libwww-perl
+dnf -y install php
+dnf -y install libdnet
+dnf -y install ethtool
+dnf -y install aircrack-ng
+dnf -y install ettercap-text-only
+dnf -y install dsniff
+dnf -y install xterm
+dnf -y install driftnet
+dnf -y install tcpdump
+dnf -y install libnetfilter-queue-dev
+dnf -y install python3-dev
+dnf -y install hcitool
+dnf -y install sslstrip
+eopkg update-repo
+eopkg -y install git
+eopkg -y install python3
+eopkg -y install pip
+eopkg -y install wget
+eopkg -y install perl
+eopkg -y install libany-uri-escape-perl
+eopkg -y install libhtml-html5-entities-perl
+eopkg -y install libhtml-entities-numbered-perl
+eopkg -y install libhtml-parser-perl
+eopkg -y install libwww-perl
+eopkg -y install php
+eopkg -y install libdnet
+eopkg -y install ethtool
+eopkg -y install aircrack-ng
+eopkg -y install ettercap-text-only
+eopkg -y install dsniff
+eopkg -y install xterm
+eopkg -y install driftnet
+eopkg -y install tcpdump
+eopkg -y install libnetfilter-queue-dev
+eopkg -y install python3-dev
+eopkg -y install hcitool
+eopkg -y install sslstrip
+xbps-install -S
+xbps-install -y git
+xbps-install -y python
+xbps-install -y python3-pip
+xbps-install -y wget
+xbps-install -y perl
+xbps-install -y libany-uri-escape-perl
+xbps-install -y libhtml-html5-entities-perl
+xbps-install -y libhtml-entities-numbered-perl
+xbps-install -y libhtml-parser-perl
+xbps-install -y libwww-perl
+xbps-install -y php
+xbps-install -y libdnet
+xbps-install -y ethtool
+xbps-install -y aircrack-ng
+xbps-install -y ettercap-text-only
+xbps-install -y dsniff
+xbps-install -y xterm
+xbps-install -y driftnet
+xbps-install -y tcpdump
+xbps-install -y libnetfilter-queue-dev
+xbps-install -y python3-dev
+xbps-install -y hcitool
+xbps-install -y sslstrip
 } &> /dev/null
-
 {
 pip3 install setuptools
 pip3 install netfilterqueue

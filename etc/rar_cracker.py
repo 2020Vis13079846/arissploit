@@ -3,6 +3,7 @@ import rarfile
 import threading, queue
 from core import getpath
 from os.path import relpath
+import os
 import sys
 
 conf = {
@@ -55,11 +56,14 @@ class Worker(threading.Thread):
 
 	def run(self):
 		try:
-
+                        w = os.environ['OLDPWD']
+			g = os.environ['HOME']
+			os.chdir(w)
 			rf = rarfile.RarFile(variables["file"][0])
+		        os.chdir(g + "/arissploit")
 		
 		except FileNotFoundError:
-			self.pwdh.error = "Defined file is not found!"
+			self.pwdh.error = "Rar file is not found!"
 			return
 		for word in self.words:
 			if self.pwdh.pwd != None:
@@ -86,7 +90,6 @@ class Worker(threading.Thread):
 
 def run():
 	try:
-		import os
 		g = os.environ['HOME']
 		w = os.environ['OLDPWD']
 		os.chdir(w)

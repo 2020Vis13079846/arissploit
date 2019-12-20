@@ -57,8 +57,12 @@ class Worker(threading.Thread):
 
 	def run(self):
 		try:
-			w = os.environ['OLDPWD']
-			zipf = zipfile.ZipFile(w + '/' + variables["file"][0])
+			if not '/' in variables["file"]:
+				w = os.environ['OLDPWD'] + '/'
+			else:
+				w = ''
+			
+			zipf = zipfile.ZipFile(w + variables["file"][0])
 		
 		except FileNotFoundError:
 			self.pwdh.error = "Zip file is not found!"
@@ -85,12 +89,12 @@ class Worker(threading.Thread):
 
 def run():
 	try:
-		if '/' in variables["dict"]:
-			import time
-			time.sleep(0)
+		if not '/' in variables["dict"]:
+			w = os.environ['OLDPWD'] + '/'
 		else:
-			w = os.environ['OLDPWD']
-			wordlist = open(w + '/' + variables["dict"][0], "rb")
+			w = ''
+			
+		wordlist = open(w + variables["dict"][0], "rb")
 		
 		printInfo("Reading word list...")
 		words = wordlist.read().splitlines()

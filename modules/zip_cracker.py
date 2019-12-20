@@ -9,7 +9,7 @@ import sys
 conf = {
 	"name": "zip_cracker", # Module's name (should be same as file name)
 	"version": "1.0", # Module version
-	"shortdesc": "Zip file brute-force attack using dictionary.", # Short description
+	"shortdesc": "Zip file brute-force attack using wordlist.", # Short description
 	"author": "Entynetproject", # Author
 	"initdate": "22.12.2016", # Initial date
 	"lastmod": "3.1.2017",

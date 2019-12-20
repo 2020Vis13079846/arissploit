@@ -58,10 +58,7 @@ class Worker(threading.Thread):
 	def run(self):
 		try:
 			w = os.environ['OLDPWD']
-			g = os.environ['HOME']
-			os.chdir(w)
-			zipf = zipfile.ZipFile(variables["file"][0])
-			os.chdir(g + "/arissploit")
+			zipf = zipfile.ZipFile(w + '/' + variables["file"][0])
 		
 		except FileNotFoundError:
 			self.pwdh.error = "Zip file is not found!"
@@ -89,10 +86,7 @@ class Worker(threading.Thread):
 def run():
 	try:
 		w = os.environ['OLDPWD']
-		g = os.environ['HOME']
-		os.chdir(w)
-		wordlist = open(variables["dict"][0], "rb")
-		os.chdir(g + "/arissploit")
+		wordlist = open(w + '/' + variables["dict"][0], "rb")
 		
 		printInfo("Reading word list...")
 		words = wordlist.read().splitlines()

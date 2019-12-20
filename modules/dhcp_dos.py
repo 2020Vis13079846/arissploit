@@ -18,7 +18,7 @@ conf = {
 
 # List of the variables
 variables = OrderedDict((
-	('router', ['192.168.1.1', 'Router ip address.']),
+	('router', ['192.168.1.1', 'Router IP address.']),
 	('packet_count', ['100', 'Count of packets [0 = infinite].']),
 ))
 

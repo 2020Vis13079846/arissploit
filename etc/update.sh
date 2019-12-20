@@ -1,13 +1,8 @@
-#blue start 
-	BS="\033[1;34m"
-#color end
-	CE="\033[0m"
-#red start
-	RS="\033[1;31m"
-#green start
-	GNS="-e \033[1;32m"
-#white start
-        WHS="\033[0;97m"
+BS="\033[1;94m"
+RS="\033[1;91m"
+YS="\033[1;33m"
+GNS="\033[1;32m"
+CE="\033[0m"
         
 if [[ -d /data/data/com.termux ]]
 then

@@ -65,6 +65,7 @@ class Worker(threading.Thread):
 			zipf = zipfile.ZipFile(w + variables["file"][0])
 		
 		except FileNotFoundError:
+			print(zipf)
 			self.pwdh.error = "Zip file is not found!"
 			return
 		for word in self.words:
@@ -99,6 +100,7 @@ def run():
 		printInfo("Reading word list...")
 		words = wordlist.read().splitlines()
 	except FileNotFoundError:
+		print(wordlist)
 		printError("Word list is not found!")
 		return ModuleError("Word list is not found!")
 	printInfo("Brute-force attack started...")

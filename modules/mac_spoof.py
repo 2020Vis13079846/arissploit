@@ -78,9 +78,9 @@ def reset(args):
 		xterm1a = "service network-manager stop"
 		xterm2a = "ifconfig "+variables['interface'][0]+" hw ether "+realmac
 		xterm3a = "service network-manager start"
-		printInfo("Setting real MAC...")
+		printInfo("Status: changing MAC address...")
 		os.system(xterm1a)
-		printInfo("Trying to set MAC address...")
+		printInfo("Status: trying to reset MAC address...")
 		os.system(xterm2a)
 		os.system(xterm3a)
 		printSuccess("Status: done!")

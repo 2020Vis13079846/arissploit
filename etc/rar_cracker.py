@@ -56,11 +56,10 @@ class Worker(threading.Thread):
 
 	def run(self):
 		try:
-			w = os.environ['OLDPWD']
-			g = os.environ['HOME']
-			os.chdir(w)
-			rf = rarfile.RarFile(variables["file"][0])
-			os.chdir(g + "/arissploit")
+			if not '/' in variables["file"][0]:
+				rf = rarfile.RarFile(os.environ['OLDPWD'] + '/' + variables["file"][0])
+			else:
+				rf = rarfile.RarFile(variables["file"][0])
 		
 		except FileNotFoundError:
 			self.pwdh.error = "Rar file is not found!"
@@ -90,11 +89,11 @@ class Worker(threading.Thread):
 
 def run():
 	try:
-		g = os.environ['HOME']
-		w = os.environ['OLDPWD']
-		os.chdir(w)
-		wordlist = open(variables["dict"][0], "rb")
-		os.chdir(g + "/arissploit")
+		if not '/' in variables["dict"][0]:
+			wordlist = open(os.environ['OLDPWD'] + '/' + variables["dict"][0], "rb")
+		else:
+			wordlist = open(variables["dict"][0], "rb")
+
 		printInfo("Reading word list...")
 		words = wordlist.read().splitlines()
 	except FileNotFoundError:

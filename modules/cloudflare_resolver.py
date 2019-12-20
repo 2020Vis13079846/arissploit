@@ -41,11 +41,11 @@ def run():
 	try:
 		orgip = ipresolver.query(variables['target'][0], 'A')
 		print(colors.green+"[-------------------------]"+colors.end)
-		print(colors.green+"[+] Default IP Address : %s"%orgip[0]+colors.end)
+		print(colors.green+"[+] Default IP Address: %s"%orgip[0]+colors.end)
 		print(colors.green+"[-------------------------]"+colors.end)
 		apianswer[variables['target'][0]] = orgip
 	except(dns.exception.Timeout):
-		print(colors.red+"[-] Error : Host is down!"+colors.end)
+		print(colors.red+"[-] Error: Host is down!"+colors.end)
 	except dns.resolver.NoAnswer:
 		print(colors.red+"[?] The DNS response does not contain an answer to the question."+colors.end)
 	for i in sub:
@@ -53,14 +53,14 @@ def run():
 		try:
 			query = ipresolver.query(host, 'A')
 			if query[0] == orgip[0]:
-				print(colors.yellow+"[?] %s : %s"%(host, query[0])+colors.end)
+				print(colors.yellow+"[?] %s: %s"%(host, query[0])+colors.end)
 				apianswer[host] = query[0]
 			else:
-				print(colors.green+"[+] %s : %s"%(host, query[0])+colors.end)
+				print(colors.green+"[+] %s: %s"%(host, query[0])+colors.end)
 				apianswer[host] = query[0]
 		except(dns.exception.Timeout):
 			if variables['pos'][0] != 'true':
-				print(colors.red+"[-] %s : N/A"%host+colors.end)
+				print(colors.red+"[-] %s: N/A"%host+colors.end)
 		except dns.resolver.NoAnswer:
 			if variables['pos'][0] != 'true':
 				print(colors.red+"[?] The DNS response does not contain an answer to the question."+colors.end)

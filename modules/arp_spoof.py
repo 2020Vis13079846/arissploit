@@ -33,8 +33,8 @@ changelog = "Version 1.0:\nrelease\nVersion 2.0:\nrewritten"
 option_notes = "Interface only required when option: all = true"
 
 customcommands = {
-	"stop": "End arp spoof.",
-	"get": "Get arp spoof status.",
+	"stop": "Stop ARP spoof.",
+	"get": "Get ARP spoof status.",
 }
 
 class SpoofController(threading.Thread):

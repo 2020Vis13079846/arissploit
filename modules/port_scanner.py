@@ -7,7 +7,7 @@ from datetime import datetime
 conf = {
 	"name": "port_scanner",
 	"version": "1.0",
-	"shortdesc": "Scan open ports.",
+	"shortdesc": "Website ports scanner.",
 	"author": "Entynetproject",
 	"initdate": "4.3.2016",
 	"lastmod": "3.1.2017",
@@ -16,7 +16,7 @@ conf = {
 
 # List of the variables
 variables = OrderedDict((
-	('target', ['google.com', 'Target address.']),
+	('target', ['google.com', 'Target web address.']),
 	('first', [1, 'First port which will be scanned.']),
 	('last', [100, 'Last port which will be scanned.']),
 ))

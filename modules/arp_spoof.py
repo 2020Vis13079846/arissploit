@@ -10,7 +10,7 @@ from core.exceptions import *
 conf = {
 	"name": "arp_spoof",
 	"version": "1.0",
-	"shortdesc": "Arp spoof.",
+	"shortdesc": "Network targets ARP spoofer.",
 	"author": "Entynetproject",
 	"initdate": "10.3.2016",
 	"lastmod": "3.1.2017",
@@ -21,10 +21,10 @@ conf = {
 
 # List of the variables
 variables = OrderedDict((
-	("target", ["192.168.1.3", "Target ip address."]),
-	("router", ["192.168.1.1", "Router ip address."]),
-	("all", ["false", "Spoof every device [true/false]."]),
-	("interface", ["eth0", "Target interface."])
+	("target", ["192.168.1.3", "Target IP address."]),
+	("router", ["192.168.1.1", "Router IP address."]),
+	("all", ["false", "Spoof every target."]),
+	("interface", ["eth0", "Target interface name."])
 ))
 
 # Simple changelog

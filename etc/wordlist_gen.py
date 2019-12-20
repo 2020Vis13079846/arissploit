@@ -63,11 +63,11 @@ class Worker(threading.Thread):
 
 	def run(self):
 		try:
-			w = os.environ['OLDPWD']
-			g = os.environ['HOME']
-			os.chdir(w)
+			if not '/' in variables["output"][0]:
+			f = open(os.environ['OLDPWD'] + '/' + variables["output"][0], "a")
+		else:
 			f = open(variables["output"][0], "a")
-			os.chdir(g + "/arissploit")
+			
 		except Exception as error:
 			printError(error)
 			return ModuleError(error)

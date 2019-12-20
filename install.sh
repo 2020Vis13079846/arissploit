@@ -55,6 +55,7 @@ read -n 1
 
 clear
 cat banner/banner.txt
+echo
 sleep 1
 echo -e "["$BS"inf"$CE"] Installing dependencies..."
 sleep 1

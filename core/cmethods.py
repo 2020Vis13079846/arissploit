@@ -27,7 +27,6 @@ import core.cowsay
 import core.matrix
 import core.sky
 from core.hftest import check_module
-from core import update
 from core import mscop
 from core import value_holder
 from core import moddbparser

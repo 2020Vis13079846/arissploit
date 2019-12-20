@@ -4,6 +4,7 @@ import threading, queue
 import itertools
 from os.path import relpath
 from core import getpath
+import os
 
 conf = {
 	"name": "wordlist_gen", # Module's name (should be same as file name)
@@ -36,8 +37,12 @@ customcommands = {
 addchr = ""
 
 def init():
+	w = os.environ['OLDPWD']
+	g = os.environ['HOME']
+	os.chdir(w)
 	variables["output"][0] = relpath(getpath.db() + "wordlist", getpath.main_module())
-
+        os.chdir(g + "/arissploit")
+	
 class StatHolder:
 	kill = False
 

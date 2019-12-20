@@ -9,7 +9,7 @@ from core import colors
 conf = {
 	"name": "network_kill",
 	"version": "1.0",
-	"shortdesc": "Blocks communication between router and target.",
+	"shortdesc": "Network devices killer.",
 	"author": "Entynetproject",
 	"initdate": "24.2.2016",
 	"lastmod": "29.12.2016",
@@ -19,8 +19,8 @@ conf = {
 
 # List of variables
 variables = OrderedDict((
-	('target', ['192.168.1.2', "Target device ip."]),
-	('router', ['192.168.1.1', "Router's ip."]),
+	('target', ['192.168.1.2', "Target IP address."]),
+	('router', ['192.168.1.1', "Router IP address."]),
 ))
 
 # Additional help notes

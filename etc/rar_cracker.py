@@ -59,7 +59,7 @@ class Worker(threading.Thread):
 			rf = rarfile.RarFile(variables["file"][0])
 		
 		except FileNotFoundError:
-			self.pwdh.error = "Rar file not found!"
+			self.pwdh.error = "Defined file is not found!"
 			return
 		for word in self.words:
 			if self.pwdh.pwd != None:
@@ -96,7 +96,7 @@ def run():
 		words = wordlist.read().splitlines()
 	except FileNotFoundError:
 		printError("Word list not found!")
-		return ModuleError("word list not found")
+		return ModuleError("Word list is not found!")
 	printInfo("Brute-force attack started...")
 
 	pwdh = PwdHolder

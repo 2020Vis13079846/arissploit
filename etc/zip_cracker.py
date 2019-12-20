@@ -4,6 +4,7 @@ import zipfile
 import threading, queue
 from core import getpath
 from os.path import relpath
+import os
 import sys
 
 conf = {

@@ -7,7 +7,7 @@ from core import getpath
 conf = {
 	"name": "wifi_jammer",
 	"version": "1.0",
-	"shortdesc": "Jam wifi.",
+	"shortdesc": "WiFi Jammer.",
 	"author": "Entynetproject.",
 	"initdate": "24.2.2016",
 	"lastmod": "29.12.2016",
@@ -21,7 +21,7 @@ variables = OrderedDict((
 	('interface', ['wlan0', 'Wireless interface name.']),
 	('bssid', ['none', 'Target BSSID address.']),
 	('essid', ['none', 'Target ESSID name.']),
-	('mon', ['mon0', 'Monitor.']),
+	('mon', ['mon0', 'Monitor interface.']),
 	('channel', ['11', 'Target channel number.']),
 ))
 
@@ -30,7 +30,7 @@ help_notes = colors.red+"This module will not work without root permission!\n Th
 
 # Used with custom commands (remove this if are not using custom commands)
 customcommands = {
-	'scan': 'Scan for target.',
+	'scan': 'Scan for targets.',
 	'stop': 'Terminate process.'
 }
 

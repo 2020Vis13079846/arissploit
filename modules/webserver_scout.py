@@ -6,7 +6,7 @@ import socket
 conf = {
 	"name": "webserver_scout",
 	"version": "1.0",
-	"shortdesc": "Get information from webserver.",
+	"shortdesc": "Webserver information thief.",
 	"author": "Entynetproject",
 	"initdate": "17.5.2016",
 	"lastmod": "3.1.2017",
@@ -15,8 +15,8 @@ conf = {
 
 # List of the variables
 variables = OrderedDict((
-	('target', ['google.com', 'Target address.']),
-	('timeout', ['1', 'Timeout (default: 1).']),
+	('target', ['google.com', 'Target web address.']),
+	('timeout', ['1', 'Timeout.']),
 ))
 
 # Simple changelog

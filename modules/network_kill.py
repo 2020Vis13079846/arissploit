@@ -9,7 +9,7 @@ from core import colors
 conf = {
 	"name": "network_kill",
 	"version": "1.0",
-	"shortdesc": "Network devices killer.",
+	"shortdesc": "Network targets killer.",
 	"author": "Entynetproject",
 	"initdate": "24.2.2016",
 	"lastmod": "29.12.2016",

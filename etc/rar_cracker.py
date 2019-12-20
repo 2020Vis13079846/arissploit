@@ -56,11 +56,11 @@ class Worker(threading.Thread):
 
 	def run(self):
 		try:
-                        w = os.environ['OLDPWD']
+			w = os.environ['OLDPWD']
 			g = os.environ['HOME']
 			os.chdir(w)
 			rf = rarfile.RarFile(variables["file"][0])
-		        os.chdir(g + "/arissploit")
+			os.chdir(g + "/arissploit")
 		
 		except FileNotFoundError:
 			self.pwdh.error = "Rar file is not found!"

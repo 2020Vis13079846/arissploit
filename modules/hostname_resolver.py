@@ -4,7 +4,7 @@ import socket
 conf = {
 	"name": "hostname_resolver",
 	"version": "1.0",
-	"shortdesc": "Resolve hostname using ip.",
+	"shortdesc": "Hostname IP resolver.",
 	"author": "Entynetproject",
 	"initdate": "9.5.2016",
 	"lastmod": "3.1.2017",
@@ -13,7 +13,7 @@ conf = {
 
 # List of the variables
 variables = OrderedDict((
-	('target', ['192.168.1.1', 'Target ip address.']),
+	('target', ['192.168.1.1', 'Target IP address.']),
 ))
 
 #simple changelog

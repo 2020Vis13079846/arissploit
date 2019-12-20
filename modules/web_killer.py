@@ -7,7 +7,7 @@ from core import colors
 conf = {
 	"name": "web_killer",
 	"version": "1.0",
-	"shortdesc": "TCP attack.",
+	"shortdesc": "Arrange TCP attack.",
 	"author": "Entynetproject",
 	"initdate": "24.2.2016",
 	"lastmod": "29.12.2016",
@@ -18,7 +18,7 @@ conf = {
 # List of the variables
 variables = OrderedDict((
 	('interface', ['wlan0', 'Network interface name.']),
-	('target', ['google.com', 'Target address.']),
+	('target', ['google.com', 'Target web address.']),
 
 ))
 

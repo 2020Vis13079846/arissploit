@@ -62,7 +62,7 @@ sleep 1
 exit
 fi
 sleep 1
-echo -e "["$BS"inf"$CE"] Installing dependencies..."
+echo -e "["$BS"inf"$CE"] Installing update..."
 {
 rm -rf ~/arissploit
 rm /bin/arissploit
@@ -76,9 +76,9 @@ sleep 0
 else
 cd ~/arissploit
 chmod +x install.sh
-./install.sh
+echo | ./install.sh
 fi
 } &> /dev/null
-echo -e "["$GNS"suf"$CE"] Successfully installed!"
+echo -e "["$GNS"suf"$CE"] Successfully updated!"
 sleep 1
 exit

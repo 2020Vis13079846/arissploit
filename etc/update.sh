@@ -50,19 +50,19 @@ ASESR="$( curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's
 if [[ "$ASESR" = "" ]]
 then 
 sleep 1
-echo -e ""$RS"[-] "$WHS"Download failed!"$CE""
+echo -e "["$RS"err"$CE"] Download failed!"
 sleep 1
 exit
 fi
 if [[ $EUID -ne 0 ]]
 then
 sleep 1
-echo -e ""$RS"[-] "$WHS"Permission denied!"$CE""
+echo -e "["$RS"err"$CE"] Permission denied!"
 sleep 1
 exit
 fi
 sleep 1
-echo -e ""$BS"[*] "$WHS"Installing update..."$CE""
+echo -e "["$BS"inf"$CE"] Installing dependencies..."
 {
 rm -rf ~/arissploit
 rm /bin/arissploit
@@ -79,6 +79,6 @@ chmod +x install.sh
 ./install.sh
 fi
 } &> /dev/null
-echo -e ""$BS"[+] "$WHS"Successfully updated!"$CE""
+echo -e "["$GNS"suf"$CE"] Successfully installed!"
 sleep 1
 exit

@@ -7,7 +7,7 @@ import os
 conf = {
 	"name": "arp_dos",
 	"version": "1.0",
-	"shortdesc": "ARP cache denial of service attack.",
+	"shortdesc": "ARP cache denial of service.",
 	"author": "Entynetproject",
 	"initdate": "3.3.2016",
 	"lastmod": "31.12.2016",

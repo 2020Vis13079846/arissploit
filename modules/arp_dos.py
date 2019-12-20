@@ -7,7 +7,7 @@ import os
 conf = {
 	"name": "arp_dos",
 	"version": "1.0",
-	"shortdesc": "Arp cache denial of service attack.",
+	"shortdesc": "ARP cache denial of service attack.",
 	"author": "Entynetproject",
 	"initdate": "3.3.2016",
 	"lastmod": "31.12.2016",
@@ -20,8 +20,8 @@ conf = {
 
 # List of the variables
 variables = OrderedDict((
-	('target', ['192.168.1.2', 'Target ip address.']),
-	('router', ['192.168.1.1', 'Router ip address.']),
+	('target', ['192.168.1.2', 'Target IP address.']),
+	('router', ['192.168.1.1', 'Router IP address.']),
 	('interface', ['eth0', 'Network interface name.']),
 ))
 

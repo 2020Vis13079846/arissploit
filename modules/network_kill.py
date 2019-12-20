@@ -30,8 +30,8 @@ help_notes = colors.red+"This module will not work without root permission!\n Th
 changelog = "Version 1.0:\nrelease"
 
 def run():
-	printInfo("Arp poisoning has been started...")
-	printInfo("Ctrl + C to end.")
+	printInfo("ARP poisoning has been started...")
+	printInfo("Ctrl + C to stop.")
 	packet = ARP()
 	packet.psrc = variables['router'][0]
 	packet.pdst = variables['target'][0]

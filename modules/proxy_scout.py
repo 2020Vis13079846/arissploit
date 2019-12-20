@@ -9,7 +9,7 @@ import re
 conf = {
 	"name": "proxy_scout",
 	"version": "1.0",
-	"shortdesc": "Verify http proxy.",
+	"shortdesc": "Http proxy checker.",
 	"author": "Entynetproject",
 	"initdate": "19.5.2016",
 	"lastmod": "29.12.2016",
@@ -19,12 +19,12 @@ conf = {
 
 # List of the variables
 variables = OrderedDict((
-	('target', ['192.168.1.2', 'Target address.']),
+	('target', ['192.168.1.2', 'Target IP address.']),
 	('port', ['80', 'Target port.']),
-	('timeout', ['1', 'Timeout (default: 1).']),
-	('port_range', ['1-100000', 'Port range (default: 1-100000).']),
-	('use_range', ['0', 'Scan port range (1=yes/0=no).']),
-	('scan_common', ['0', 'Scan commonly used ports (1=yes/0=no).']),
+	('timeout', ['1', 'Timeout.']),
+	('port_range', ['1-100000', 'Port range.']),
+	('use_range', ['0', 'Scan port range.']),
+	('scan_common', ['0', 'Scan commonly used ports.']),
 ))
 
 # Simple changelog

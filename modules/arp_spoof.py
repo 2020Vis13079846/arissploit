@@ -158,7 +158,7 @@ def run():
 		arpspoof = ArpSpoofer(variables["router"][0], variables["target"][0], controller)
 		arpspoof.start()
 
-	printInfo("Use \"stop\" command to end spoof.")
+	printInfo("Use \"stop\" command to stop spoof.")
 	printInfo("Get spoof status using \"get status\" command.")
 
 def stop(args):
@@ -171,9 +171,9 @@ def get(args):
 		printInfo("Attack is running...")
 		return "Attack is running..."
 	elif controller.error == None and controller.kill == True:
-		printInfo("Attack ended.")
+		printInfo("Attack stopped.")
 		os.system('echo "0" >> /proc/sys/net/ipv4/ip_forward')
-		return "Attack ended."
+		return "Attack stopped."
 	elif controller.error != None:
 		printError("Faced error: "+controller.error)
 		os.system('echo "0" >> /proc/sys/net/ipv4/ip_forward')

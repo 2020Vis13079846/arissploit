@@ -19,8 +19,8 @@ conf = {
 variables = OrderedDict((
 	("output", ["none", "Output file."]),
 	("chars", ["num_", "Chars."]),
-	("maxlen", [4, "Max length of word (int)."]),
-	("minlen", [3, "Min length or word (int)."]),
+	("maxlen", [4, "Max length of word."]),
+	("minlen", [3, "Min length or word."]),
 ))
 
 # Additional notes to options

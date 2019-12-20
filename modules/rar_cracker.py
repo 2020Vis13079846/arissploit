@@ -19,7 +19,7 @@ conf = {
 variables = OrderedDict((
 	("file", ["none", "Target rar file."]),
 	("dict", ["none", "Dictionary of words."]),
-	("tc", [8, "Thread count (int)."]),
+	("tc", [8, "Thread count."]),
 	("exto", ["none", "Extract directory."])
 ))
 

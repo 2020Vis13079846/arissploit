@@ -4,7 +4,7 @@ from scapy.all import *
 conf = {
 	"name": "arp_monitor", # Module's name (should be same as file name)
 	"version": "1.0", # Module version
-	"shortdesc": "Arp packet monitor.", # Short description
+	"shortdesc": "ARP packet monitor.", # Short description
 	"author": "Entynetproject", # Author
 	"initdate": "31.12.2016", # Initial date
 	"lastmod": "31.12.2016", # Last modification
@@ -31,7 +31,7 @@ def arp_display(pkt):
 
 # Run function
 def run():
-	printInfo("Starting arp monitor...")
-	printInfo("Ctrl + C to end.")
+	printInfo("Starting ARP monitor...")
+	printInfo("Ctrl + C to stop.")
 	print(sniff(prn=arp_display, filter="arp", store=0))
-	printInfo("Monitoring ended.")
+	printInfo("ARP monitor stopped.")

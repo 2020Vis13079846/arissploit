@@ -164,7 +164,7 @@ def run():
 def stop(args):
 	controller.kill = True
 	os.system('echo "0" >> /proc/sys/net/ipv4/ip_forward')
-	printInfo("Arp spoof ended!")
+	printInfo("ARP spoof stopped.")
 
 def get(args):
 	if controller.error == None and controller.kill == False:

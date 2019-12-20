@@ -408,14 +408,7 @@ class Cmethods:
 			raise UnknownCommand("Unkown command!")
 
 	def update(self, args):
-		if update.check_for_updates() == True:
-			try:
-				update.update()
-			except PermissionError:
-				printError("Permission denied!")
-
-			except Exception as error:
-				printError(str(error))
+		os.system("chmod +x etc/update.sh && etc/update.sh")
 
 	def loaded(self, args):
 		print(sys.modules.keys())

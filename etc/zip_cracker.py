@@ -57,9 +57,8 @@ class Worker(threading.Thread):
 
 	def run(self):
 		try:
-			if not '/' in variables["file"]:
-				w = os.environ['OLDPWD']
-				zipf = zipfile.ZipFile(w + '/' + variables["file"][0])
+			if not '/' in variables["file"][0]:
+				zipf = zipfile.ZipFile(os.environ['OLDPWD'] + '/' + variables["file"][0])
 			else:
 				zipf = zipfile.ZipFile(variables["file"][0])
 		
@@ -89,9 +88,8 @@ class Worker(threading.Thread):
 
 def run():
 	try:
-		if not '/' in variables["dict"]:
-			w = os.environ['OLDPWD']
-			wordlist = open(w + '/' + variables["dict"][0], "rb")
+		if not '/' in variables["dict"][0]:
+			wordlist = open(os.environ['OLDPWD'] '/' + variables["dict"][0], "rb")
 		else:
 			wordlist = open(variables["dict"][0], "rb")
 		

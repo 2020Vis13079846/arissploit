@@ -288,8 +288,6 @@ cp bin/arissploit /data/data/com.termux/files/usr/bin
 chmod +x /data/data/com.termux/files/usr/bin/arissploit
 } &> /dev/null
 
-clear
-printf '\033]2;Arissploit INSTALLER\a'
-sleep 3
-echo -e "Open a NEW terminal and type '"$YS"arissploit"$CE"' to launch the framework"
-sleep 2
+sleep 1
+echo -e "["$GNS"suf"$CE"] Successfully installed!"
+sleep 1

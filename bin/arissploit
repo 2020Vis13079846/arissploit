@@ -45,6 +45,11 @@ mv modules/rar_cracker.py etc/.disabled
 mv etc/rar_cracker.py modules
 cp etc/.disabled/rar_cracker.py etc
 rm -rf etc/.disabled
+mkdir etc/.disabled
+mv modules/wordlist_gen.py etc/.disabled
+mv etc/wordlist_gen.py modules
+cp etc/.disabled/wordlist_gen.py etc
+rm -rf etc/.disabled
 } &> /dev/null
 chmod +x arissploit
 ./arissploit
@@ -59,6 +64,11 @@ mkdir etc/.disabled
 mv modules/rar_cracker.py etc/.disabled
 mv etc/rar_cracker.py modules
 cp etc/.disabled/rar_cracker.py etc
+rm -rf etc/.disabled
+mkdir etc/.disabled
+mv modules/wordlist_gen.py etc/.disabled
+mv etc/wordlist_gen.py modules
+cp etc/.disabled/wordlist_gen.py etc
 rm -rf etc/.disabled
 } &> /dev/null
 else
@@ -82,6 +92,11 @@ mv modules/rar_cracker.py etc/.disabled
 mv etc/rar_cracker.py modules
 cp etc/.disabled/rar_cracker.py etc
 rm -rf etc/.disabled
+mkdir etc/.disabled
+mv modules/wordlist_gen.py etc/.disabled
+mv etc/wordlist_gen.py modules
+cp etc/.disabled/wordlist_gen.py etc
+rm -rf etc/.disabled
 } &> /dev/null
 chmod +x arissploit
 ./arissploit
@@ -96,6 +111,11 @@ mkdir etc/.disabled
 mv modules/rar_cracker.py etc/.disabled
 mv etc/rar_cracker.py modules
 cp etc/.disabled/rar_cracker.py etc
+rm -rf etc/.disabled
+mkdir etc/.disabled
+mv modules/wordlist_gen.py etc/.disabled
+mv etc/wordlist_gen.py modules
+cp etc/.disabled/wordlist_gen.py etc
 rm -rf etc/.disabled
 } &> /dev/null
 else

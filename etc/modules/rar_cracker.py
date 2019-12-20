@@ -9,7 +9,7 @@ import sys
 conf = {
 	"name": "rar_cracker", # Module's name (should be same as file name)
 	"version": "1.0", # Module version
-	"shortdesc": "Rar file brute-force attack using word list.", # Short description
+	"shortdesc": "Rar file brute-force attack using wordlist.", # Short description
 	"author": "Entynetproject", # Author
 	"initdate": "25.12.2016", # Initial date
 	"lastmod": "3.1.2017",

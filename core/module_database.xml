@@ -52,9 +52,6 @@
 		<module name="arp_spoof">
 			<shortdesc>Network targets ARP spoofer.</shortdesc>
 		</module>
-		<module name="mac_spoof">
-			<shortdesc>MAC spoof.</shortdesc>
-		</module>
 		<module name="mitm">
 			<shortdesc>Man in the middle attack.</shortdesc>
 		</module>

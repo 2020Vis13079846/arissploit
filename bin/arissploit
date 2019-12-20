@@ -37,18 +37,18 @@ then
 cd ~/arissploit
 mkdir etc/.disabled
 mv modules/zip_cracker.py etc/.disabled
-mv etc/zip_cracker.py modules
-cp etc/.disabled/zip_cracker.py etc
+mv etc/modules/zip_cracker.py modules
+cp etc/.disabled/zip_cracker.py etc/modules
 rm -rf etc/.disabled
 mkdir etc/.disabled
 mv modules/rar_cracker.py etc/.disabled
-mv etc/rar_cracker.py modules
-cp etc/.disabled/rar_cracker.py etc
+mv etc/modules/rar_cracker.py modules
+cp etc/.disabled/rar_cracker.py etc/modules
 rm -rf etc/.disabled
 mkdir etc/.disabled
 mv modules/wordlist_gen.py etc/.disabled
-mv etc/wordlist_gen.py modules
-cp etc/.disabled/wordlist_gen.py etc
+mv etc/modules/wordlist_gen.py modules
+cp etc/.disabled/wordlist_gen.py etc/modules
 rm -rf etc/.disabled
 } &> /dev/null
 chmod +x arissploit
@@ -57,18 +57,18 @@ chmod +x arissploit
 cd ~/arissploit
 mkdir etc/.disabled
 mv modules/zip_cracker.py etc/.disabled
-mv etc/zip_cracker.py modules
-cp etc/.disabled/zip_cracker.py etc
+mv etc/modules/zip_cracker.py modules
+cp etc/.disabled/zip_cracker.py etc/modules
 rm -rf etc/.disabled
 mkdir etc/.disabled
 mv modules/rar_cracker.py etc/.disabled
-mv etc/rar_cracker.py modules
-cp etc/.disabled/rar_cracker.py etc
+mv etc/modules/rar_cracker.py modules
+cp etc/.disabled/rar_cracker.py etc/modules
 rm -rf etc/.disabled
 mkdir etc/.disabled
 mv modules/wordlist_gen.py etc/.disabled
-mv etc/wordlist_gen.py modules
-cp etc/.disabled/wordlist_gen.py etc
+mv etc/modules/wordlist_gen.py modules
+cp etc/.disabled/wordlist_gen.py etc/modules
 rm -rf etc/.disabled
 } &> /dev/null
 else
@@ -84,18 +84,18 @@ cd $OLDPWD
 cd ~/arissploit
 mkdir etc/.disabled
 mv modules/zip_cracker.py etc/.disabled
-mv etc/zip_cracker.py modules
-cp etc/.disabled/zip_cracker.py etc
+mv etc/modules/zip_cracker.py modules
+cp etc/.disabled/zip_cracker.py etc/modules
 rm -rf etc/.disabled
 mkdir etc/.disabled
 mv modules/rar_cracker.py etc/.disabled
-mv etc/rar_cracker.py modules
-cp etc/.disabled/rar_cracker.py etc
+mv etc/modules/rar_cracker.py modules
+cp etc/.disabled/rar_cracker.py etc/modules
 rm -rf etc/.disabled
 mkdir etc/.disabled
 mv modules/wordlist_gen.py etc/.disabled
-mv etc/wordlist_gen.py modules
-cp etc/.disabled/wordlist_gen.py etc
+mv etc/modules/wordlist_gen.py modules
+cp etc/.disabled/wordlist_gen.py etc/modules
 rm -rf etc/.disabled
 } &> /dev/null
 chmod +x arissploit
@@ -104,18 +104,18 @@ chmod +x arissploit
 cd ~/arissploit
 mkdir etc/.disabled
 mv modules/zip_cracker.py etc/.disabled
-mv etc/zip_cracker.py modules
-cp etc/.disabled/zip_cracker.py etc
+mv etc/modules/zip_cracker.py modules
+cp etc/.disabled/zip_cracker.py etc/modules
 rm -rf etc/.disabled
 mkdir etc/.disabled
 mv modules/rar_cracker.py etc/.disabled
-mv etc/rar_cracker.py modules
-cp etc/.disabled/rar_cracker.py etc
+mv etc/modules/rar_cracker.py modules
+cp etc/.disabled/rar_cracker.py etc/modules
 rm -rf etc/.disabled
 mkdir etc/.disabled
 mv modules/wordlist_gen.py etc/.disabled
-mv etc/wordlist_gen.py modules
-cp etc/.disabled/wordlist_gen.py etc
+mv etc/modules/wordlist_gen.py modules
+cp etc/.disabled/wordlist_gen.py etc/modules
 rm -rf etc/.disabled
 } &> /dev/null
 else

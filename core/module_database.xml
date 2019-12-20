@@ -1,8 +1,7 @@
-<?xml version="1.0" ?>
 <data>
 	<category key="wireless_bluetooth" name="Wireless/Bluetooth">
 		<module name="wifi_jammer">
-			<shortdesc>Jam wifi.</shortdesc>
+			<shortdesc>WiFi Jammer.</shortdesc>
 		</module>
 		<module name="bluetooth_pod">
 			<shortdesc>Bluetooth ping of death.</shortdesc>
@@ -10,13 +9,13 @@
 	</category>
 	<category key="web_modules" name="Web Modules">
 		<module name="cloudflare_resolver">
-			<shortdesc>Tries to resolve ip from subdomains.</shortdesc>
+			<shortdesc>Subdomains IP resolver.</shortdesc>
 		</module>
 		<module name="dir_scanner">
-			<shortdesc>Scans dirs from website.</shortdesc>
+			<shortdesc>Website directions scanner.</shortdesc>
 		</module>
 		<module name="web_killer">
-			<shortdesc>TCP attack.</shortdesc>
+			<shortdesc>TCP attack arranger.</shortdesc>
 		</module>
 		<module name="apache_users">
 			<shortdesc>Scan directory of apache users.</shortdesc>
@@ -25,33 +24,33 @@
 			<shortdesc>PHPMyAdmin login page scanner.</shortdesc>
 		</module>
 		<module name="port_scanner">
-			<shortdesc>Scan open ports.</shortdesc>
+			<shortdesc>Website ports scanner.</shortdesc>
 		</module>
 		<module name="email_bomber">
-			<shortdesc>Spam email to target email.</shortdesc>
+			<shortdesc>Target email bomber.</shortdesc>
 		</module>
 		<module name="hostname_resolver">
-			<shortdesc>Resolve hostname using ip.</shortdesc>
+			<shortdesc>Hostname IP resolver.</shortdesc>
 		</module>
 		<module name="webserver_scout">
-			<shortdesc>Get information from webserver.</shortdesc>
+			<shortdesc>Webserver information thief.</shortdesc>
 		</module>
 		<module name="proxy_scout">
-			<shortdesc>Verify http proxy.</shortdesc>
+			<shortdesc>Http proxy checker.</shortdesc>
 		</module>
 		<module name="whois">
-			<shortdesc>Perform whois query.</shortdesc>
+			<shortdesc>Whois query performer.</shortdesc>
 		</module>
 	</category>
 	<category key="network_modules" name="Network Modules">
 		<module name="network_kill">
-			<shortdesc>Blocks communication between router and target.</shortdesc>
+			<shortdesc>Network targets killer.</shortdesc>
 		</module>
 		<module name="arp_dos">
-			<shortdesc>Arp cache denial of service attack.</shortdesc>
+			<shortdesc>ARP cache denial of service.</shortdesc>
 		</module>
 		<module name="arp_spoof">
-			<shortdesc>Arp spoof.</shortdesc>
+			<shortdesc>Network targets ARP spoofer.</shortdesc>
 		</module>
 		<module name="mac_spoof">
 			<shortdesc>MAC spoof.</shortdesc>
@@ -60,21 +59,24 @@
 			<shortdesc>Man in the middle attack.</shortdesc>
 		</module>
 		<module name="dns_spoof">
-			<shortdesc>DNS spoof.</shortdesc>
+			<shortdesc>Network targets DNS spoofer.</shortdesc>
 		</module>
 		<module name="arp_monitor">
-			<shortdesc>Arp packet monitor.</shortdesc>
+			<shortdesc>ARP packet monitor.</shortdesc>
 		</module>
 		<module name="dhcp_dos">
 			<shortdesc>DHCP denial of service.</shortdesc>
 		</module>
+		<module name="mac_changer">
+			<shortdesc>MAC address changer.</shortdesc>
+		</module>
 	</category>
 	<category key="file_modules" name="File Modules">
 		<module name="zip_cracker">
-			<shortdesc>Zip file brute-force attack using dictionary.</shortdesc>
+			<shortdesc>Zip file brute-force attack using wordlist.</shortdesc>
 		</module>
 		<module name="rar_cracker">
-			<shortdesc>Rar file brute-force attack using word list.</shortdesc>
+			<shortdesc>Rar file brute-force attack using wordlist.</shortdesc>
 		</module>
 	</category>
 	<category key="generator_modules" name="Generator Modules">

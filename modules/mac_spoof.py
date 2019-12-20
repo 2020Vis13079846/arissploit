@@ -8,9 +8,9 @@ from core import getpath
 from core.setvar import setvar
 
 conf = {
-	"name": "mac_spoof",
+	"name": "mac_changer",
 	"version": "1.0",
-	"shortdesc": "MAC spoof.",
+	"shortdesc": "MAC address changer.",
 	"author": "Entynetproject",
 	"initdate": "9.3.2016",
 	"lastmod": "3.1.2017",
@@ -23,13 +23,13 @@ conf = {
 customcommands = {
 	'scan': 'Scan network.',
 	'random_mac': 'Generate random MAC.',
-	'reset': 'End MAC spoof.'
+	'reset': 'Reset MAC address.'
 }
 
 # List of the variables
 variables = OrderedDict((
-	('fake_mac', ['02:a0:04:d3:00:11', 'Fake MAC.']),
-	('interface', ['eth0', 'Network interface.']),
+	('fake_mac', ['00:11:22:33:44:55', 'Fake MAC address.']),
+	('interface', ['eth0', 'Network interface name.']),
 ))
 
 # Additional help notes
@@ -45,9 +45,9 @@ def run():
 	xterm1 = "service network-manager stop"
 	xterm2 = "ifconfig "+variables['interface'][0]+" hw ether "+variables['fake_mac'][0]
 	xterm3 = "service network-manager start"
-	printInfo("Status: starting MAC spoof...")
+	printInfo("Status: changing MAC address...")
 	os.system(xterm1)
-	printInfo("Status: trying to set fake MAC address...")
+	printInfo("Status: trying to set MAC address...")
 	os.system(xterm2)
 	os.system(xterm3)
 	printSuccess("Status: done!")
@@ -80,7 +80,7 @@ def reset(args):
 		xterm3a = "service network-manager start"
 		printInfo("Setting real MAC...")
 		os.system(xterm1a)
-		printInfo("Trying to set real MAC address...")
+		printInfo("Trying to set MAC address...")
 		os.system(xterm2a)
 		os.system(xterm3a)
 		printSuccess("Status: done!")

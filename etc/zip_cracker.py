@@ -58,11 +58,10 @@ class Worker(threading.Thread):
 	def run(self):
 		try:
 			if not '/' in variables["file"]:
-				w = os.environ['OLDPWD'] + '/'
+				w = os.environ['OLDPWD']
+				zipf = zipfile.ZipFile(w + '/' + variables["file"][0])
 			else:
-				w = ''
-			
-			zipf = zipfile.ZipFile(w + variables["file"][0])
+				zipf = zipfile.ZipFile(variables["file"][0])
 		
 		except FileNotFoundError:
 			print(zipf)
@@ -91,16 +90,14 @@ class Worker(threading.Thread):
 def run():
 	try:
 		if not '/' in variables["dict"]:
-			w = os.environ['OLDPWD'] + '/'
+			w = os.environ['OLDPWD']
+			wordlist = open(w + '/' + variables["dict"][0], "rb")
 		else:
-			w = ''
-			
-		wordlist = open(w + variables["dict"][0], "rb")
+			wordlist = open(variables["dict"][0], "rb")
 		
 		printInfo("Reading word list...")
 		words = wordlist.read().splitlines()
 	except FileNotFoundError:
-		print(wordlist)
 		printError("Word list is not found!")
 		return ModuleError("Word list is not found!")
 	printInfo("Brute-force attack started...")

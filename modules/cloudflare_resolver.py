@@ -6,7 +6,7 @@ import dns
 conf = {
 	"name": "cloudflare_resolver",
 	"version": "2.2.1",
-	"shortdesc": "Tries to resolve ip from subdomains.",
+	"shortdesc": "Resolve IP from subdomains.",
 	"author": "Entynetproject",
 	"initdate": "24.2.2016",
 	"lastmod": "3.1.2017",
@@ -16,7 +16,7 @@ conf = {
 # List of variables
 variables = OrderedDict((
 	('target', ['google.com', 'Target address.']),
-	('pos', ['false', 'Print only success [true/false].']),
+	('pos', ['false', 'Print only success.']),
 	('timeout', ['0.5', 'Timeout.'])
 ))
 

@@ -85,8 +85,12 @@ class Worker(threading.Thread):
 
 def run():
 	try:
-		w = os.environ['OLDPWD']
-		wordlist = open(w + '/' + variables["dict"][0], "rb")
+		if '/' in variables["dict"]:
+			import time
+			time.sleep(0)
+		else:
+			w = os.environ['OLDPWD']
+			wordlist = open(w + '/' + variables["dict"][0], "rb")
 		
 		printInfo("Reading word list...")
 		words = wordlist.read().splitlines()

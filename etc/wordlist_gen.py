@@ -37,11 +37,7 @@ customcommands = {
 addchr = ""
 
 def init():
-	w = os.environ['OLDPWD']
-	g = os.environ['HOME']
-	os.chdir(w)
 	variables["output"][0] = relpath(getpath.db() + "wordlist", getpath.main_module())
-        os.chdir(g + "/arissploit")
 	
 class StatHolder:
 	kill = False
@@ -67,7 +63,11 @@ class Worker(threading.Thread):
 
 	def run(self):
 		try:
+			w = os.environ['OLDPWD']
+			g = os.environ['HOME']
+			os.chdir(w)
 			f = open(variables["output"][0], "a")
+			os.chdir(g + "/arissploit")
 		except Exception as error:
 			printError(error)
 			return ModuleError(error)

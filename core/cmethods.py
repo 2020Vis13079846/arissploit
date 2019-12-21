@@ -353,29 +353,6 @@ class Cmethods:
 		except IndexError:
 			raise UnknownCommand("Unkown command!")
 
-	def check(self, args):
-		try:
-			if True:
-				try:
-					self.modadd = importlib.import_module("modules."+args[0])
-					print(colors.green+"module found"+colors.end)
-					check_module(self.modadd)
-					print(colors.green+"\ntest passed"+colors.end)
-
-				except IndexError:
-					print(colors.red + "Please enter module name!"+ colors.end)
-
-				except ImportError:
-					print(colors.red+"Error: module not found!"+colors.end)
-
-				except:
-					print(colors.red + "error:\n")
-					traceback.print_exc(file=sys.stdout)
-					print(colors.end)
-
-		except IndexError:
-			raise UnknownCommand("Unkown command!")
-
 	def matrix(self, args):
 		try:
 			core.matrix.main()

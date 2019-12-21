@@ -32,27 +32,35 @@
 
 ![arissploit](https://user-images.githubusercontent.com/54115104/71311791-207a3280-2434-11ea-9906-d2f0e16311ff.png)
 
+***
+
 # About arissploit framework
 
     INFO: Arissploit Framework is a simple framework designed to master penetration 
     testing tools. Arissploit Framework offers simple structure, basic CLI, and 
     useful features for learning and developing penetration testing tools.
 
-# How to install arissploit
+***
 
-> cd arissploit
+# Getting started
+
+## Proton installation
+
+> cd proton
 
 > chmod +x install.sh
 
 > ./install.sh
 
-# How to uninstall arissploit
+## Proton uninstallation
 
-> cd arissploit
+> cd proton
 
 > chmod +x uninstall.sh
 
 > ./uninstall.sh
+
+***
 
 # Why arissploit framework?
 
@@ -75,11 +83,15 @@
     
 ![modules](https://user-images.githubusercontent.com/54115104/71309073-ab4b3500-2414-11ea-9308-fa90d760d56a.png)
     
+***
+    
 # Arissploit framework disclaimer
 
     INFO: Usage of the Arissploit Framework for attacking targets without prior mutual consent is illegal. 
     It is the end user's responsibility to obey all applicable local, state, federal, and international laws. 
     Developers assume no liability and are not responsible for any misuse or damage caused by this program.
+    
+***
     
 # Arissploit framework license
 
@@ -104,5 +116,7 @@
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
+
+***
 
 # Thats all!

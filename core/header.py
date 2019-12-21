@@ -3,7 +3,6 @@ from core import colors
 from core.moduleop import count
 
 arissploit = r"""
-
                 .----.   @   @                  
                / .-.-.`.  \v/                            
                | | '\ \ \_/ )                      
@@ -19,4 +18,4 @@ def print_info():
 	print("\t" + colors.bold + "API"+colors.end+"\t[ "+info.apiversion+"         ]"+colors.end)
 	print("\t" + colors.bold + "Date"+colors.end+"\t[ "+info.update_date+"          ]"+colors.end)
 	print("\t" + colors.bold + "Modules "+colors.end+"[ "+count.mod+" modules"+"        ]"+colors.end)
-	print("\n")
+	print("")

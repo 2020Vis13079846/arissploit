@@ -7,7 +7,7 @@ from core import getpath
 conf = {
 	"name": "wifi_jammer",
 	"version": "1.0",
-	"shortdesc": "WiFi Jammer.",
+	"shortdesc": "WiFi networks jammer.",
 	"author": "Entynetproject.",
 	"initdate": "24.2.2016",
 	"lastmod": "29.12.2016",

@@ -1,6 +1,6 @@
 
 commands = [
-["check module [module]", "Check selected module."],
+["check [module]", "Check selected module."],
 ["show modules", "List all modules."],
 ["use [module]", "Load selected module."],
 ["version", "Show Arissploit version."],
@@ -14,9 +14,9 @@ commands = [
 ["redb", "Update module database."],
 ["ifconfig", "Run ifconfig command."],
 ["os [command]","Run terminal command."],
+["dependencies", "List all dependencies."],
 ["reload [module]", "Reload selected module."],
-["list dependencies", "List every dependencies."],
-["new module [module]", "Create new module."]
+["create [module]", "Create new module."]
 ]
 
 mcommands = [
@@ -36,5 +36,5 @@ mcommands = [
 ["reload", "Reload this module."],
 ["ifconfig", "Run ifconfig command."],
 ["os [command]","Run terminal command."],
-["list dependencies", "List every dependencies."]
+["dependencies", "List all dependencies."]
 ]

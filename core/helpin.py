@@ -1,5 +1,6 @@
 
 commands = [
+["create [module]", "Create new module."]  
 ["check [module]", "Check selected module."],
 ["show modules", "List all modules."],
 ["use [module]", "Load selected module."],
@@ -15,8 +16,7 @@ commands = [
 ["ifconfig", "Run ifconfig command."],
 ["os [command]","Run terminal command."],
 ["dependencies", "List all dependencies."],
-["reload [module]", "Reload selected module."],
-["create [module]", "Create new module."]
+["reload [module]", "Reload selected module."]
 ]
 
 mcommands = [

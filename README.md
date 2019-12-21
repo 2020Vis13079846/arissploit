@@ -44,7 +44,7 @@
 
 # Getting started
 
-## Proton installation
+## Arissploit installation
 
 > cd arissploit
 

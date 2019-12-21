@@ -21,12 +21,12 @@
   <a href="https://github.com/entynetproject/arissploit/wiki">
       <img src="https://img.shields.io/badge/wiki%20-arissploit-lightgrey.svg">
  </a>
-  <a href="https://twitter.com/arissploit">
-    <img src="https://img.shields.io/badge/twitter-arissploit-blue.svg">
+  <a href="https://twitter.com/entynetproject">
+    <img src="https://img.shields.io/badge/twitter-entynetproject-blue.svg">
  </a>
 </p>
 
-![arissploit](https://user-images.githubusercontent.com/54115104/68434631-81261680-01ca-11ea-92e8-1b6c2f92df36.png)
+![arissploit](https://user-images.githubusercontent.com/54115104/71311705-b9a84980-2432-11ea-999d-29e1e4981cf8.png)
 
 # About arissploit framework
 

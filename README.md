@@ -71,7 +71,7 @@
     bluetooth modules, web modules, network modules, 
     file modules and generator modules.
     
-![modules](https://user-images.githubusercontent.com/54115104/66274002-a13c8000-e882-11e9-8d4e-5afd57af8776.png)
+![modules](https://user-images.githubusercontent.com/54115104/71309073-ab4b3500-2414-11ea-9308-fa90d760d56a.png)
     
 # Arissploit framework disclaimer
 

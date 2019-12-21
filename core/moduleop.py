@@ -71,7 +71,7 @@ def addtodb(modadd):
 							return
 	if new == True:
 		printInfo(modadd.conf["name"]+" doesn't exist in database\n", start="\n")
-		print("available categories keys:"+colors.yellow)
+		print("Available categories keys:"+colors.yellow)
 		for category in root:
 			if category.tag == "category":
 				print(category.attrib["key"])

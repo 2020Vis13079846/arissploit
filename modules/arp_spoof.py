@@ -34,7 +34,7 @@ option_notes = "Interface only required when option: all = true"
 
 customcommands = {
 	"stop": "Stop ARP spoof.",
-	"get": "Get ARP spoof status.",
+	"status": "Show ARP spoof status.",
 }
 
 class SpoofController(threading.Thread):
@@ -149,12 +149,12 @@ def run():
 	os.system('echo "1" >> /proc/sys/net/ipv4/ip_forward')
 
 	if variables["all"][0] == "true":
-		printInfo("Starting arp spoof...")
+		printInfo("Starting ARP spoof...")
 		spoofcontroller = SpoofController(controller)
 		spoofcontroller.start()
 
 	else:
-		printInfo("Starting arp spoof...")
+		printInfo("Starting ARP spoof...")
 		arpspoof = ArpSpoofer(variables["router"][0], variables["target"][0], controller)
 		arpspoof.start()
 

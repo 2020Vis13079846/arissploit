@@ -36,7 +36,7 @@ variables = OrderedDict((
 help_notes = colors.red+"This module will not work without root permissions, and ethtool!"+colors.end
 
 # Additional notes to options
-option_notes = colors.yellow+"You can generate fake_mac using 'random_mac' command.\nUse 'reset' command to end MAC spoof."+colors.end
+option_notes = colors.yellow+"You can generate fake MAC address using 'random_mac' command.\nUse 'reset' command to reset your real MAC address."+colors.end
 
 # Simple changelog
 changelog = "Version 1.0:\nrelease"
@@ -45,12 +45,12 @@ def run():
 	xterm1 = "service network-manager stop"
 	xterm2 = "ifconfig "+variables['interface'][0]+" hw ether "+variables['fake_mac'][0]
 	xterm3 = "service network-manager start"
-	printInfo("Status: changing MAC address...")
+	printInfo("Status: Changing MAC address...")
 	os.system(xterm1)
-	printInfo("Status: trying to set MAC address...")
+	printInfo("Status: Trying to set fake MAC address...")
 	os.system(xterm2)
 	os.system(xterm3)
-	printSuccess("Status: done!")
+	printSuccess("Status: Done!")
 
 def scan(args):
 	network_scanner.scan()
@@ -78,9 +78,9 @@ def reset(args):
 		xterm1a = "service network-manager stop"
 		xterm2a = "ifconfig "+variables['interface'][0]+" hw ether "+realmac
 		xterm3a = "service network-manager start"
-		printInfo("Status: changing MAC address...")
+		printInfo("Status: Changing MAC address...")
 		os.system(xterm1a)
-		printInfo("Status: trying to reset MAC address...")
+		printInfo("Status: Trying to reset real MAC address...")
 		os.system(xterm2a)
 		os.system(xterm3a)
-		printSuccess("Status: done!")
+		printSuccess("Status: Done!")

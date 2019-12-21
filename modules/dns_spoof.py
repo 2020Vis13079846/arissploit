@@ -174,7 +174,7 @@ def run():
 	if variables["arp_spoof"][0] == "true":
 		printInfo("IPv4 forwarding...")
 		os.system('echo "1" >> /proc/sys/net/ipv4/ip_forward')
-		printInfo("Starting arp spoof...")
+		printInfo("Starting ARP spoof...")
 		arpspoof = ArpSpoofer(variables["router"][0], variables["target"][0], controller)
 		arpspoof.start()
 
@@ -190,7 +190,7 @@ def run():
 			q.unbind()
 			os.system('iptables -F')
 			os.system('iptables -X')
-			printInfo("dns spoof ended")
+			printInfo("DNS spoof stopped.")
 	except:
 		printError("Unexcepted error:\n")
 		traceback.print_exc(file=sys.stdout)

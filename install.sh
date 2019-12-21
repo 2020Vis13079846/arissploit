@@ -36,27 +36,22 @@ then
    exit
 fi
 
-printf '\033]2;arissploit INSTALLER\a'
+if [[ -d ~/arissploit ]]
+then
+sleep 0
+else
+cd ~
+{
+git clone https://github.com/entynetproject/arissploit.git
+} &> /dev/null
+fi
+sleep 0.5
 clear
-cat banner/banner.txt
-echo -e "\033[1;33mBy Arissploit Team\033[0m"
-sleep 3
-echo -e "More on our site:"
-sleep 3
-echo -e "==> \033[1;33mhttp://entynetproject.simplesite.com/\033[0m"
-sleep 3
-echo -e "Creators of Arissploit Framework (\033[4;33mArissploit Team\033[0m):"
-sleep 3
-echo -e "\033[4;34mEntynetproject\033[0m - Main Developer"
-sleep 3
-echo -e "\033[4;33mDJ Mobley\033[0m      - Ascii Designer"
-sleep 3
-echo -e "Press \033[1;33many key\033[0m to install arissploit"
-read -n 1
-
-clear
+sleep 0.5
+cd ~/arissploit
 cat banner/banner.txt
 echo
+
 sleep 1
 echo -e "["$BS"inf"$CE"] Installing dependencies..."
 sleep 1

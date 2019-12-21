@@ -13,7 +13,7 @@ try:
 except:
 	importerror = True
 	terror = traceback.format_exc()
-	printError("Cannot import netfilterqueue! Have you installed dependencies?")
+	printError("Cannot import netfilterqueue!")
 
 
 conf = {

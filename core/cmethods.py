@@ -334,12 +334,12 @@ class Cmethods:
 					template = os.path.join('core', 'module_template')
 					f = open(template, 'r')
 					template_contents = f.readlines()
-					template_contents[5] = "	\"name\": \""+args[1]+"\", # Module's name (should be same as file name)\n"
+					template_contents[5] = "	\"name\": \""+args[0]+"\", # Module's name (should be same as file name)\n"
 					template_contents[11] = "	\"initdate\": \""+(time.strftime("%d.%m.%Y"))+"\", # Initial date\n"
 					template_contents[12] = "	\"lastmod\": \""+(time.strftime("%d.%m.%Y"))+"\", # Last modification\n"
 					mfile.writelines(template_contents)
 					mfile.close()
-					print(colors.bold+"Module "+ args[1] +".py" +" saved to ./modules"+colors.end)
+					print(colors.bold+"Module "+ args[0] +".py" +" saved to ./modules"+colors.end)
 
 			except IndexError:
 				print(colors.red + "Please enter module name!" + colors.end)

@@ -325,7 +325,7 @@ class Cmethods:
 	def create(self, args):
 		try:
 			try:
-				completeName = os.path.join(getpath.modules(), args[1]+".py")
+				completeName = os.path.join(getpath.modules(), args[0]+".py")
 				if os.path.exists(completeName):
 					print(colors.red+"Module already exists!"+colors.end)
 
@@ -356,7 +356,7 @@ class Cmethods:
 	def check(self, args):
 		try:
 			try:
-				self.modadd = importlib.import_module("modules."+args[1])
+				self.modadd = importlib.import_module("modules."+args[0])
 				print(colors.green+"module found"+colors.end)
 				check_module(self.modadd)
 				print(colors.green+"\ntest passed"+colors.end)

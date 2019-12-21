@@ -1,7 +1,7 @@
 <data>
 	<category key="wireless_bluetooth" name="Wireless/Bluetooth">
 		<module name="wifi_jammer">
-			<shortdesc>WiFi Jammer.</shortdesc>
+			<shortdesc>WiFi network jammer.</shortdesc>
 		</module>
 		<module name="bluetooth_pod">
 			<shortdesc>Bluetooth ping of death.</shortdesc>

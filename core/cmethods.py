@@ -390,15 +390,6 @@ class Cmethods:
 	def cowsay(self, args):
 		print(core.cowsay.cowsay("Arissploit Framework"))
 
-	def make(self, args):
-		try:
-			if args[0] == "exit":
-				sys.exit(0)
-			else:
-				raise UnknownCommand("Unkown command!")
-		except IndexError:
-			raise UnknownCommand("Unkown command!")
-
 	def update(self, args):
 		os.system("chmod +x etc/update.sh && etc/update.sh")
 
@@ -419,7 +410,13 @@ class Cmethods:
 					pass
 			for dep in dependencies:
 				print(dep)
-
+		else:
+			try:
+				for dep in self.modadd.conf["dependencies"]:
+					print(dep)
+			except KeyError:
+				printInfo("this module doesn't require any dependencies")
+					
 	def init(self, args):
 		if self.mm.moduleLoaded == 1:
 			try:

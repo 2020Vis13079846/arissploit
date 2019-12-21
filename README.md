@@ -41,8 +41,6 @@
 > chmod +x install.sh
 
 > ./install.sh
-    
-![installer](https://user-images.githubusercontent.com/54115104/66913212-df713680-f01c-11e9-9311-c62ad4508333.png)
 
 # How to uninstall arissploit
 
@@ -83,7 +81,7 @@
 
     MIT License
 
-    Copyright (C) 2019, Arissploit Team. All Rights Reserved.
+    Copyright (C) 2019, Entynetproject. All Rights Reserved.
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal

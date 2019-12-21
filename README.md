@@ -46,15 +46,15 @@
 
 ## Proton installation
 
-> cd proton
+> cd arissploit
 
 > chmod +x install.sh
 
 > ./install.sh
 
-## Proton uninstallation
+## Arissploit uninstallation
 
-> cd proton
+> cd arissploit
 
 > chmod +x uninstall.sh
 

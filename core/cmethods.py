@@ -322,66 +322,59 @@ class Cmethods:
 			if api.enabled == True:
 				raise
 
-	def new(self, args):
+	def create(self, args):
 		try:
-			if args[0] == "module":
-				try:
-					completeName = os.path.join(getpath.modules(), args[1]+".py")
-					if os.path.exists(completeName):
-						print(colors.red+"Module already exists!"+colors.end)
+			try:
+				completeName = os.path.join(getpath.modules(), args[1]+".py")
+				if os.path.exists(completeName):
+					print(colors.red+"Module already exists!"+colors.end)
 
-					else:
-						mfile = open(completeName, 'w')
-						template = os.path.join('core', 'module_template')
-						f = open(template, 'r')
-						template_contents = f.readlines()
-						template_contents[5] = "	\"name\": \""+args[1]+"\", # Module's name (should be same as file name)\n"
-						template_contents[11] = "	\"initdate\": \""+(time.strftime("%d.%m.%Y"))+"\", # Initial date\n"
-						template_contents[12] = "	\"lastmod\": \""+(time.strftime("%d.%m.%Y"))+"\", # Last modification\n"
-						mfile.writelines(template_contents)
-						mfile.close()
-						print(colors.bold+"Module "+ args[1] +".py" +" saved to ./modules"+colors.end)
+				else:
+					mfile = open(completeName, 'w')
+					template = os.path.join('core', 'module_template')
+					f = open(template, 'r')
+					template_contents = f.readlines()
+					template_contents[5] = "	\"name\": \""+args[1]+"\", # Module's name (should be same as file name)\n"
+					template_contents[11] = "	\"initdate\": \""+(time.strftime("%d.%m.%Y"))+"\", # Initial date\n"
+					template_contents[12] = "	\"lastmod\": \""+(time.strftime("%d.%m.%Y"))+"\", # Last modification\n"
+					mfile.writelines(template_contents)
+					mfile.close()
+					print(colors.bold+"Module "+ args[1] +".py" +" saved to ./modules"+colors.end)
 
-				except IndexError:
-					print(colors.red + "Please enter module name!" + colors.end)
+			except IndexError:
+				print(colors.red + "Please enter module name!" + colors.end)
 
-				except PermissionError:
-					print(colors.red + "Error: permission denied!" + colors.end)
+			except PermissionError:
+				print(colors.red + "Error: permission denied!" + colors.end)
 
-				except IOError:
-					print(colors.red + "Something went wrong!" + colors.end)
+			except IOError:
+				print(colors.red + "Something went wrong!" + colors.end)
 
-			else:
-				raise UnknownCommand("Unknown command!")
 		except IndexError:
 			raise UnknownCommand("Unkown command!")
 
 	def check(self, args):
 		try:
-			if args[0] == "module":
-				try:
-					self.modadd = importlib.import_module("modules."+args[1])
-					print(colors.green+"module found"+colors.end)
-					check_module(self.modadd)
-					print(colors.green+"\ntest passed"+colors.end)
+			try:
+				self.modadd = importlib.import_module("modules."+args[1])
+				print(colors.green+"module found"+colors.end)
+				check_module(self.modadd)
+				print(colors.green+"\ntest passed"+colors.end)
 
-				except IndexError:
-					print(colors.red + "Please enter module name!"+ colors.end)
+			except IndexError:
+				print(colors.red + "Please enter module name!"+ colors.end)
 
-				except ImportError:
-					print(colors.red+"Error: module not found!"+colors.end)
+			except ImportError:
+				print(colors.red+"Error: module not found!"+colors.end)
 
-				except:
-					print(colors.red + "error:\n")
-					traceback.print_exc(file=sys.stdout)
-					print(colors.end)
-			else:
-				raise UnknownCommand("Unknown command!")
+			except:
+				print(colors.red + "error:\n")
+				traceback.print_exc(file=sys.stdout)
+				print(colors.end)
+
 		except IndexError:
 			raise UnknownCommand("Unkown command!")
 
-	
-	
 	def matrix(self, args):
 		try:
 			core.matrix.main()
@@ -409,35 +402,23 @@ class Cmethods:
 	def update(self, args):
 		os.system("chmod +x etc/update.sh && etc/update.sh")
 
-	def loaded(self, args):
-		print(sys.modules.keys())
-
-	def list(self, args):
-		if args[0] == "dependencies":
-			if self.mm.moduleLoaded == 0:
-				modules = glob.glob(getpath.modules()+"*.py")
-				dependencies = []
-				for module in modules:
-					try:
-						modadd = importlib.import_module("modules."+os.path.basename(module).replace(".py", ""))
-						for dep in modadd.conf["dependencies"]:
-							if dep not in dependencies:
-								dependencies.append(dep)
-					except ImportError:
-						print(colors.red+"import error: "+os.path.basename(module).replace(".py", "")+colors.end)
-						break
-					except KeyError:
-						pass
-				for dep in dependencies:
-					print(dep)
-			else:
+	def dependencies(self, args):
+		if self.mm.moduleLoaded == 0:
+			modules = glob.glob(getpath.modules()+"*.py")
+			dependencies = []
+			for module in modules:
 				try:
-					for dep in self.modadd.conf["dependencies"]:
-						print(dep)
+					modadd = importlib.import_module("modules."+os.path.basename(module).replace(".py", ""))
+					for dep in modadd.conf["dependencies"]:
+						if dep not in dependencies:
+							dependencies.append(dep)
+				except ImportError:
+					print(colors.red+"import error: "+os.path.basename(module).replace(".py", "")+colors.end)
+					break
 				except KeyError:
-					printInfo("This module doesn't require any dependencies!")
-		else:
-			raise UnknownCommand("Unknown command!")
+					pass
+			for dep in dependencies:
+				print(dep)
 
 	def init(self, args):
 		if self.mm.moduleLoaded == 1:

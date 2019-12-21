@@ -1,7 +1,6 @@
 
 commands = [
 ["create [module]", "Create new module."],
-["check [module]", "Check selected module."],
 ["show modules", "List all modules."],
 ["use [module]", "Load selected module."],
 ["version", "Show Arissploit version."],

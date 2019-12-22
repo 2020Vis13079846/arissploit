@@ -70,18 +70,17 @@ def addtodb(modadd):
 							printSuccess("database updated")
 							return
 	if new == True:
-		printInfo("Module "+modadd.conf["name"]+" doesn't exist in database")
+		printInfo("Module "+modadd.conf["name"]+" doesn't exist in modules database!")
 		printInfo("Going to add this module to modules database...")
 		dome = input(colors.purple+"Add module to [old/new] "+colors.end)
 		if dome == "old":
 			pass
 		if dome == "new":
-			printInfo("Category not found!")
 			printInfo("Going to add new category...")
 			catname = input(colors.purple+"Category: "+colors.end)
 			newcat = ElementTree.Element("category")
 			newcat.set("name", catname)
-			newcat.set("key", catkey)
+			newcat.set("key", catname)
 			module = ElementTree.Element("module")
 			shortdesc = ElementTree.Element("shortdesc")
 			shortdesc.text = modadd.conf["shortdesc"]

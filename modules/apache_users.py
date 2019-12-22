@@ -1020,7 +1020,6 @@ def run():
 '~davis',
 '~davon',
 '~davy',
-'~de witt',
 '~dean',
 '~deane',
 '~decca',

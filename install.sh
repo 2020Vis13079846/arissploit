@@ -272,7 +272,7 @@ xbps-install -y sslstrip
 
 {
 pip3 install setuptools
-pip3 install netfilterqueue
+pip3 install -r requirements.txt
 } &> /dev/null
 
 {

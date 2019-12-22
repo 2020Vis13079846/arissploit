@@ -44,7 +44,7 @@ class arissploitapi:
 				raise ApiNotSupported("This module doesn't support API!")
 		except core.exceptions.ModuleNotFound:
 			self.enablePrint()
-			raise ModuleNotFound("Error: module not found!")
+			raise ModuleNotFound("Error: module is not found!")
 		except:
 			self.enablePrint()
 			raise
@@ -66,7 +66,7 @@ class arissploitapi:
 			self.ch.handle("set "+target+" "+value)
 		except core.exceptions.VariableError:
 			self.enablePrint()
-			raise VariableError("Error: variable not found!")
+			raise VariableError("Error: variable is not found!")
 		except:
 			self.enablePrint()
 			raise

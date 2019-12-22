@@ -54,7 +54,6 @@ try:
 	# Import core modules
 	from core import colors
 	from core import header
-	from core import hftest
 	from core import shell
 	from core import scriptio
 	from core import getpath
@@ -81,13 +80,9 @@ def fatalerror():
 # Start up shell
 
 try:
-	def main(scripting, scf):
+	def main():
 		try:
-			if scripting == 1:
-				scriptio.run(scf)
-
-			else:
-				shell.run()
+			shell.run()
 
 		except SystemExit as e:
 			sys.exit(e)
@@ -96,30 +91,7 @@ try:
 			fatalerror()
 
 	if __name__ == '__main__':
-		scripting = 0
-		scf = ""
-
-		try:
-			opts, args = getopt.getopt(sys.argv[1:], 's:t:')
-			for opt, arg in opts:
-				if opt in ('-t'):
-					if arg == 'challenge':
-						hftest.challenge()
-					else:
-						print(colors.red+'Invalid arguments!'+colors.end)
-
-				if opt in ('-s'):
-					try:
-						scriptfile = open(getpath.scripts()+arg+'.hfs', 'r')
-						reader = csv.reader(scriptfile)
-						scf = [row for row in reader]
-						scripting = 1
-						print(colors.green+"Entering scripting mode..."+colors.end)
-					except FileNotFoundError:
-						print(colors.red+'Error: script not found!'+colors.end)
-		except getopt.GetoptError:
-			print(colors.red+'Invalid arguments!'+colors.end)
-		main(scripting, scf)
+		main()
 
 # Exceptions
 

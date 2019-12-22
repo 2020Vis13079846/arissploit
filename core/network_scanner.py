@@ -9,26 +9,24 @@ from core.messages import *
 try:
 	import netifaces
 except ImportError:
-	print(colors.red+'netifaces import error:\n')
+	print(colors.red+'ImportError: netifaces:\n')
 	traceback.print_exc()
 	print(colors.end)
 
 
 def scan():
 	try:
-		print(colors.blue+"interfaces:"+colors.end)
+		print(colors.purple+"Interfaces:"+colors.end)
 		for iface in netifaces.interfaces():
 			print(colors.yellow+iface+colors.end)
-		print("")
-		interface = input(colors.purple+"interface: "+colors.end)
+		interface = input(colors.purple+"Interface: "+colors.end)
 		try:
 			ip = netifaces.ifaddresses(interface)[2][0]['addr']
 		except(ValueError, KeyError):
-			printError("invalid interface")
+			printError("Invalid interface!")
 			return
 		ips = ip+"/24"
-		printInfo("scanning please wait...\n", start="\n")
-		print(colors.blue+"MAC - IP"+colors.end)
+		printInfo("Scanning, please wait...")
 
 		start_time = datetime.now()
 
@@ -36,14 +34,14 @@ def scan():
 		try:
 			ans, unans = srp(Ether(dst="ff:ff:ff:ff:ff:ff")/ARP(pdst = ips), timeout = 2,iface=interface,inter=0.1)
 		except PermissionError:
-			printError('root permissions required')
+			printError('Permission denied!')
 			return
 
 		for snd,rcv in ans:
 			print(rcv.sprintf(colors.yellow+"r%Ether.src% - %ARP.psrc%"+colors.end))
 		stop_time = datetime.now()
 		total_time = stop_time - start_time
-		printSuccess("scan completed", start="\n")
-		printSuccess("scan duration: "+str(total_time))
+		printSuccess("Scan completed!")
+		printSuccess("Scan duration: "+str(total_time))
 	except KeyboardInterrupt:
-		printInfo("network scanner terminated", start="\n")
+		printInfo("Network scanner terminated!")

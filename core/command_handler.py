@@ -50,7 +50,7 @@ class Commandhandler:
 
 		except ModuleNotFound:
 			if self.api == True:
-				raise ModuleNotFound("Module not found!")
+				raise ModuleNotFound("Module is not found!")
 
 		except VariableError:
 			if self.api == True:

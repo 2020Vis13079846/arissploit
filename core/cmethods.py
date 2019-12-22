@@ -26,7 +26,6 @@ from prettytable import PrettyTable
 import core.cowsay
 import core.matrix
 import core.sky
-from core.hftest import check_module
 from core import mscop
 from core import value_holder
 from core import moddbparser
@@ -147,7 +146,7 @@ class Cmethods:
 				try:
 					if self.modadd.conf["needroot"] == 1:
 						if not os.geteuid() == 0:
-							printWarning("This module requires root permissions for full functionality!")
+							printWarning("This module requires root permissions!")
 				except KeyError:
 					pass
 				if init == True:
@@ -156,11 +155,11 @@ class Cmethods:
 					except AttributeError:
 						pass
 			except ImportError:
-				print(colors.red + "Module not found!" + colors.end)
-				raise ModuleNotFound("Module not found!")
+				print(colors.red + "Module is not found!" + colors.end)
+				raise ModuleNotFound("Module is not found!")
 			except IndexError:
 				print(colors.red + "Please enter module name!" + colors.end)
-				raise ModuleNotFound("Module not found!")
+				raise ModuleNotFound("Module is not found!")
 			except:
 				print(colors.red+"Unexpected error in module:\n")
 				traceback.print_exc(file=sys.stdout)
@@ -302,7 +301,7 @@ class Cmethods:
 				if api.enabled == True:
 					raise
 		else:
-			raise UnknownCommand("Module not loaded!")
+			raise UnknownCommand("Module is not loaded!")
 
 	def set(self, args):
 		try:
@@ -310,8 +309,8 @@ class Cmethods:
 			print(colors.bold+args[0] +" => "+ str(args[1]) + colors.end)
 
 		except (NameError, KeyError):
-			print(colors.red + "Option not found!" + colors.end)
-			raise VariableError("Option not found!")
+			print(colors.red + "Option is not found!" + colors.end)
+			raise VariableError("Option is not found!")
 		except IndexError:
 			print(colors.red + "Please enter variable's value" + colors.end)
 			raise VariableError("No value!")
@@ -382,7 +381,7 @@ class Cmethods:
 						if dep not in dependencies:
 							dependencies.append(dep)
 				except ImportError:
-					print(colors.red+"import error: "+os.path.basename(module).replace(".py", "")+colors.end)
+					print(colors.red+"ImportError: "+os.path.basename(module).replace(".py", "")+colors.end)
 					break
 				except KeyError:
 					pass
@@ -393,7 +392,7 @@ class Cmethods:
 				for dep in self.modadd.conf["dependencies"]:
 					print(dep)
 			except KeyError:
-				printInfo("This module doesn't require any dependencies.")
+				printInfo("This module doesn't require any dependencies")
 					
 	def init(self, args):
 		if self.mm.moduleLoaded == 1:

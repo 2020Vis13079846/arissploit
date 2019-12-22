@@ -5285,7 +5285,6 @@ def run():
 '~dedie',
 '~dedra',
 '~dee',
-'~dee dee',
 '~deeann',
 '~deeanne',
 '~deedee',

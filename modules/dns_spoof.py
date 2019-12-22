@@ -153,10 +153,10 @@ def run():
 	try:
 		hostfile = open(getpath.conf()+"hosts", "r").read()
 	except FileNotFoundError:
-		printError("host list not found")
+		printError("Host list is not found!")
 		return
 	except PermissionError:
-		printError("permission denied")
+		printError("Permission denied!")
 	for line in hostfile.splitlines():
 		if "#" not in line and len(line.split()) == 2:
 			hostlist.append(line.split())

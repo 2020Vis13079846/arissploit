@@ -4,6 +4,7 @@ import threading, queue
 import itertools
 from os.path import relpath
 from core import getpath
+import os
 
 conf = {
 	"name": "wordlist_gen", # Module's name (should be same as file name)
@@ -37,7 +38,7 @@ addchr = ""
 
 def init():
 	variables["output"][0] = relpath(getpath.db() + "wordlist", getpath.main_module())
-
+	
 class StatHolder:
 	kill = False
 
@@ -62,7 +63,11 @@ class Worker(threading.Thread):
 
 	def run(self):
 		try:
-			f = open(variables["output"][0], "a")
+			if not '/' in variables["output"][0]:
+				f = open(os.environ['OLDPWD'] + '/' + variables["output"][0], "a")
+			else:
+				f = open(variables["output"][0], "a")
+			
 		except Exception as error:
 			printError(error)
 			return ModuleError(error)

@@ -4,6 +4,7 @@ import zipfile
 import threading, queue
 from core import getpath
 from os.path import relpath
+import os
 import sys
 
 conf = {
@@ -56,10 +57,14 @@ class Worker(threading.Thread):
 
 	def run(self):
 		try:
-			zipf = zipfile.ZipFile(variables["file"][0])
+			if not '/' in variables["file"][0]:
+				zipf = zipfile.ZipFile(os.environ['OLDPWD'] + '/' + variables["file"][0])
+			else:
+				zipf = zipfile.ZipFile(variables["file"][0])
 		
 		except FileNotFoundError:
-			self.pwdh.error = "zip file not found"
+			print(zipf)
+			self.pwdh.error = "Zip file is not found!"
 			return
 		for word in self.words:
 			if self.pwdh.pwd != None:
@@ -83,12 +88,16 @@ class Worker(threading.Thread):
 
 def run():
 	try:
-		wordlist = open(variables["dict"][0], "rb")
+		if not '/' in variables["dict"][0]:
+			wordlist = open(os.environ['OLDPWD'] + '/' + variables["dict"][0], "rb")
+		else:
+			wordlist = open(variables["dict"][0], "rb")
+		
 		printInfo("Reading word list...")
 		words = wordlist.read().splitlines()
 	except FileNotFoundError:
-		printError("Word list not found!")
-		return ModuleError("Word list not found!")
+		printError("Word list is not found!")
+		return ModuleError("Word list is not found!")
 	printInfo("Brute-force attack started...")
 
 	pwdh = PwdHolder

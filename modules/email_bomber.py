@@ -90,7 +90,8 @@ def run():
 				printSuccess("email sended")
 
 	if int(variables['amount'][0]) == 0:
-		printInfo("Starting infinite loop... Ctrl + C to stop.")
+		printInfo("Starting infinite loop...")
+		printInfo("Ctrl + C to stop.")
 		while True:
 			if int(variables['random_email'][0]) == 1:
 					fakemail = generate_random_email()

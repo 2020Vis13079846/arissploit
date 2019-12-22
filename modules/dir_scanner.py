@@ -220607,8 +220607,8 @@ def run():
 				else:
 					printWarning("[%s] ... [%s %s]" % (path, res.status, res.reason))
 	except (socket.gaierror):
-		printError("target "+variables['target'][0]+" not found!")
-		return ModuleError("Not found!")
+		printError("Target "+variables['target'][0]+" is not found!")
+		return ModuleError("is not found!")
 	except (socket.timeout):
 		printError("Timeout: "+variables['target'][0])
 		return ModuleError("Timeout!")

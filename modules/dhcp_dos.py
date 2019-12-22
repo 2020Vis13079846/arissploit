@@ -67,7 +67,7 @@ def run():
 				threads.append(dhcpr)
 				i += 1
 	except KeyboardInterrupt:
-		printInfo("Kill signal received stopping attack...")
+		printInfo("Kill signal received, stopping attack...")
 		for thread in threads:
 			thread.join()
 	printInfo("Attack stopped.")

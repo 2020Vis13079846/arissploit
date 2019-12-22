@@ -114,4 +114,4 @@ def run():
 		printError('Timeout!')
 	
 	except ConnectionResetError:
-		printSuccess('Proxy detected.')
+		printSuccess('Proxy server detected.')

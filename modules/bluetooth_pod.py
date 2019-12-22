@@ -26,7 +26,7 @@ variables = OrderedDict((
 
 # Custom commands
 customcommands = {
-	'scan': 'Scan for devices.'
+	'scan': 'Scan for targets.'
 }
 
 # Simple changelog

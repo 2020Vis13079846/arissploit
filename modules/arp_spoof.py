@@ -66,7 +66,7 @@ class SpoofController(threading.Thread):
 			ans, unans = srp(Ether(dst="ff:ff:ff:ff:ff:ff")/ARP(pdst = ips), timeout = 2,iface=variables["interface"][0],inter=0.1)
 		except PermissionError:
 			self.controller.kill = True
-			self.controller.error = "Permission error!"
+			self.controller.error = "Permission denied!"
 			return
 		for snd,rcv in ans:
 			ip = rcv.sprintf("%ARP.psrc%")

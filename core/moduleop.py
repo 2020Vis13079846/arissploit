@@ -70,13 +70,35 @@ def addtodb(modadd):
 							printSuccess("database updated")
 							return
 	if new == True:
-		printInfo(modadd.conf["name"]+" doesn't exist in database\n", start="\n")
-		print("Available categories keys:"+colors.yellow)
+		printInfo("Module "+modadd.conf["name"]+" doesn't exist in database")
+		printInfo("Going to add this module to modules database...")
+		dome = input(colors.purple+"Add module to [old/new] "+colors.end)
+		if dome == "old":
+			pass
+		if dome == "new":
+			printInfo("Category not found!")
+			printInfo("Going to add new category...")
+			catname = input(colors.purple+"Category: "+colors.end)
+			newcat = ElementTree.Element("category")
+			newcat.set("name", catname)
+			newcat.set("key", catkey)
+			module = ElementTree.Element("module")
+			shortdesc = ElementTree.Element("shortdesc")
+			shortdesc.text = modadd.conf["shortdesc"]
+			module.set("name", modadd.conf["name"])
+			module.append(shortdesc)
+			newcat.append(module)
+			root.append(newcat)
+			writedb(root)
+			printSuccess("New category created!")
+			printSuccess("Module added to "+newcat.attrib["name"])
+			return
+		print(colors.purple+"Categories:"+colors.yellow)
 		for category in root:
 			if category.tag == "category":
 				print(category.attrib["key"])
 		print(colors.end, end="")
-		catkey = input("\nGive new or exist key? ")
+		catkey = input(colors.purple+"Category: "+colors.end)
 
 		for category in root:
 			if category.tag == "category" and category.attrib["key"] == catkey:
@@ -94,7 +116,7 @@ def addtodb(modadd):
 		if newcat == True:
 			printInfo("Category not found!")
 			printInfo("Going to add new category...")
-			catname = input("Give new category name: ")
+			catname = input(colors.purple+"Category: "+colors.end)
 			newcat = ElementTree.Element("category")
 			newcat.set("name", catname)
 			newcat.set("key", catkey)

@@ -23,7 +23,7 @@ def printoptions(modadd):
 	try:
 		print(" ")
 		t = PrettyTable([colors.red +'Option', 'Value', 'Description'+colors.end])
-		t.add_row(["------","------","-----------"])
+		t.add_row(["------","-----","-----------"])
 		t.align = 'l'
 		t.valing = 'm'
 		t.border = False

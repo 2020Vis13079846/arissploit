@@ -1,4 +1,0 @@
-use mac_spoof
-random_mac
-run
-make exit

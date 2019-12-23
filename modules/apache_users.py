@@ -7555,7 +7555,6 @@ def run():
 '~minnnie',
 '~minny',
 '~minta',
-'~miof mela',
 '~miquela',
 '~mira',
 '~mirabel',
@@ -8930,7 +8929,6 @@ def run():
 '~zorana',
 '~zorina',
 '~zorine',
-'~zsa zsa',
 '~zsazsa',
 '~zulema',
 '~zuzana',]

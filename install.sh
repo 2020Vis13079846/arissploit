@@ -285,5 +285,5 @@ chmod +x /data/data/com.termux/files/usr/bin/arissploit
 } &> /dev/null
 
 sleep 1
-echo -e "["$GNS"suf"$CE"] Successfully installed!"
+echo -e "["$GNS"suc"$CE"] Successfully installed!"
 sleep 1

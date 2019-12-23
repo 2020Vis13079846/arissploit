@@ -79,6 +79,6 @@ chmod +x install.sh
 echo | ./install.sh
 fi
 } &> /dev/null
-echo -e "["$GNS"suf"$CE"] Successfully updated!"
+echo -e "["$GNS"suc"$CE"] Successfully updated!"
 sleep 1
 exit

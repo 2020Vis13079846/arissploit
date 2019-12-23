@@ -6825,8 +6825,6 @@ def run():
 '~kym',
 '~kynthia',
 '~kyrstin',
-'~l;urette',
-'~la verne',
 '~lacee',
 '~lacey',
 '~lacie',

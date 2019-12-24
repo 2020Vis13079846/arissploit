@@ -1,6 +1,6 @@
 # Arissploit Framework (Penetration Testing Tools)
 
-![arissploit](https://user-images.githubusercontent.com/54115104/71426265-5a06a400-26a7-11ea-8910-82126b77201e.jpg)
+![arissploit](https://user-images.githubusercontent.com/54115104/71426283-b669c380-26a7-11ea-90a2-b33ed832cfd5.png)
               
 <p align="center">
   <a href="http://entynetproject.simplesite.com/">

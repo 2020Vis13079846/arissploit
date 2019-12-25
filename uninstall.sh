@@ -26,6 +26,8 @@ RS="\033[1;91m"
 YS="\033[1;33m"
 CE="\033[0m"
 
+printf '\033]2;uninstall.sh\a'
+
 if [[ $EUID -ne 0 ]]
 then
    sleep 1

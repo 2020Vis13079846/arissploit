@@ -140,7 +140,7 @@ def addchar(args):
 	global addchr
 	try:
 		addchr += args[0]
-		return "[suf] Chars added."
+		return "[suc] Chars added."
 	except IndexError:
 		printError("Args not given!")
 		return ModuleError("Args not given!")

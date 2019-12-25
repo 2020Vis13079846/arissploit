@@ -93,11 +93,11 @@ def run():
 		else:
 			wordlist = open(variables["dict"][0], "rb")
 		
-		printInfo("Reading word list...")
+		printInfo("Reading wordlist...")
 		words = wordlist.read().splitlines()
 	except FileNotFoundError:
-		printError("Word list is not found!")
-		return ModuleError("Word list is not found!")
+		printError("Wordlist is not found!")
+		return ModuleError("Wordlist is not found!")
 	printInfo("Brute-force attack started...")
 
 	pwdh = PwdHolder

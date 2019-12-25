@@ -132,9 +132,9 @@ def run():
 			thread.join()
 	except KeyboardInterrupt:
 		sh.kill = True
-		printInfo("Word generator terminated!")
+		printInfo("Wordlist generator terminated!")
 
-	printSuccess("Word list genereted.")
+	printSuccess("Wordlist genereted.")
 
 def addchar(args):
 	global addchr

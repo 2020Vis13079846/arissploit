@@ -58,6 +58,15 @@
 
 ***
 
+# Arissploit Framework execution
+
+    INFO: To execute Arissploit Framework you 
+    should execute the following command!
+
+> arissploit
+
+***
+
 # Why Arissploit Framework
 
 > Arissploit is free software

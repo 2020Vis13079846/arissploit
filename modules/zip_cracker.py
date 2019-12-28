@@ -57,10 +57,7 @@ class Worker(threading.Thread):
 
 	def run(self):
 		try:
-			if not '/' in variables["file"][0]:
-				zipf = zipfile.ZipFile(os.environ['OLDPWD'] + '/' + variables["file"][0])
-			else:
-				zipf = zipfile.ZipFile(variables["file"][0])
+			zipf = zipfile.ZipFile(variables["file"][0])
 		
 		except FileNotFoundError:
 			print(zipf)

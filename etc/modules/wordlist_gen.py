@@ -63,7 +63,7 @@ class Worker(threading.Thread):
 
 	def run(self):
 		try:
-			if not '/' in variables["output"][0]:
+			if variables["output"][0][0] != '/':
 				f = open(os.environ['OLDPWD'] + '/' + variables["output"][0], "a")
 			else:
 				f = open(variables["output"][0], "a")

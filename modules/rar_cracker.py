@@ -86,10 +86,7 @@ class Worker(threading.Thread):
 
 def run():
 	try:
-		if not '/' in variables["dict"][0]:
-			wordlist = open(os.environ['OLDPWD'] + '/' + variables["dict"][0], "rb")
-		else:
-			wordlist = open(variables["dict"][0], "rb")
+		wordlist = open(variables["dict"][0], "rb")
 
 		printInfo("Reading wordlist...")
 		words = wordlist.read().splitlines()

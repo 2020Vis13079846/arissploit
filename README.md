@@ -123,5 +123,3 @@
     SOFTWARE.
 
 ***
-
-# Thats all!

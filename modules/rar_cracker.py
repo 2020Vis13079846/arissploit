@@ -56,10 +56,7 @@ class Worker(threading.Thread):
 
 	def run(self):
 		try:
-			if not '/' in variables["file"][0]:
-				rf = rarfile.RarFile(os.environ['OLDPWD'] + '/' + variables["file"][0])
-			else:
-				rf = rarfile.RarFile(variables["file"][0])
+			rf = rarfile.RarFile(variables["file"][0])
 		
 		except FileNotFoundError:
 			self.pwdh.error = "Rar file is not found!"

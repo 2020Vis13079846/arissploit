@@ -56,7 +56,7 @@ class Worker(threading.Thread):
 
 	def run(self):
 		try:
-			if not '/' in variables["file"][0]:
+			if variables["file"][0][0] != '/':
 				rf = rarfile.RarFile(os.environ['OLDPWD'] + '/' + variables["file"][0])
 			else:
 				rf = rarfile.RarFile(variables["file"][0])
@@ -89,7 +89,7 @@ class Worker(threading.Thread):
 
 def run():
 	try:
-		if not '/' in variables["dict"][0]:
+		if variables["dict"][0][0] != '/':
 			wordlist = open(os.environ['OLDPWD'] + '/' + variables["dict"][0], "rb")
 		else:
 			wordlist = open(variables["dict"][0], "rb")

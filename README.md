@@ -30,7 +30,7 @@
 
 ***
 
-# About arissploit framework
+# About Arissploit Framework
 
     INFO: Arissploit Framework is a simple framework designed to master penetration 
     testing tools. Arissploit Framework offers simple structure, basic CLI, and 
@@ -58,7 +58,7 @@
 
 ***
 
-# Why arissploit framework?
+# Why Arissploit Framework
 
 > Arissploit is free software
 
@@ -81,7 +81,7 @@
     
 ***
     
-# Arissploit framework disclaimer
+# Arissploit Framework disclaimer
 
     INFO: Usage of the Arissploit Framework for attacking targets without prior mutual consent is illegal. 
     It is the end user's responsibility to obey all applicable local, state, federal, and international laws. 
@@ -89,7 +89,7 @@
     
 ***
     
-# Arissploit framework license
+# Arissploit Framework license
 
     MIT License
 

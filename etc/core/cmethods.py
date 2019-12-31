@@ -92,7 +92,7 @@ class Cmethods:
 		os.system(' '.join(args))
 		
 		g = os.environ['HOME']
-                os.chdir(g + "/arissploit")		
+		os.chdir(g + "/arissploit")
 
 	def help(self, args):
 		print("")

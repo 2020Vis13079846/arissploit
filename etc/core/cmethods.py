@@ -86,7 +86,11 @@ class Cmethods:
 	def os(self, args):
 		CYAN = '\033[1;34m'
 		ENDL = '\033[0m'
-		os.system(' '.join(args))
+		w = os.environ['OLDPWD']
+                os.chdir(w)
+	        os.system(' '.join(args))
+		g = os.environ['HOME']
+                os.chdir(g + "/mouse")		
 
 	def help(self, args):
 		print("")

@@ -87,7 +87,7 @@ class Cmethods:
 		CYAN = '\033[1;34m'
 		ENDL = '\033[0m'
 		w = os.environ['OLDPWD']
-                os.chdir(w)
+		os.chdir(w)
 		
 	        os.system(' '.join(args))
 		

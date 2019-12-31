@@ -88,7 +88,9 @@ class Cmethods:
 		ENDL = '\033[0m'
 		w = os.environ['OLDPWD']
                 os.chdir(w)
+		
 	        os.system(' '.join(args))
+		
 		g = os.environ['HOME']
                 os.chdir(g + "/mouse")		
 

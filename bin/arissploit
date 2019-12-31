@@ -50,6 +50,11 @@ mv modules/wordlist_gen.py etc/.disabled
 mv etc/modules/wordlist_gen.py modules
 cp etc/.disabled/wordlist_gen.py etc/modules
 rm -rf etc/.disabled
+mkdir etc/.disabled
+mv core/cmethods.py etc/.disabled
+mv etc/core/cmethods.py core
+cp etc/.disabled/cmethods.py etc/core
+rm -rf etc/.disabled
 } &> /dev/null
 chmod +x arissploit
 ./arissploit
@@ -69,6 +74,11 @@ mkdir etc/.disabled
 mv modules/wordlist_gen.py etc/.disabled
 mv etc/modules/wordlist_gen.py modules
 cp etc/.disabled/wordlist_gen.py etc/modules
+rm -rf etc/.disabled
+mkdir etc/.disabled
+mv core/cmethods.py etc/.disabled
+mv etc/core/cmethods.py core
+cp etc/.disabled/cmethods.py etc/core
 rm -rf etc/.disabled
 } &> /dev/null
 else
@@ -97,6 +107,11 @@ mv modules/wordlist_gen.py etc/.disabled
 mv etc/modules/wordlist_gen.py modules
 cp etc/.disabled/wordlist_gen.py etc/modules
 rm -rf etc/.disabled
+mkdir etc/.disabled
+mv core/cmethods.py etc/.disabled
+mv etc/core/cmethods.py core
+cp etc/.disabled/cmethods.py etc/core
+rm -rf etc/.disabled
 } &> /dev/null
 chmod +x arissploit
 ./arissploit
@@ -116,6 +131,11 @@ mkdir etc/.disabled
 mv modules/wordlist_gen.py etc/.disabled
 mv etc/modules/wordlist_gen.py modules
 cp etc/.disabled/wordlist_gen.py etc/modules
+rm -rf etc/.disabled
+mkdir etc/.disabled
+mv core/cmethods.py etc/.disabled
+mv etc/core/cmethods.py core
+cp etc/.disabled/cmethods.py etc/core
 rm -rf etc/.disabled
 } &> /dev/null
 else

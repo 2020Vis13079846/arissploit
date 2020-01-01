@@ -75,11 +75,7 @@ class Cmethods:
 			self.mm.moduleLoaded = 0
 			self.mm.moduleName = ""
 		else:
-			exitonoff = input("Exit Arissploit Framework [yes/no]? ")
-			if exitonoff == "yes":
-				sys.exit()
-			elif exitonoff == "y":
-				sys.exit()
+			sys.exit()
 
 	def clear(self, args):
 		if len(args) != 0 and args[0] == "tmp":

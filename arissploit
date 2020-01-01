@@ -99,7 +99,6 @@ except KeyboardInterrupt:
 	print()
 
 except SystemExit as e:
-	print(colors.bold+"Exiting..."+colors.end)
 	sys.exit(e)
 
 except:

@@ -1,4 +1,4 @@
-# Arissploit Framework v3.0
+# Arissploit Framework
 
 <h4 align="center"><img src="https://user-images.githubusercontent.com/54115104/71426283-b669c380-26a7-11ea-90a2-b33ed832cfd5.png">
               

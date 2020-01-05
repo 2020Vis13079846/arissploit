@@ -2,7 +2,7 @@
 
 # MIT License
 #
-# Copyright (C) 2019, Arissploit Team. All Rights Reserved.
+# Copyright (C) 2019, Entynetproject. All Rights Reserved.
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -22,8 +22,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-BS="\033[1;94m"
-RS="\033[1;91m"
+BS="\033[1;34m"
+RS="\033[1;31m"
 YS="\033[1;33m"
 GNS="\033[1;32m"
 CE="\033[0m"
@@ -37,7 +37,7 @@ else
 UPD="false"
 fi
 else
-if [[ -f /usr/local/bin/mouse ]]
+if [[ -f /usr/local/bin/arissploit ]]
 then
 UPD="true"
 else

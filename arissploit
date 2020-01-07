@@ -32,12 +32,6 @@ try:
 	import getopt
 	import csv
 
-	# Check python version
-	req_version = (3,5)
-	cur_version = sys.version_info
-	if cur_version < req_version:
-		print('Python3.5 or greater is recommended.')
-
 	# Disable scapy warning
 	logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
 

@@ -19,8 +19,8 @@ conf = {
 # List of the variables
 variables = OrderedDict((
 	('interface', ['wlan0', 'Wireless interface name.']),
-	('bssid', ['none', 'Target BSSID address.']),
-	('essid', ['none', 'Target ESSID name.']),
+	('bssid', ['', 'Target BSSID address.']),
+	('essid', ['', 'Target ESSID name.']),
 	('mon', ['mon0', 'Monitor interface.']),
 	('channel', ['11', 'Target channel number.']),
 ))

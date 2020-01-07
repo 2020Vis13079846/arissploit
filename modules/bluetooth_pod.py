@@ -20,7 +20,7 @@ conf = {
 # List of variables
 variables = OrderedDict((
 	('interface', ['hci0', 'Interface.']),
-	('bdaddr', ['none', 'Target bluetooth address.']),
+	('bdaddr', ['', 'Target bluetooth address.']),
 	('size', ['600', 'Size of packets (default 600).']),
 ))
 

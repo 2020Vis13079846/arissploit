@@ -77,6 +77,7 @@ pkg -y install tcpdump
 pkg -y install libnetfilter-queue-dev
 pkg -y install hcitool
 pkg -y install sslstrip
+pkg -y install l2ping
 apt-get update
 apt-get -y install git
 apt-get -y install python3
@@ -101,6 +102,7 @@ apt-get -y install libnetfilter-queue-dev
 apt-get -y install python3-dev
 apt-get -y install hcitool
 apt-get -y install sslstrip
+apt-get -y install l2ping
 apk update
 apk add git
 apk add python3
@@ -124,7 +126,8 @@ apk add tcpdump
 apk add libnetfilter-queue-dev
 apk add python3-dev
 apk add hcitool
-apk add install sslstrip
+apk add sslstrip
+apk add l2ping
 pacman -Sy
 pacman -S --noconfirm git
 pacman -S --noconfirm python3
@@ -149,6 +152,7 @@ pacman -S --noconfirm libnetfilter-queue-dev
 pacman -S --noconfirm python3-dev
 pacman -S --noconfirm hcitool
 pacman -S --noconfirm sslstrip
+pacman -S --noconfirm l2ping
 zypper refresh
 zypper install -y git
 zypper install -y python3
@@ -173,6 +177,7 @@ zypper install -y libnetfilter-queue-dev
 zypper install -y python3-dev
 zypper install -y hcitool
 zypper install -y sslstrip
+zypper install -y l2ping
 yum -y install git
 yum -y install python3
 yum -y install python3-pip
@@ -218,6 +223,7 @@ dnf -y install libnetfilter-queue-dev
 dnf -y install python3-dev
 dnf -y install hcitool
 dnf -y install sslstrip
+dnf -y install l2ping
 eopkg update-repo
 eopkg -y install git
 eopkg -y install python3
@@ -242,6 +248,7 @@ eopkg -y install libnetfilter-queue-dev
 eopkg -y install python3-dev
 eopkg -y install hcitool
 eopkg -y install sslstrip
+eopkg -y install l2ping
 xbps-install -S
 xbps-install -y git
 xbps-install -y python
@@ -266,6 +273,7 @@ xbps-install -y libnetfilter-queue-dev
 xbps-install -y python3-dev
 xbps-install -y hcitool
 xbps-install -y sslstrip
+xbps-install -y l2ping
 } &> /dev/null
 
 {

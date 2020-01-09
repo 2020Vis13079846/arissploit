@@ -61,7 +61,7 @@
 # Arissploit Framework execution
 
     To execute Arissploit Framework you 
-    should execute the following command!
+    should execute the following command.
 
 > arissploit
 

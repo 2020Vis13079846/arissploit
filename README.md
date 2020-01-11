@@ -69,23 +69,24 @@
 
 # Why Arissploit Framework
 
-> Arissploit is free software
-
-    This is a good platform to start learning 
-    penetration testing tools development for free!
-    
-> Simple UX/UI interface
-
-    Arissploit has simple UX/UI! It is 
-    easy to understand and it will be easier 
-    for you to master the Arissploit Framework.
-    
-> A lot of different modules
-
-    Arissploit includes wireless modules,
-    bluetooth modules, web modules, network modules, 
-    file modules and generator modules.
-    
+ * Arissploit is free software.
+```
+This is a good platform to start learning 
+penetration testing tools development for free!
+```   
+ * Simple UX/UI interface.
+```
+Arissploit has simple UX/UI! It is 
+easy to understand and it will be easier 
+for you to master the Arissploit Framework.
+```  
+ * A lot of different modules.
+```
+Arissploit includes wireless modules,
+bluetooth modules, web modules, network modules, 
+file modules and generator modules.
+```
+ 
 ![modules](https://user-images.githubusercontent.com/54115104/71752885-19fea880-2e81-11ea-86fd-51308b2b2d3f.png)
 
 ***

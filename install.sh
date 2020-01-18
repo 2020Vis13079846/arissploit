@@ -277,8 +277,8 @@ xbps-install -y l2ping
 } &> /dev/null
 
 {
-pip3 install setuptools
-pip3 install -r requirements.txt
+python3 -m pip install setuptools
+python3 -m pip install -r requirements.txt
 } &> /dev/null
 
 {

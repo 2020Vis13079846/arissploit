@@ -1,6 +1,6 @@
 # Arissploit Framework
 
-![arissploit](https://user-images.githubusercontent.com/54115104/74144044-0b887700-4c0d-11ea-99c8-cc37fee25be6.jpeg) 
+![arissploit](https://user-images.githubusercontent.com/54115104/74143539-0d9e0600-4c0c-11ea-825e-60a970066b56.jpeg)
 
 <p align="center">
   <a href="http://entynetproject.simplesite.com/">

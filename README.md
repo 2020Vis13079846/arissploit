@@ -1,7 +1,6 @@
 # Arissploit Framework
 
-<h4 align="center"><img src="https://user-images.githubusercontent.com/54115104/71426283-b669c380-26a7-11ea-90a2-b33ed832cfd5.png">
-              
+![arissploit](https://user-images.githubusercontent.com/54115104/74143539-0d9e0600-4c0c-11ea-825e-60a970066b56.jpeg)              
 <p align="center">
   <a href="http://entynetproject.simplesite.com/">
     <img src="https://img.shields.io/badge/entynetproject-Ivan%20Nikolsky-blue.svg">

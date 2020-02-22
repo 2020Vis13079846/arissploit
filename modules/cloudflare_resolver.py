@@ -65,9 +65,9 @@ def run():
 		print(colors.green+"[-------------------------]"+colors.end)
 		apianswer[variables['target'][0]] = orgip
 	except(dns.exception.Timeout):
-		print(colors.red+"[-] Error: Host is down!"+colors.end)
+		printError("[-] Error: Host is down!"+colors.end)
 	except dns.resolver.NoAnswer:
-		print(colors.red+"[?] The DNS response does not contain an answer to the question."+colors.end)
+		printError("[?] The DNS response does not contain an answer to the question."+colors.end)
 	for i in sub:
 		host = i+'.'+variables['target'][0]
 		try:
@@ -80,9 +80,9 @@ def run():
 				apianswer[host] = query[0]
 		except(dns.exception.Timeout):
 			if variables['pos'][0] != 'true':
-				print(colors.red+"[-] %s: N/A"%host+colors.end)
+				printError("[-] %s: N/A"%host+colors.end)
 		except dns.resolver.NoAnswer:
 			if variables['pos'][0] != 'true':
-				print(colors.red+"[?] The DNS response does not contain an answer to the question."+colors.end)
+				printError("[?] The DNS response does not contain an answer to the question."+colors.end)
 
 	return apianswer

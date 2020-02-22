@@ -19,6 +19,7 @@
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import os
+from core.messages import *
 
 os.system("printf '\033]2;Arissploit Framework\a'")
 os.system("clear")
@@ -58,7 +59,7 @@ except KeyboardInterrupt:
 # Exception handling
 
 def fatalerror():
-	print(colors.red+"Unexpected error:")
+	printError("Unexpected error:")
 	traceback.print_exc()
 	print(colors.end)
 	forcetokr = input('Do you want to force to keep Arissploit Framework running [yes/no]? ')

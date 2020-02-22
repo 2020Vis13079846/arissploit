@@ -24,7 +24,6 @@ from core.exceptions import VariableError
 from core import cmethods
 from core.module_manager import ModuleManager
 from core import colors
-from core.messages import *
 
 class Commandhandler:
 	mm = None
@@ -54,12 +53,12 @@ class Commandhandler:
 		# Validate command
 
 		if len(command) != 0 and command[0] in self.notcommand:
-			printError("Unrecognized command!")
+			print(colors.red+"Unknown command!"+colors.end)
 			return
 		try:
 			method = getattr(self.cm, command[0])
 		except AttributeError:
-			printError("Unrecognized command!")
+			print(colors.red+"Unknown command!"+colors.end)
 			return
 		except IndexError:
 			return
@@ -67,12 +66,12 @@ class Commandhandler:
 		try:
 			return method(command[1:])
 		except UnknownCommand:
-			printError("Unrecognized command!")
+			print(colors.red+"Unknown command!"+colors.end)
 
 		except ModuleNotFound:
 			if self.api == True:
-				printError("Module is not found!")
+				raise ModuleNotFound("Module is not found!")
 
 		except VariableError:
 			if self.api == True:
-				printError("Variable error!")
+				raise VariableError("Variable error!")

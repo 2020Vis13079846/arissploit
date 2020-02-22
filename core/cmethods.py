@@ -76,15 +76,15 @@ class Cmethods:
 				try:
 					return call(command[1:])
 				except Exception as e:
-					printError("Unexpected error in module:\n")
+					print(colors.red+"Unexpected error in module:\n")
 					traceback.print_exc(file=sys.stdout)
 					print(colors.end)
 					if api.enabled == True:
 						raise
 			else:
-				printError("Unrecognized command!")
+				raise UnknownCommand("Unknown command!")
 		except AttributeError:
-			printError("Unrecognized command!")
+			raise UnknownCommand("Unknown command!")
 
 	# Built-in commands
 	
@@ -126,7 +126,7 @@ class Cmethods:
 			try:
 				print(self.modadd.conf["name"]+" "+self.modadd.conf["version"])
 			except:
-				printError("Unexpected error in module:\n")
+				print(colors.red+"Unexpected error in module:\n")
 				traceback.print_exc(file=sys.stdout)
 				print(colors.end)
 				if api.enabled == True:
@@ -173,17 +173,19 @@ class Cmethods:
 					except AttributeError:
 						pass
 			except ImportError:
-				printError("Module is not found!")
+				print(colors.red + "Module is not found!" + colors.end)
+				raise ModuleNotFound("Module is not found!")
 			except IndexError:
-				printError("Module is not found!")
+				print(colors.red + "Please enter module name!" + colors.end)
+				raise ModuleNotFound("Module is not found!")
 			except:
-				printError("Unexpected error in module:\n")
+				print(colors.red+"Unexpected error in module:\n")
 				traceback.print_exc(file=sys.stdout)
 				print(colors.end)
 				if api.enabled == True:
 					raise
 		else:
-			printError("Module in use!")
+			raise UnknownCommand("Module in use!")
 
 	def show(self, args):
 		try:
@@ -213,22 +215,22 @@ class Cmethods:
 				try:
 					moduleop.printoptions(self.modadd)
 				except:
-					printError("Unexpected error in module:\n")
+					print(colors.red+"Unexpected error in module:\n")
 					traceback.print_exc(file=sys.stdout)
 					print(colors.end)
 					if api.enabled == True:
 						raise
 			else:
-				printError("Module is not loaded!")
+				raise UnknownCommand("Module not loaded or unknown command!")
 		except IndexError:
-			printError("Unrecognized command!")
+			raise UnknownCommand("Unknown command!")
 
 	def back(self, args):
 		if self.mm.moduleLoaded == 1:
 			self.mm.moduleLoaded = 0
 			self.mm.moduleName = ""
 		else:
-			printError("Unrecognized command!")
+			raise UnknownCommand("Unknown command!")
 
 	def reload(self, args):
 		try:
@@ -293,7 +295,7 @@ class Cmethods:
 							pass
 						print(colors.bold+"Module "+ self.mm.moduleName +" reloaded"+colors.end)
 		except:
-			printError("Faced unexpected error during reimporting:\n")
+			print(colors.red+"Faced unexpected error during reimporting:\n")
 			traceback.print_exc()
 			print(colors.end)
 			if api.enabled == True:
@@ -306,18 +308,18 @@ class Cmethods:
 				return self.modadd.run()
 
 			except KeyboardInterrupt:
-				printError("Module terminated!"+colors.end)
+				print(colors.red+"Module terminated!"+colors.end)
 			except PermissionError:
 				printError("Permission denied!")
 				return "[err] Permission denied!"
 			except:
-				printError("Unexpected error in module:\n")
+				print(colors.red+"Unexpected error in module:\n")
 				traceback.print_exc(file=sys.stdout)
 				print(colors.end)
 				if api.enabled == True:
 					raise
 		else:
-			printError("Module is not loaded!")
+			raise UnknownCommand("Module is not loaded!")
 
 	def set(self, args):
 		try:
@@ -326,12 +328,12 @@ class Cmethods:
 
 		except (NameError, KeyError):
 			print(colors.red + "Option is not found!" + colors.end)
-			printError("Option is not found!")
+			raise VariableError("Option is not found!")
 		except IndexError:
 			print(colors.red + "Please enter variable's value" + colors.end)
-			printError("No value!")
+			raise VariableError("No value!")
 		except:
-			printError("Unexpected error in module:\n")
+			print(colors.red+"Unexpected error in module:\n")
 			traceback.print_exc(file=sys.stdout)
 			print(colors.end)
 			if api.enabled == True:
@@ -342,7 +344,7 @@ class Cmethods:
 			try:
 				completeName = os.path.join(getpath.modules(), args[0]+".py")
 				if os.path.exists(completeName):
-					printError("Module already exists!"+colors.end)
+					print(colors.red+"Module already exists!"+colors.end)
 
 				else:
 					mfile = open(completeName, 'w')
@@ -366,7 +368,7 @@ class Cmethods:
 				print(colors.red + "Something went wrong!" + colors.end)
 
 		except IndexError:
-			printError("Unrecognized command!")
+			raise UnknownCommand("Unkown command!")
 
 	def matrix(self, args):
 		try:
@@ -397,7 +399,7 @@ class Cmethods:
 						if dep not in dependencies:
 							dependencies.append(dep)
 				except ImportError:
-					printError("ImportError: "+os.path.basename(module).replace(".py", "")+colors.end)
+					print(colors.red+"ImportError: "+os.path.basename(module).replace(".py", "")+colors.end)
 					break
 				except KeyError:
 					pass
@@ -418,18 +420,18 @@ class Cmethods:
 			except AttributeError:
 				print("This module doesn't have init function!")
 		else:
-			printError("Unrecognized command!")
+			raise UnknownCommand("Unknown command!")
 
 	def redb(self, args):
 		if self.mm.moduleLoaded == 1:
 			try:
 				moduleop.addtodb(self.modadd)
 			except PermissionError:
-				printError("Error: permission denied!"+colors.end)
+				print(colors.red+"Error: permission denied!"+colors.end)
 			except KeyboardInterrupt:
 				print()
 			except:
-				printError("Faced unexpected:\n")
+				print(colors.red+"Faced unexpected:\n")
 				traceback.print_exc(file=sys.stdout)
 				print(colors.end)
 				if api.enabled == True:
@@ -446,11 +448,11 @@ class Cmethods:
 							modadd = importlib.import_module("modules."+module)
 							moduleop.addtodb(modadd)
 				except PermissionError:
-					printError("Error: permission denied!"+colors.end)
+					print(colors.red+"Error: permission denied!"+colors.end)
 				except KeyboardInterrupt:
 					print()
 				except:
-					printError("Faced unexpected:\n")
+					print(colors.red+"Faced unexpected:\n")
 					traceback.print_exc(file=sys.stdout)
 					print(colors.end)
 					if api.enabled == True:

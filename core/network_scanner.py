@@ -29,7 +29,7 @@ from core.messages import *
 try:
 	import netifaces
 except ImportError:
-	printError('ImportError: netifaces:\n')
+	print(colors.red+'ImportError: netifaces:\n')
 	traceback.print_exc()
 	print(colors.end)
 

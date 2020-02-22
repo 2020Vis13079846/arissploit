@@ -53,12 +53,12 @@ class Commandhandler:
 		# Validate command
 
 		if len(command) != 0 and command[0] in self.notcommand:
-			print(colors.red+"Unknown command!"+colors.end)
+			print("["+colors.bold+colors.red+"err"+colors.end+"] Unrecognized command!"+colors.end)
 			return
 		try:
 			method = getattr(self.cm, command[0])
 		except AttributeError:
-			print(colors.red+"Unknown command!"+colors.end)
+			print("["+colors.bold+colors.red+"err"+colors.end+"] Unrecognized command!"+colors.end)
 			return
 		except IndexError:
 			return
@@ -66,12 +66,12 @@ class Commandhandler:
 		try:
 			return method(command[1:])
 		except UnknownCommand:
-			print(colors.red+"Unknown command!"+colors.end)
+			print("["+colors.bold+colors.red+"err"+colors.end+"] Unrecognized command!"+colors.end)
 
 		except ModuleNotFound:
 			if self.api == True:
-				raise ModuleNotFound("Module is not found!")
+				raise ModuleNotFound("["+colors.bold+colors.red+"err"+colors.end+"] Module is not found!")
 
 		except VariableError:
 			if self.api == True:
-				raise VariableError("Variable error!")
+				raise VariableError("["+colors.bold+colors.red+"err"+colors.end+"] Variable error!")

@@ -58,7 +58,7 @@ def printoptions(modadd):
 			pass
 
 	except Exception as error:
-		print(colors.red+"error: module is corrupted\n")
+		print("["+colors.bold+colors.red+"err"+colors.end+"] error: module is corrupted\n")
 		traceback.print_exc(file=sys.stdout)
 		print(colors.end)
 

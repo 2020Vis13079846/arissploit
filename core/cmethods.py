@@ -356,16 +356,16 @@ class Cmethods:
 					template_contents[12] = "	\"lastmod\": \""+(time.strftime("%d.%m.%Y"))+"\", # Last modification\n"
 					mfile.writelines(template_contents)
 					mfile.close()
-					print(colors.bold+"Module "+ args[0] +".py" +" saved to ./modules"+colors.end)
+					printInfo("Saved to modules/"+ args[0] +".py")
 
 			except IndexError:
-				print(colors.red + "Please enter module name!" + colors.end)
+				printError("Please enter module name!")
 
 			except PermissionError:
-				print(colors.red + "Error: permission denied!" + colors.end)
+				printError("Permission denied!")
 
 			except IOError:
-				print(colors.red + "Something went wrong!" + colors.end)
+				printError("Something went wrong!")
 
 		except IndexError:
 			raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Unrecognized command!")

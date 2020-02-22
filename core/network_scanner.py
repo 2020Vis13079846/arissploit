@@ -46,7 +46,7 @@ def scan():
 			printError("Invalid interface!")
 			return
 		ips = ip+"/24"
-		printInfo("Scanning, please wait...")
+		printInfo("Scanning...")
 
 		start_time = datetime.now()
 

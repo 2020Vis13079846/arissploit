@@ -44,7 +44,7 @@ def run():
 	variables['target'][0] = variables['target'][0].replace("http://", "")
 	variables['target'][0] = variables['target'][0].replace("https://", "")
 	printInfo("Your target: " + variables['target'][0])
-	printInfo("Loading path list... please wait...")
+	printInfo("Loading path list...")
 	paths = ['/phpMyAdmin/',
 '/phpmyadmin/',
 '/PMA/',

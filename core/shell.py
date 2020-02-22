@@ -48,7 +48,6 @@ def run():
 				print()
 				mm.moduleLoaded = 0
 				mm.moduleName = ""
-				print(colors.bold + colors.red + "Ctrl + C detected, going back..." + colors.end)
 
 def setFace():
 	global shellface

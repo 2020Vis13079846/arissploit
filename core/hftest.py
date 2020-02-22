@@ -38,32 +38,32 @@ def check_module(modadd):
 	print(colors.yellow+'checking',modadd.conf["name"]+colors.green)
 	module = modadd.__name__.replace("modules.", "")
 	if modadd.conf["name"] != module:
-		print(colors.red+"\nmodules name doesn't match")
+		printError("\nmodules name doesn't match")
 	modadd.conf["version"]
 	if modadd.conf["shortdesc"] == 'none':
-		print(colors.red+'\ndesc variable has default value'+colors.green)
+		printError('\ndesc variable has default value'+colors.green)
 		testfailed()
 	if modadd.conf["github"] == 'none':
-		 print(colors.red+'\ngithub variable has default value'+colors.green)
+		 printError('\ngithub variable has default value'+colors.green)
 		 testfailed()
 	if modadd.conf["author"] == 'none':
-		print(colors.red+'\ncreatedby variable has default value'+colors.green)
+		printError('\ncreatedby variable has default value'+colors.green)
 		testfailed()
 	if modadd.conf["email"] == 'none':
-		print(colors.red+'\nemail variable has default value'+colors.green)
+		printError('\nemail variable has default value'+colors.green)
 		testfailed()
 
 	if modadd.conf["initdate"] == "none":
-		print(colors.red+'\ninitdate variable has default value'+colors.green)
+		printError('\ninitdate variable has default value'+colors.green)
 		testfailed()
 
 	if modadd.conf["lastmod"] == "none":
-		print(colors.red+'\nlastmod variable has default value'+colors.green)
+		printError('\nlastmod variable has default value'+colors.green)
 		testfailed()
 
 	try:
 		if modadd.conf["dependencies"][0] == None:
-			print(colors.red+"\ndependencies has default value")
+			printError("\ndependencies has default value")
 			testfailed()
 	except KeyError:
 		pass
@@ -86,7 +86,7 @@ def check_customcommands(modadd):
 	for line in f:
 		for c in modadd.customcommands:
 			if c in line and "def" in line and "#" not in line and "args" not in line:
-				print(colors.red+"custom command function doesn't have args argument"+colors.end)
+				printError("custom command function doesn't have args argument"+colors.end)
 				testfailed()
 	f.close()
 
@@ -117,8 +117,8 @@ def check_cmethods():
 	for line in fcm:
 		if "self" not in line and "def " in line or "args" not in line and "def " in line:
 			if "__init__" not in line and "mcu" not in line and "#" not in line:
-				print(colors.red+"error in line "+str(linenum)+":\n"+colors.end)
-				print(colors.red+line+colors.end)
+				printError("error in line "+str(linenum)+":\n"+colors.end)
+				printError(line+colors.end)
 				testfailed()
 		linenum += 1
 
@@ -145,11 +145,11 @@ def challenge():
 		sys.exit(e)
 
 	except:
-		print(colors.red+"\ntest not passed!\n")
+		printError("\ntest not passed!\n")
 		traceback.print_exc()
 		print(colors.end)
 		sys.exit(1)
 
 def testfailed():
-	print(colors.red+"\ntest not passed!\n"+colors.end)
+	printError("\ntest not passed!\n"+colors.end)
 	sys.exit(1)

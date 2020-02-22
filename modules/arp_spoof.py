@@ -200,4 +200,4 @@ def get(args):
 		return ModuleError(controller.error)
 
 	else:
-		printError("Unrecognized command!")
+		raise UnknownCommand("Unknown command!")

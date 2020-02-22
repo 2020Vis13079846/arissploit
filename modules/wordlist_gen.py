@@ -151,7 +151,7 @@ def run():
 		sh.kill = True
 		printInfo("Wordlist generator terminated!")
 
-	printSuccess("Wordlist genereted.")
+	printSuccess("Wordlist genereted!")
 
 def addchar(args):
 	global addchr

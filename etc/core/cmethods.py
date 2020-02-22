@@ -179,8 +179,10 @@ class Cmethods:
 					except AttributeError:
 						pass
 			except ImportError:
+				print("["+colors.bold+colors.red+"err"+colors.end+"] Module is not found!")
 				raise ModuleNotFound("["+colors.bold+colors.red+"err"+colors.end+"] Module is not found!")
 			except IndexError:
+				print("["+colors.bold+colors.red+"err"+colors.end+"] Module is not found!")
 				raise ModuleNotFound("["+colors.bold+colors.red+"err"+colors.end+"] Module is not found!")
 			except:
 				print("["+colors.bold+colors.red+"err"+colors.end+"] Unexpected error in module:\n")
@@ -331,8 +333,10 @@ class Cmethods:
 			print(colors.bold+args[0] +" => "+ str(args[1]) + colors.end)
 
 		except (NameError, KeyError):
+			print("["+colors.bold+colors.red+"err"+colors.end+"] Option is not found!")
 			raise VariableError("["+colors.bold+colors.red+"err"+colors.end+"] Option is not found!")
 		except IndexError:
+			print("["+colors.bold+colors.red+"err"+colors.end+"] Invalid value!")
 			raise VariableError("["+colors.bold+colors.red+"err"+colors.end+"] Invalid value!")
 		except:
 			print("["+colors.bold+colors.red+"err"+colors.end+"] Unexpected error in module:\n")
@@ -370,7 +374,7 @@ class Cmethods:
 				print(colors.red + "Something went wrong!" + colors.end)
 
 		except IndexError:
-			raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Unkown command!")
+			raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Unrecognized command!")
 
 	def matrix(self, args):
 		try:

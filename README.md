@@ -66,14 +66,14 @@
 
 # Why Arissploit Framework
 
- * Arissploit is free software.
+ * Good platform to start.
 ```
-This is a good platform to start learning 
-penetration testing tools development for free!
+Arissploit is a good platform to start 
+learning penetration testing tools development.
 ```   
- * Simple UX/UI interface.
+ * Simple and clear UX/UI.
 ```
-Arissploit has simple UX/UI! It is 
+Arissploit has a simple UX/UI. It is 
 easy to understand and it will be easier 
 for you to master the Arissploit Framework.
 ```  

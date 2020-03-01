@@ -68,18 +68,18 @@
 
  * A good platform to start.
 ```
-Arissploit is a good platform to start 
+Arissploit Framework is a good platform to start 
 learning penetration testing tools development.
 ```   
  * Simple and clear UX/UI.
 ```
-Arissploit has a simple UX/UI. It is 
-easy to understand and it will be easier 
+Arissploit Framework has a simple UX/UI. It 
+is easy to understand and it will be easier 
 for you to master the Arissploit Framework.
 ```  
  * A lot of different modules.
 ```
-Arissploit includes wireless modules,
+Arissploit Framework includes wireless modules,
 bluetooth modules, web modules, network modules, 
 file modules and generator modules.
 ```

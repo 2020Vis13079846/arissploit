@@ -66,7 +66,7 @@
 
 # Why Arissploit Framework
 
- * Good platform to start.
+ * A good platform to start.
 ```
 Arissploit is a good platform to start 
 learning penetration testing tools development.

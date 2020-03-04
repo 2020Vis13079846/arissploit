@@ -23,11 +23,11 @@ from core import colors
 from core.moduleop import count
 
 arissploit = r"""
-            .----.   @   @                  
-           / .-.-.`.  \v/                            
-           | | '\ \ \_/ )                      
-         ,-\ `-.' /.'  /           
-         '---`----'----'    
+          .----.   @   @                  
+         / .-.-.`.  \v/                            
+         | | '\ \ \_/ )                      
+       ,-\ `-.' /.'  /           
+       '---`----'----'    
 """
 
 def print_info():

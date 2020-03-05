@@ -66,17 +66,17 @@
 
 # Why Arissploit Framework
 
+ * Simple and clear UX/UI.
+```
+Arissploit Framework has a simple and clear UX/UI. 
+It is easy to understand and it will be easier 
+for you to master the Arissploit Framework.
+```  
  * A good platform to start.
 ```
 Arissploit Framework is a good platform to start 
 learning penetration testing tools development.
 ```   
- * Simple and clear UX/UI.
-```
-Arissploit Framework has a simple UX/UI. It 
-is easy to understand and it will be easier 
-for you to master the Arissploit Framework.
-```  
  * A lot of different modules.
 ```
 Arissploit Framework includes wireless modules,

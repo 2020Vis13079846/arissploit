@@ -356,7 +356,7 @@ class Cmethods:
 					template_contents[12] = "	\"lastmod\": \""+(time.strftime("%d.%m.%Y"))+"\", # Last modification\n"
 					mfile.writelines(template_contents)
 					mfile.close()
-					printInfo("Saved to modules/"+ args[0] +".py")
+					printSuccess("Module saved to modules/"+ args[0] +".py!")
 
 			except IndexError:
 				printError("Please enter module name!")
@@ -416,9 +416,9 @@ class Cmethods:
 		if self.mm.moduleLoaded == 1:
 			try:
 				self.modadd.init()
-				print("Module initialized!")
+				printSuccess("Module has been initialized!")
 			except AttributeError:
-				print("This module doesn't have init function!")
+				printError("This module doesn't have init function!")
 		else:
 			raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Unrecognized command!")
 

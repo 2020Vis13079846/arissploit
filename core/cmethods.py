@@ -356,7 +356,7 @@ class Cmethods:
 					template_contents[12] = "	\"lastmod\": \""+(time.strftime("%d.%m.%Y"))+"\", # Last modification\n"
 					mfile.writelines(template_contents)
 					mfile.close()
-					printSuccess("Module saved to modules/"+ args[0] +".py!")
+					printSuccess("Saved to modules/"+ args[0] +".py!")
 
 			except IndexError:
 				printError("Please enter module name!")

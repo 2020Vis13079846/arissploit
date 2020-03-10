@@ -76,5 +76,7 @@ echo | ./install.sh
 fi
 } &> /dev/null
 echo -e "["$GNS"suc"$CE"] Successfully updated!"
+cd .
+touch .updated
 sleep 1
 exit

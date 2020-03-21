@@ -438,8 +438,7 @@ class Cmethods:
 					raise
 
 		else:
-			answer = input("Do you want to update modules database [yes/no]? ")
-			if answer == "yes" or answer == "y":
+			if True:
 				try:
 					modules = glob.glob(getpath.modules()+"*.py")
 					for module in modules:

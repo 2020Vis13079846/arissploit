@@ -251,14 +251,14 @@ class Cmethods:
 							self.modadd.init()
 						except AttributeError:
 							pass
-						print (colors.bold+"Module "+ args[0] +" reloaded"+colors.end)
+						print("["+colors.bold+colors.green+"suc"+colors.end+"] Module "+ args[0] +" reloaded!"+colors.end)
 					else:
 						importlib.import_module(mod)
 						try:
 							self.modadd.init()
 						except AttributeError:
 							pass
-						print(colors.bold+"Module "+ args[0] +" imported"+colors.end)
+						print("["+colors.bold+colors.green+"suc"+colors.end+"] Module "+ args[0] +" imported!"+colors.end)
 
 				except IndexError:
 					print (colors.red+"Please enter module's name"+colors.end)
@@ -273,14 +273,14 @@ class Cmethods:
 							self.modadd.init()
 						except AttributeError:
 							pass				
-						print (colors.bold+"Module "+ args[0] +" reloaded"+colors.end)
+						print("["+colors.bold+colors.green+"suc"+colors.end+"] Module "+ args[0] +" reloaded!"+colors.end)
 					else:
 						importlib.import_module(mod)
 						try:
 							self.modadd.init()
 						except AttributeError:
 							pass
-						print(colors.bold+"Module "+ self.mm.moduleName +" reloaded"+colors.end)
+						print("["+colors.bold+colors.green+"suc"+colors.end+"] Module "+ self.mm.moduleName +" reloaded!"+colors.end)
 				except IndexError:
 					mod = "modules."+self.mm.moduleName
 					if mod in sys.modules:
@@ -291,7 +291,7 @@ class Cmethods:
 							self.modadd.init()
 						except AttributeError:
 							pass
-						print (colors.bold+"Module "+ self.mm.moduleName +" reloaded"+colors.end)
+						print("["+colors.bold+colors.green+"suc"+colors.end+"] Module "+ self.mm.moduleName +" reloaded!"+colors.end)
 
 					else:
 						modadd = importlib.import_module(mod)
@@ -299,7 +299,7 @@ class Cmethods:
 							self.modadd.init()
 						except AttributeError:
 							pass
-						print(colors.bold+"Module "+ self.mm.moduleName +" reloaded"+colors.end)
+						print("["+colors.bold+colors.green+"suc"+colors.end+"] Module "+ self.mm.moduleName +" reloaded!"+colors.end)
 		except:
 			print("["+colors.bold+colors.red+"err"+colors.end+"] Faced unexpected error during reimporting:\n")
 			traceback.print_exc()
@@ -433,7 +433,7 @@ class Cmethods:
 			try:
 				moduleop.addtodb(self.modadd)
 			except PermissionError:
-				print("["+colors.bold+colors.red+"err"+colors.end+"] Error: permission denied!"+colors.end)
+				print("["+colors.bold+colors.red+"err"+colors.end+"] Permission denied!"+colors.end)
 			except KeyboardInterrupt:
 				print()
 			except:
@@ -453,7 +453,7 @@ class Cmethods:
 							modadd = importlib.import_module("modules."+module)
 							moduleop.addtodb(modadd)
 				except PermissionError:
-					print("["+colors.bold+colors.red+"err"+colors.end+"] Error: permission denied!"+colors.end)
+					print("["+colors.bold+colors.red+"err"+colors.end+"] Permission denied!"+colors.end)
 				except KeyboardInterrupt:
 					print()
 				except:

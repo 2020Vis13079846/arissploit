@@ -92,7 +92,7 @@ def addtodb(modadd):
 	if new == True:
 		printInfo("Module "+modadd.conf["name"]+" doesn't exist in modules database!")
 		printInfo("Going to add this module to modules database...")
-		dome = input(colors.purple+"Add module to [old/new] "+colors.end)
+		dome = input(colors.purple+"Add module to [old/new] "+colors.end).strip(" ").lower()
 		if dome == "old":
 			pass
 		if dome == "new":

@@ -60,7 +60,7 @@ useful features for learning and developing penetration testing tools.
 # Arissploit Framework execution
 
 ```
-To execute Arissploit Framework you 
+To execute Arissploit Framework you
 should execute the following command.
 ```
 

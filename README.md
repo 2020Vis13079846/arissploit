@@ -29,9 +29,11 @@
 
 # About Arissploit Framework
 
-    Arissploit Framework is a simple framework designed to master penetration 
-    testing tools. Arissploit Framework offers simple structure, basic CLI, and 
-    useful features for learning and developing penetration testing tools.
+```
+Arissploit Framework is a simple framework designed to master penetration 
+testing tools. Arissploit Framework offers simple structure, basic CLI, and 
+useful features for learning and developing penetration testing tools.
+```
 
 ***
 
@@ -57,8 +59,10 @@
 
 # Arissploit Framework execution
 
-    To execute Arissploit Framework you 
-    should execute the following command.
+```
+To execute Arissploit Framework you 
+should execute the following command.
+```
 
 > arissploit
 
@@ -90,10 +94,12 @@ file modules and generator modules.
     
 # Arissploit Framework disclaimer
 
-    Usage of the Arissploit Framework for attacking targets without prior mutual consent is illegal.
-    It is the end user's responsibility to obey all applicable local, state, federal, and international laws.
-    Developers assume no liability and are not responsible for any misuse or damage caused by this program.
-    
+```
+Usage of the Arissploit Framework for attacking targets without prior mutual consent is illegal.
+It is the end user's responsibility to obey all applicable local, state, federal, and international laws.
+Developers assume no liability and are not responsible for any misuse or damage caused by this program.
+```
+
 ***
     
 # Arissploit Framework license

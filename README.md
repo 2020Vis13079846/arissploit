@@ -90,8 +90,8 @@ file modules and generator modules.
     
 # Arissploit Framework disclaimer
 
-    Usage of the Arissploit Framework for attacking targets without prior mutual consent is illegal. 
-    It is the end user's responsibility to obey all applicable local, state, federal, and international laws. 
+    Usage of the Arissploit Framework for attacking targets without prior mutual consent is illegal.
+    It is the end user's responsibility to obey all applicable local, state, federal, and international laws.
     Developers assume no liability and are not responsible for any misuse or damage caused by this program.
     
 ***
@@ -100,9 +100,9 @@ file modules and generator modules.
 
 ```
     ---------------------------------------------------
-                   Arissploit Framework                                                                      
+                   Arissploit Framework                
     ---------------------------------------------------
-        Copyright (C) <2019-2020>  <Entynetproject>      
+        Copyright (C) <2019-2020>  <Entynetproject>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

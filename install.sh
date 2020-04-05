@@ -34,6 +34,17 @@ then
    exit
 fi
 
+{
+ASESR="$( curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//' )"
+} &> /dev/null
+if [[ "$ASESR" = "" ]]
+then 
+   sleep 1
+   echo -e "["$RS"err"$CE"] No Internet connection!"$CE""
+   sleep 1
+   exit
+fi
+
 if [[ -d ~/arissploit ]]
 then
 sleep 0

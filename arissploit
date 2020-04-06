@@ -21,39 +21,33 @@
 import os
 
 os.system("printf '\033]2;Arissploit Framework\a'")
-os.system("clear")
 
-try:
+# Import python modules
+import traceback
+import sys
+import logging
+import getopt
+import csv
 
-	# Import python modules
-	import traceback
-	import sys
-	import logging
-	import getopt
-	import csv
+# Disable scapy warning
+logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
 
-	# Disable scapy warning
-	logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
+# Import getpath for lib path
+from core import getpath
 
-	# Import getpath for lib path
-	from core import getpath
+# Append lib path
+sys.path.append(getpath.lib())
 
-	# Append lib path
-	sys.path.append(getpath.lib())
+# Import core modules
+from core import colors
+from core import header
+from core import shell
+from core import scriptio
+from core import getpath
 
-	# Import core modules
-	from core import colors
-	from core import header
-	from core import shell
-	from core import scriptio
-	from core import getpath
-
-	# Print header
-	print(header.arissploit)
-	header.print_info()
-
-except KeyboardInterrupt:
-	sys.exit(0)
+# Print header
+print(header.arissploit)
+header.print_info()
 
 # Exception handling
 

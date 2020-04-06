@@ -46,6 +46,7 @@ from core import scriptio
 from core import getpath
 
 # Print header
+os.system("clear")
 print(header.arissploit)
 header.print_info()
 

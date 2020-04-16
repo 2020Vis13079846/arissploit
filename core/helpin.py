@@ -47,7 +47,7 @@ mcommands = [
 ["matrix", "Arissploit Framework matrix."],
 ["clear", "Clear terminal window."],
 ["exit", "Exit from this module."],
-["back", "Go back to previous menu."],
+["back", "Return to previous menu."],
 ["sky", "Arissploit Framework sky."],
 ["scan", "Scan devices from LAN."],
 ["redb", "Update modules database."],

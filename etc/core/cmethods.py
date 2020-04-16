@@ -330,7 +330,7 @@ class Cmethods:
 	def set(self, args):
 		try:
 			self.modadd.variables[args[0]][0] = args[1]
-			print(colors.bold+args[0] +" => "+ str(args[1]) + colors.end)
+			print(colors.bold+args[0] +" ==> "+ str(args[1]) + colors.end)
 
 		except (NameError, KeyError):
 			print("["+colors.bold+colors.red+"err"+colors.end+"] Option is not found!")

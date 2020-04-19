@@ -186,7 +186,8 @@ class Cmethods:
 					if api.enabled == True:
 						raise
 			else:
-				raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Module in use!")
+				print("hello, payload")
+				#raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Module in use!")
 
 	def modules(self, args):
 		t = PrettyTable([colors.bold+'Modules:', ''+colors.end])

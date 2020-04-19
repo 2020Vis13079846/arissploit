@@ -103,6 +103,8 @@ class Cmethods:
 		w = os.environ['OLDPWD']
  		os.chdir(w)
 		os.system(' '.join(args))
+		g = os.environ['HOME']
+ 		os.chdir(g + "/arissploit")
 
 	def help(self, args):
 		print("")

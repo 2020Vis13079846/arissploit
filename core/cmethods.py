@@ -89,11 +89,7 @@ class Cmethods:
 	# Built-in commands
 	
 	def exit(self, args):
-		if self.mm.moduleLoaded == 1:
-			self.mm.moduleLoaded = 0
-			self.mm.moduleName = ""
-		else:
-			sys.exit()
+		sys.exit()
 
 	def clear(self, args):
 		if len(args) != 0 and args[0] == "tmp":
@@ -143,10 +139,14 @@ class Cmethods:
 		del network_scanner
 
 	def use(self, args):
-		try:
-			init = False
-			if "modules."+args[0] not in sys.modules:
-				init = True
+		if 1:
+			try:
+				init = False
+				if "modules."+args[0] not in sys.modules:
+					init = True
+			except:
+				printError("Please enter module name!")
+				return
 
 			if self.mm.moduleLoaded == 0:
 				try:
@@ -187,9 +187,7 @@ class Cmethods:
 						raise
 			else:
 				raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Module in use!")
-		except:
-			printError("Please enter module name!")
-				
+
 	def modules(self, args):
 		t = PrettyTable([colors.bold+'Modules:', ''+colors.end])
 		t.align = 'l'

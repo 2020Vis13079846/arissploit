@@ -89,11 +89,7 @@ class Cmethods:
 	# Built-in commands
 	
 	def exit(self, args):
-		if self.mm.moduleLoaded == 1:
-			self.mm.moduleLoaded = 0
-			self.mm.moduleName = ""
-		else:
-			sys.exit()
+		sys.exit()
 
 	def clear(self, args):
 		if len(args) != 0 and args[0] == "tmp":
@@ -104,13 +100,7 @@ class Cmethods:
 	def os(self, args):
 		CYAN = '\033[1;34m'
 		ENDL = '\033[0m'
-		w = os.environ['OLDPWD']
-		os.chdir(w)
-		
 		os.system(' '.join(args))
-		
-		g = os.environ['HOME']
-		os.chdir(g + "/arissploit")
 
 	def help(self, args):
 		print("")
@@ -149,77 +139,46 @@ class Cmethods:
 		del network_scanner
 
 	def use(self, args):
-		init = False
-		if "modules."+args[0] not in sys.modules:
-			init = True
-
-		if self.mm.moduleLoaded == 0:
+		if 1:
 			try:
-				self.modadd = importlib.import_module("modules."+args[0])
-				self.mm.moduleLoaded = 1
-				self.mm.setName(self.modadd.conf["name"])
-				try:
-					print(self.modadd.conf["message"])
-				except KeyError:
-					pass
-				try:
-					if self.modadd.conf["outdated"] == 1:
-						printWarning("This module is outdated and might not be working!")
-				except KeyError:
-					pass
-				try:
-					if self.modadd.conf["needroot"] == 1:
-						if not os.geteuid() == 0:
-							printWarning("This module requires root permissions!")
-				except KeyError:
-					pass
-				if init == True:
-					try:
-						self.modadd.init()
-					except AttributeError:
-						pass
-			except ImportError:
-				print("["+colors.bold+colors.red+"err"+colors.end+"] Module is not found!")
-				raise ModuleNotFound("["+colors.bold+colors.red+"err"+colors.end+"] Module is not found!")
-			except IndexError:
-				print("["+colors.bold+colors.red+"err"+colors.end+"] Module is not found!")
-				raise ModuleNotFound("["+colors.bold+colors.red+"err"+colors.end+"] Module is not found!")
+				init = False
+				if "modules."+args[0] not in sys.modules:
+					init = True
 			except:
-				print("["+colors.bold+colors.red+"err"+colors.end+"] Unexpected error in module:\n")
-				traceback.print_exc(file=sys.stdout)
-				print(colors.end)
-				if api.enabled == True:
-					raise
-		else:
-			raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Module in use!")
+				printError("Please enter module name!")
+				return
 
-	def show(self, args):
-		try:
-			if args[0] == "modules":
-				t = PrettyTable([colors.bold+'Modules:', ''+colors.end])
-				t.align = 'l'
-				t.valing = 'm'
-				t.border = False
-				xml = moddbparser.parsemoddb()
-				root = xml[0]
-				for category in root:
-					if category.tag == "category":
-						t.add_row(["", ""])
-						t.add_row([colors.red+colors.uline+category.attrib["name"]+colors.end, colors.red+colors.uline+"Description"+colors.end])
-
-					for item in category:
-						if item.tag == "module":
-							for child in item:
-								if child.tag == "shortdesc":
-									t.add_row([item.attrib["name"], child.text])
-									break
-				print("")
-				print(t)
-				print("")
-
-			elif args[0] == "options" and self.mm.moduleLoaded == 1:
+			if self.mm.moduleLoaded == 0:
 				try:
-					moduleop.printoptions(self.modadd)
+					self.modadd = importlib.import_module("modules."+args[0])
+					self.mm.moduleLoaded = 1
+					self.mm.setName(self.modadd.conf["name"])
+					try:
+						print(self.modadd.conf["message"])
+					except KeyError:
+						pass
+					try:
+						if self.modadd.conf["outdated"] == 1:
+							printWarning("This module is outdated and might not be working!")
+					except KeyError:
+						pass
+					try:
+						if self.modadd.conf["needroot"] == 1:
+							if not os.geteuid() == 0:
+								printWarning("This module requires root permissions!")
+					except KeyError:
+						pass
+					if init == True:
+						try:
+							self.modadd.init()
+						except AttributeError:
+							pass
+				except ImportError:
+					print("["+colors.bold+colors.red+"err"+colors.end+"] Module is not found!")
+					raise ModuleNotFound("["+colors.bold+colors.red+"err"+colors.end+"] Module is not found!")
+				except IndexError:
+					print("["+colors.bold+colors.red+"err"+colors.end+"] Module is not found!")
+					raise ModuleNotFound("["+colors.bold+colors.red+"err"+colors.end+"] Module is not found!")
 				except:
 					print("["+colors.bold+colors.red+"err"+colors.end+"] Unexpected error in module:\n")
 					traceback.print_exc(file=sys.stdout)
@@ -227,9 +186,39 @@ class Cmethods:
 					if api.enabled == True:
 						raise
 			else:
-				raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Module not loaded or Unrecognized command!")
-		except IndexError:
-			raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Unrecognized command!")
+				print("["+colors.bold+colors.red+"err"+colors.end+"] Module already in use!")
+
+	def modules(self, args):
+		t = PrettyTable([colors.bold+'Modules:', ''+colors.end])
+		t.align = 'l'
+		t.valing = 'm'
+		t.border = False
+		xml = moddbparser.parsemoddb()
+		root = xml[0]
+		for category in root:
+			if category.tag == "category":
+				t.add_row(["", ""])
+				t.add_row([colors.red+colors.uline+category.attrib["name"]+colors.end, colors.red+colors.uline+"Description"+colors.end])
+
+			for item in category:
+				if item.tag == "module":
+					for child in item:
+						if child.tag == "shortdesc":
+							t.add_row([item.attrib["name"], child.text])
+							break
+		print("")
+		print(t)
+		print("")
+
+	def options(self, args):
+		try:
+			moduleop.printoptions(self.modadd)
+		except:
+			print("["+colors.bold+colors.red+"err"+colors.end+"] Unexpected error in module:\n")
+			traceback.print_exc(file=sys.stdout)
+			print(colors.end)
+			if api.enabled == True:
+				raise
 
 	def back(self, args):
 		if self.mm.moduleLoaded == 1:
@@ -308,7 +297,6 @@ class Cmethods:
 				raise
 
 	def run(self, args):
-
 		if self.mm.moduleLoaded == 1:
 			try:
 				return self.modadd.run()

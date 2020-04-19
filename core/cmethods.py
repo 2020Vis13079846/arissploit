@@ -143,6 +143,9 @@ class Cmethods:
 		del network_scanner
 
 	def use(self, args):
+		if args == "":
+			printError("Please enter module name!")
+			sys.exit()
 		init = False
 		if "modules."+args[0] not in sys.modules:
 			init = True
@@ -187,9 +190,9 @@ class Cmethods:
 		else:
 			raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Module in use!")
 
-	def show(self, args):
+	def modules(self, args):
 		try:
-			if args[0] == "modules":
+			if 1:
 				t = PrettyTable([colors.bold+'Modules:', ''+colors.end])
 				t.align = 'l'
 				t.valing = 'm'
@@ -211,17 +214,15 @@ class Cmethods:
 				print(t)
 				print("")
 
-			elif args[0] == "options" and self.mm.moduleLoaded == 1:
-				try:
-					moduleop.printoptions(self.modadd)
-				except:
-					print("["+colors.bold+colors.red+"err"+colors.end+"] Unexpected error in module:\n")
-					traceback.print_exc(file=sys.stdout)
-					print(colors.end)
-					if api.enabled == True:
-						raise
-			else:
-				raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Module not loaded or Unrecognized command!")
+	def options(self, args):
+		try:
+			moduleop.printoptions(self.modadd)
+		except:
+			print("["+colors.bold+colors.red+"err"+colors.end+"] Unexpected error in module:\n")
+			traceback.print_exc(file=sys.stdout)
+			print(colors.end)
+			if api.enabled == True:
+				raise
 		except IndexError:
 			raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Unrecognized command!")
 

@@ -297,7 +297,6 @@ class Cmethods:
 				raise
 
 	def run(self, args):
-
 		if self.mm.moduleLoaded == 1:
 			try:
 				return self.modadd.run()
@@ -415,7 +414,7 @@ class Cmethods:
 			except AttributeError:
 				printError("This module doesn't have init function!")
 		else:
-			raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Unreccognized command!")
+			raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Unrecognized command!")
 
 	def redb(self, args):
 		if self.mm.moduleLoaded == 1:

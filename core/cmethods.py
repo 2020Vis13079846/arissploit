@@ -223,8 +223,6 @@ class Cmethods:
 			print(colors.end)
 			if api.enabled == True:
 				raise
-		except IndexError:
-			raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Unrecognized command!")
 
 	def back(self, args):
 		if self.mm.moduleLoaded == 1:

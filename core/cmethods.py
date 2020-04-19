@@ -415,7 +415,7 @@ class Cmethods:
 			except AttributeError:
 				printError("This module doesn't have init function!")
 		else:
-			raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Unrecognized command!")
+			raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Unreccognized command!")
 
 	def redb(self, args):
 		if self.mm.moduleLoaded == 1:

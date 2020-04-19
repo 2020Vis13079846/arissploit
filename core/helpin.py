@@ -34,7 +34,7 @@ commands = [
 ["scan","Scan devices from LAN."],
 ["sky","Arissploit Framework sky."],
 ["update","Update Arissploit Framework."],
-["use","Load selected module."],
+["use","Use specified module."],
 ["version","Show Arissploit version."]
 ]
 
@@ -42,6 +42,7 @@ mcommands = [
 ["back","Return to previous menu."],
 ["clear","Clear terminal window."],
 ["cowsay","Arissploit Framework cowsay."],
+["create","Create new module."],
 ["dependencies", "List module dependencies."],
 ["exit","Exit from this module."],
 ["help","Show all available commands."],
@@ -56,5 +57,6 @@ mcommands = [
 ["set","Set an option value."],
 ["sky","Arissploit Framework sky."],
 ["update","Update Arissploit Framework."],
+["use","Use specified module."],
 ["version","Show module version."]
 ]

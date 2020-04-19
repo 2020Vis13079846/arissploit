@@ -191,28 +191,26 @@ class Cmethods:
 			raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Module in use!")
 
 	def modules(self, args):
-		try:
-			if 1:
-				t = PrettyTable([colors.bold+'Modules:', ''+colors.end])
-				t.align = 'l'
-				t.valing = 'm'
-				t.border = False
-				xml = moddbparser.parsemoddb()
-				root = xml[0]
-				for category in root:
-					if category.tag == "category":
-						t.add_row(["", ""])
-						t.add_row([colors.red+colors.uline+category.attrib["name"]+colors.end, colors.red+colors.uline+"Description"+colors.end])
+		t = PrettyTable([colors.bold+'Modules:', ''+colors.end])
+		t.align = 'l'
+		t.valing = 'm'
+		t.border = False
+		xml = moddbparser.parsemoddb()
+		root = xml[0]
+		for category in root:
+			if category.tag == "category":
+				t.add_row(["", ""])
+				t.add_row([colors.red+colors.uline+category.attrib["name"]+colors.end, colors.red+colors.uline+"Description"+colors.end])
 
-					for item in category:
-						if item.tag == "module":
-							for child in item:
-								if child.tag == "shortdesc":
-									t.add_row([item.attrib["name"], child.text])
-									break
-				print("")
-				print(t)
-				print("")
+			for item in category:
+				if item.tag == "module":
+					for child in item:
+						if child.tag == "shortdesc":
+							t.add_row([item.attrib["name"], child.text])
+							break
+		print("")
+		print(t)
+		print("")
 
 	def options(self, args):
 		try:

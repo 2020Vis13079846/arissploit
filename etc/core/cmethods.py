@@ -37,7 +37,6 @@ sys.path.append(getpath.lib())
 
 from core import helptable
 from core import helpin
-from core import info
 from core import colors
 from core import moduleop
 from prettytable import PrettyTable
@@ -132,7 +131,7 @@ class Cmethods:
 				if api.enabled == True:
 					raise
 		else:
-			print("Arissploit Framework " + info.version + " " + info.codename)
+			print("Arissploit Framework v3.0")
 
 	def ifconfig(self, args):
 		os.system("ifconfig"+" "+' '.join(args))

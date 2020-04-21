@@ -115,12 +115,17 @@ def run():
 	if variables["dict"][0] == "":
 	    printError("No wordlist file specified!")
 	    return ModuleError("No wordlist file specified!")
-		
-	if os.path.exists(variables["dict"][0]):
-	    wordlist = open(variables["dict"][0], "rb")
+	
+	if variables["dict"][0][0] != '/':
+	    dicti = os.environ["OLDPWD"] + '/' + variables["dict"][0]
 	else:
-	    printError("Local file: "+variables["dict"][0]+": does not exist!")
-	    return ModuleError("Local file: "+variables["dict"][0]+": does not exist!")
+	    dicti = variables["dict"][0]
+		
+	if os.path.exists(dicti):
+	    wordlist = open(dicti, "rb")
+	else:
+	    printError("Local file: "+dicti+": does not exist!")
+	    return ModuleError("Local file: "+dicti+": does not exist!")
 	
 	printInfo("Reading wordlist...")
 	words = wordlist.read().splitlines()

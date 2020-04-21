@@ -75,15 +75,20 @@ class Worker(threading.Thread):
 		threading.Thread.__init__(self)
 
 	def run(self):
-		if variables["file"][0] == "":
+		if variables["file"][0][0] != '/':
+		    file = os.environ['OLDPWD'] + '/' + variables["file"]
+		else:
+		    file = variables["file"]
+		
+		if file == "":
 		    printError("No rar file specified!")
 		    return ModuleError("No rar file specified!")
 		
-		if os.path.exists(variables["file"][0]):
-		    rf = rarfile.RarFile(variables["file"][0])
+		if os.path.exists(file):
+		    rf = rarfile.RarFile(file)
 		else:
-		    printError("Local file: "+variables["file"][0]+": does not exist!")
-		    return ModuleError("Local file: "+variables["file"][0]+": does not exist!")
+		    printError("Local file: "+file+": does not exist!")
+		    return ModuleError("Local file: "+file+": does not exist!")
 		
 		for word in self.words:
 			if self.pwdh.pwd != None:

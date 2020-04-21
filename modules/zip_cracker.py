@@ -104,15 +104,19 @@ class Worker(threading.Thread):
 				pass
 
 def run():
-	try:
-		wordlist = open(variables["dict"][0], "rb")
+	if variables["dict"][0] == "":
+	    printError("No wordlist file specified!")
+	    return ModuleError("No wordlist file specified!")
 		
-		printInfo("Reading wordlist...")
-		words = wordlist.read().splitlines()
-	except FileNotFoundError:
-		printError("Wordlist is not found!")
-		return ModuleError("Wordlist is not found!")
-	printInfo("Brute-force attack started...")
+	if os.path.exists(variables["dict"][0]):
+	    wordlist = open(variables["dict"][0], "rb")
+	else:
+	    printError("Local file: "+variables["dict"][0]+": does not exist!")
+	    return ModuleError("Local file: "+variables["dict"][0]+": does not exist!")
+	
+	printInfo("Reading wordlist...")
+	words = wordlist.read().splitlines()
+	printInfo("Starting brute-force attack...")
 
 	pwdh = PwdHolder
 	pwdh.reset()

@@ -82,23 +82,26 @@ class Worker(threading.Thread):
 		threading.Thread.__init__(self)
 
 	def run(self):
-		ouput = variables["output"][0]
-		
-		if output == "":
+		if variables["output"][0] == "":
 		    printError("No output file specified!")
 		    return ModuleError("No output file specified!")
+		
+		if variables["output"][0][0] != '/':
+		    output = os.environ['OLDPWD'] + '/' + variables["output"][0]
 		else:
-		    direct = os.path.split()
+		    output = variables["output"][0]
+		
+		direct = os.path.split(output)[0]
 		    
-		    if os.path.exists(direct):
-			if os.path.isdir(direct):
-			    f = open(output, "a")
-			else:
-			    printError("Error: "+direct+": not a directory!")
-			    return ModuleError("Error: "+direct+": not a directory!")
+		if os.path.exists(direct):
+		    if os.path.isdir(direct):
+			f = open(output, "a")
 		    else:
-			printError("Local directory: "+direct+": does not exist!")
-			return ModuleError("Local directory: "+direct+": does not exist!")
+			printError("Error: "+direct+": not a directory!")
+			return ModuleError("Error: "+direct+": not a directory!")
+		else:
+		    printError("Local directory: "+direct+": does not exist!")
+		    return ModuleError("Local directory: "+direct+": does not exist!")
 		
 		for L in range(self.lenmin, self.lenmax):
 			for word in itertools.combinations_with_replacement(self.chars, L):

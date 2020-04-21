@@ -75,15 +75,16 @@ class Worker(threading.Thread):
 		threading.Thread.__init__(self)
 
 	def run(self):
-		try:
-			if variables["file"][0][0] != '/':
-				rf = rarfile.RarFile(os.environ['OLDPWD'] + '/' + variables["file"][0])
-			else:
-				rf = rarfile.RarFile(variables["file"][0])
+		if variables["file"][0] == "":
+		    printError("No rar file specified!")
+		    return ModuleError("No rar file specified!")
 		
-		except FileNotFoundError:
-			self.pwdh.error = "Rar file is not found!"
-			return
+		if os.path.exists(variables["file"][0]):
+		    rf = rarfile.RarFile(variables["file"][0])
+		else:
+		    printError("Local file: "+variables["file"][0]+": does not exist!")
+		    return ModuleError("Local file: "+variables["file"][0]+": does not exist!")
+		
 		for word in self.words:
 			if self.pwdh.pwd != None:
 				return
@@ -108,18 +109,19 @@ class Worker(threading.Thread):
 
 
 def run():
-	try:
-		if variables["dict"][0][0] != '/':
-			wordlist = open(os.environ['OLDPWD'] + '/' + variables["dict"][0], "rb")
-		else:
-			wordlist = open(variables["dict"][0], "rb")
-
-		printInfo("Reading wordlist...")
-		words = wordlist.read().splitlines()
-	except FileNotFoundError:
-		printError("Wordlist is not found!")
-		return ModuleError("Wordlist is not found!")
-	printInfo("Brute-force attack started...")
+	if variables["dict"][0] == "":
+	    printError("No wordlist file specified!")
+	    return ModuleError("No wordlist file specified!")
+		
+	if os.path.exists(variables["dict"][0]):
+	    wordlist = open(variables["dict"][0], "rb")
+	else:
+	    printError("Local file: "+variables["dict"][0]+": does not exist!")
+	    return ModuleError("Local file: "+variables["dict"][0]+": does not exist!")
+		
+	printInfo("Reading wordlist...")
+	words = wordlist.read().splitlines()
+	printInfo("Starting brute-force attack...")
 
 	pwdh = PwdHolder
 	pwdh.reset()

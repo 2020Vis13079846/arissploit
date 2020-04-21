@@ -86,11 +86,7 @@ class Worker(threading.Thread):
 		    printError("No output file specified!")
 		    return ModuleError("No output file specified!")
 		
-		if variables["output"][0][0] != '/':
-		    output = os.environ['OLDPWD'] + '/' + variables["output"][0]
-		else:
-		    output = variables["output"][0]
-		
+		output = variables["output"][0]
 		direct = os.path.split(output)[0]
 		    
 		if os.path.exists(direct):

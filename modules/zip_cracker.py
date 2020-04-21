@@ -76,13 +76,16 @@ class Worker(threading.Thread):
 		threading.Thread.__init__(self)
 
 	def run(self):
-		try:
-			zipf = zipfile.ZipFile(variables["file"][0])
+		if variables["file"][0] == "":
+		    printError("No zip file specified!")
+		    return ModuleError("No zip file specified!")
 		
-		except FileNotFoundError:
-			print(zipf)
-			self.pwdh.error = "Zip file is not found!"
-			return
+		if os.path.exists(variables["file"][0]):
+		    zipf = zipfile.ZipFile(variables["file"][0])
+		else:
+		    printError("Local file: "+variables["file"][0]+": does not exist!")
+		    return ModuleError("Local file: "+variables["file"][0]+": does not exist!")
+		
 		for word in self.words:
 			if self.pwdh.pwd != None:
 				return

@@ -80,11 +80,16 @@ class Worker(threading.Thread):
 		    printError("No zip file specified!")
 		    return ModuleError("No zip file specified!")
 		
-		if os.path.exists(variables["file"][0]):
-		    zipf = zipfile.ZipFile(variables["file"][0])
+		if variables["file"][0][0] != '/':
+		    file = os.environ['OLDPWD'] + '/' + variables["file"][0]
 		else:
-		    printError("Local file: "+variables["file"][0]+": does not exist!")
-		    return ModuleError("Local file: "+variables["file"][0]+": does not exist!")
+		    file = variables["file"][0]
+		
+		if os.path.exists(file):
+		    zipf = zipfile.ZipFile(file)
+		else:
+		    printError("Local file: "+file+": does not exist!")
+		    return ModuleError("Local file: "+file+": does not exist!")
 		
 		for word in self.words:
 			if self.pwdh.pwd != None:

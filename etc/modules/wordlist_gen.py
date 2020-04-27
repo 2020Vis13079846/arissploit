@@ -38,7 +38,7 @@ conf = {
 
 # List of the variables
 variables = OrderedDict((
-	("lpath", ["", "Local path."]),
+	("output", ["", "Output path."]),
 	("chars", ["num_", "Chars."]),
 	("maxlen", [4, "Max length of word."]),
 	("minlen", [3, "Min length or word."]),
@@ -84,6 +84,8 @@ class Worker(threading.Thread):
 	def run(self):
 		outputfile = variables["output"][0]
 		
+		w = os.environ['OLDPWD']
+            	os.chdir(w)
 		if os.path.isdir(outputfile):
 			if os.path.exists(outputfile):
 	    			if outputfile[-1:] == "/":
@@ -98,6 +100,8 @@ class Worker(threading.Thread):
 					printInfo(colors.bold+"Saving to "+outputfile+"..."+colors.end)
 			else:
 	    			printError("Local directory: "+outputfile+": does not exist!")
+				g = os.environ['HOME']
+            			os.chdir(g + "/arissploit")
 		    		return ModuleError("Local directory: "+outputfile+": does not exist!")
     		else:
 			direct = os.path.split(outputfile)[0]
@@ -112,10 +116,16 @@ class Worker(threading.Thread):
 					printInfo(colors.bold+"Saving to "+outputfile+"..."+colors.end)
             			else:
                 			printError("Error: "+direct+": not a directory!")
+					g = os.environ['HOME']
+            				os.chdir(g + "/arissploit")
 					return ModuleError("Error: "+direct+": not a directory!")
 			else:
 	    			printError("Local directory: "+direct+": does not exist!")
+				g = os.environ['HOME']
+            			os.chdir(g + "/arissploit")
 		    		return ModuleError("Local directory: "+direct+": does not exist!")
+		g = os.environ['HOME']
+            	os.chdir(g + "/arissploit")
 		
 		for L in range(self.lenmin, self.lenmax):
 			for word in itertools.combinations_with_replacement(self.chars, L):

@@ -84,10 +84,10 @@ class Worker(threading.Thread):
 		
 		if os.path.exists(file):
 		    if os.path.isdir(file):
-		        zipf = zipfile.ZipFile(file)
-		    else:
 			printError("Error: "+file+": is a directory!")
 		    	return ModuleError("Error: "+file+": is a directory!")
+		    else:
+			zipf = zipfile.ZipFile(file)
 		else:
 		    printError("Local file: "+file+": does not exist!")
 		    return ModuleError("Local file: "+file+": does not exist!")

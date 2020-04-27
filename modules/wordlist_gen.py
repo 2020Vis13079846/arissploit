@@ -38,7 +38,7 @@ conf = {
 
 # List of the variables
 variables = OrderedDict((
-	("output", ["", "Output file."]),
+	("lpath", ["", "Local path."]),
 	("chars", ["num_", "Chars."]),
 	("maxlen", [4, "Max length of word."]),
 	("minlen", [3, "Min length or word."]),
@@ -57,7 +57,7 @@ customcommands = {
 addchr = ""
 
 def init():
-	variables["output"][0] = relpath(getpath.db() + "wordlist", getpath.main_module())
+	variables["lpath"][0] = relpath(getpath.db() + "wordlist", getpath.main_module())
 	
 class StatHolder:
 	kill = False
@@ -82,22 +82,40 @@ class Worker(threading.Thread):
 		threading.Thread.__init__(self)
 
 	def run(self):
-		if variables["output"][0] == "":
-		    printError("No output file specified!")
-		    return ModuleError("No output file specified!")
+		outputfile = variables["lpath"][0]
 		
-		output = variables["output"][0]
-		direct = os.path.split(output)[0]
-		    
-		if os.path.exists(direct):
-		    if os.path.isdir(direct):
-			f = open(output, "a")
-		    else:
-			printError("Error: "+direct+": not a directory!")
-			return ModuleError("Error: "+direct+": not a directory!")
-		else:
-		    printError("Local directory: "+direct+": does not exist!")
-		    return ModuleError("Local directory: "+direct+": does not exist!")
+		if os.path.isdir(outputfile):
+			if os.path.exists(outputfile):
+	    			if outputfile[-1:] == "/":
+                			outputfile = outputfile + 'output.txt'
+                			fh = logging.FileHandler(outputfile)
+                			logger.addHandler(fh)
+                			logger.setLevel(logging.INFO)
+            			else:
+                			outputfile = outputfile + '/output.txt'
+                			fh = logging.FileHandler(outputfile)
+                			logger.addHandler(fh)
+                			logger.setLevel(logging.INFO)
+			else:
+	    			printError("Local directory: "+outputfile+": does not exist!")
+		    		return ModuleError("Local directory: "+outputfile+": does not exist!")
+    		else:
+			direct = os.path.split(outputfile)[0]
+        		if direct == "":
+            			direct = "."
+        		else:
+            			pass
+			if os.path.exists(direct):
+            			if os.path.isdir(direct):
+                			fh = logging.FileHandler(outputfile)
+                			logger.addHandler(fh)
+                			logger.setLevel(logging.INFO)
+            			else:
+                			printError("Error: "+direct+": not a directory!")
+					return ModuleError("Error: "+direct+": not a directory!")
+			else:
+	    			printError("Local directory: "+direct+": does not exist!")
+		    		return ModuleError("Local directory: "+direct+": does not exist!")
 		
 		for L in range(self.lenmin, self.lenmax):
 			for word in itertools.combinations_with_replacement(self.chars, L):

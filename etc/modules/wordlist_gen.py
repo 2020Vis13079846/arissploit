@@ -38,7 +38,7 @@ conf = {
 
 # List of the variables
 variables = OrderedDict((
-	("output", ["", "Output file."]),
+	("lpath", ["", "Local path."]),
 	("chars", ["num_", "Chars."]),
 	("maxlen", [4, "Max length of word."]),
 	("minlen", [3, "Min length or word."]),
@@ -82,26 +82,40 @@ class Worker(threading.Thread):
 		threading.Thread.__init__(self)
 
 	def run(self):
-		if variables["output"][0] == "":
-		    printError("No output file specified!")
-		    return ModuleError("No output file specified!")
+		outputfile = variables["output"][0]
 		
-		if variables["output"][0][0] != '/':
-		    output = os.environ['OLDPWD'] + '/' + variables["output"][0]
-		else:
-		    output = variables["output"][0]
-		
-		direct = os.path.split(output)[0]
-		    
-		if os.path.exists(direct):
-		    if os.path.isdir(direct):
-			f = open(output, "a")
-		    else:
-			printError("Error: "+direct+": not a directory!")
-			return ModuleError("Error: "+direct+": not a directory!")
-		else:
-		    printError("Local directory: "+direct+": does not exist!")
-		    return ModuleError("Local directory: "+direct+": does not exist!")
+		if os.path.isdir(outputfile):
+			if os.path.exists(outputfile):
+	    			if outputfile[-1:] == "/":
+                			outputfile = outputfile + 'output.txt'
+					printInfo(colors.bold+"Generating wordlist..."+colors.end)
+					f = open(outputfile, "a")
+					printInfo(colors.bold+"Saving to "+outputfile+"..."+colors.end)
+            			else:
+                			outputfile = outputfile + '/output.txt'
+					printInfo(colors.bold+"Generating wordlist..."+colors.end)
+					f = open(outputfile, "a")
+					printInfo(colors.bold+"Saving to "+outputfile+"..."+colors.end)
+			else:
+	    			printError("Local directory: "+outputfile+": does not exist!")
+		    		return ModuleError("Local directory: "+outputfile+": does not exist!")
+    		else:
+			direct = os.path.split(outputfile)[0]
+        		if direct == "":
+            			direct = "."
+        		else:
+            			pass
+			if os.path.exists(direct):
+            			if os.path.isdir(direct):
+                			printInfo(colors.bold+"Generating wordlist..."+colors.end)
+					f = open(outputfile, "a")
+					printInfo(colors.bold+"Saving to "+outputfile+"..."+colors.end)
+            			else:
+                			printError("Error: "+direct+": not a directory!")
+					return ModuleError("Error: "+direct+": not a directory!")
+			else:
+	    			printError("Local directory: "+direct+": does not exist!")
+		    		return ModuleError("Local directory: "+direct+": does not exist!")
 		
 		for L in range(self.lenmin, self.lenmax):
 			for word in itertools.combinations_with_replacement(self.chars, L):
@@ -110,7 +124,8 @@ class Worker(threading.Thread):
 					return
 				word = ''.join(word)
 				f.write(word+"\n")
-
+			
+		printSuccess("Saved to "+outputfile+"!")
 		f.close()
 
 def run():
@@ -157,15 +172,12 @@ def run():
 		threads.append(t)
 		t.start()
 
-	printInfo(colors.bold+"Generating..."+colors.end)
 	try:
 		for thread in threads:
 			thread.join()
 	except KeyboardInterrupt:
 		sh.kill = True
 		printInfo("Wordlist generator terminated!")
-
-	printSuccess("Wordlist genereted!")
 
 def addchar(args):
 	global addchr

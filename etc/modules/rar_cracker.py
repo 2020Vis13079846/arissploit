@@ -79,13 +79,14 @@ class Worker(threading.Thread):
 		    printError("No rar file specified!")
 		    return ModuleError("No rar file specified!")
 		
-		if variables["file"][0][0] != '/':
-		    file = os.environ['OLDPWD'] + '/' + variables["file"][0]
-		else:
-		    file = variables["file"][0]
+		file = variables["file"][0]
 		
 		if os.path.exists(file):
-		    rf = rarfile.RarFile(file)
+		    if os.path.isdir(file):
+			printError("Error: "+file+": is a directory!")
+		    	return ModuleError("Error: "+file+": is a directory!")
+		    else:
+		    	rf = rarfile.RarFile(file)
 		else:
 		    printError("Local file: "+file+": does not exist!")
 		    return ModuleError("Local file: "+file+": does not exist!")
@@ -118,13 +119,14 @@ def run():
 	    printError("No wordlist file specified!")
 	    return ModuleError("No wordlist file specified!")
 	
-	if variables["dict"][0][0] != '/':
-	    dicti = os.environ["OLDPWD"] + '/' + variables["dict"][0]
-	else:
-	    dicti = variables["dict"][0]
+	dicti = variables["dict"][0]
 		
 	if os.path.exists(dicti):
-	    wordlist = open(dicti, "rb")
+	    if os.path.isdir(dicti):
+		printError("Error: "+dicti+": is a directory!")
+		return ModuleError("Error: "+dicti+": is a directory!")
+	    else:
+	        wordlist = open(dicti, "rb")
 	else:
 	    printError("Local file: "+dicti+": does not exist!")
 	    return ModuleError("Local file: "+dicti+": does not exist!")

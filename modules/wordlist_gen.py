@@ -38,7 +38,7 @@ conf = {
 
 # List of the variables
 variables = OrderedDict((
-	("lpath", ["", "Local path."]),
+	("output", ["", "Output path."]),
 	("chars", ["num_", "Chars."]),
 	("maxlen", [4, "Max length of word."]),
 	("minlen", [3, "Min length or word."]),

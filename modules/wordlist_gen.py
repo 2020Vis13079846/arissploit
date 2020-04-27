@@ -88,14 +88,14 @@ class Worker(threading.Thread):
 			if os.path.exists(outputfile):
 	    			if outputfile[-1:] == "/":
                 			outputfile = outputfile + 'output.txt'
-                			fh = logging.FileHandler(outputfile)
-                			logger.addHandler(fh)
-                			logger.setLevel(logging.INFO)
+					printInfo(colors.bold+"Generating wordlist..."+colors.end)
+					f = open(outputfile, "a")
+					printInfo(colors.bold+"Saving to "+outputfile+"..."+colors.end)
             			else:
                 			outputfile = outputfile + '/output.txt'
-                			fh = logging.FileHandler(outputfile)
-                			logger.addHandler(fh)
-                			logger.setLevel(logging.INFO)
+					printInfo(colors.bold+"Generating wordlist..."+colors.end)
+					f = open(outputfile, "a")
+					printInfo(colors.bold+"Saving to "+outputfile+"..."+colors.end)
 			else:
 	    			printError("Local directory: "+outputfile+": does not exist!")
 		    		return ModuleError("Local directory: "+outputfile+": does not exist!")
@@ -107,9 +107,9 @@ class Worker(threading.Thread):
             			pass
 			if os.path.exists(direct):
             			if os.path.isdir(direct):
-                			fh = logging.FileHandler(outputfile)
-                			logger.addHandler(fh)
-                			logger.setLevel(logging.INFO)
+                			printInfo(colors.bold+"Generating wordlist..."+colors.end)
+					f = open(outputfile, "a")
+					printInfo(colors.bold+"Saving to "+outputfile+"..."+colors.end)
             			else:
                 			printError("Error: "+direct+": not a directory!")
 					return ModuleError("Error: "+direct+": not a directory!")
@@ -124,7 +124,8 @@ class Worker(threading.Thread):
 					return
 				word = ''.join(word)
 				f.write(word+"\n")
-
+			
+		printSuccess("Saved to "+outputfile+"!")
 		f.close()
 
 def run():
@@ -171,15 +172,12 @@ def run():
 		threads.append(t)
 		t.start()
 
-	printInfo(colors.bold+"Generating..."+colors.end)
 	try:
 		for thread in threads:
 			thread.join()
 	except KeyboardInterrupt:
 		sh.kill = True
 		printInfo("Wordlist generator terminated!")
-
-	printSuccess("Wordlist genereted!")
 
 def addchar(args):
 	global addchr

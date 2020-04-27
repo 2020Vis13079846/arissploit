@@ -122,7 +122,11 @@ def run():
 	dicti = variables["dict"][0]
 		
 	if os.path.exists(dicti):
-	    wordlist = open(dicti, "rb")
+	    if os.path.isdir(dicti):
+		printError("Error: "+dicti+": is a directory!")
+		return ModuleError("Error: "+dicti+": is a directory!")
+	    else:
+	        wordlist = open(dicti, "rb")
 	else:
 	    printError("Local file: "+dicti+": does not exist!")
 	    return ModuleError("Local file: "+dicti+": does not exist!")

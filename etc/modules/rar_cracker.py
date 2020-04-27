@@ -81,15 +81,23 @@ class Worker(threading.Thread):
 		
 		file = variables["file"][0]
 		
+		w = os.environ['OLDPWD']
+            	os.chdir(w)
 		if os.path.exists(file):
 		    if os.path.isdir(file):
 			printError("Error: "+file+": is a directory!")
+			g = os.environ['HOME']
+            		os.chdir(g + "/arissploit")
 		    	return ModuleError("Error: "+file+": is a directory!")
 		    else:
 		    	rf = rarfile.RarFile(file)
 		else:
 		    printError("Local file: "+file+": does not exist!")
+		    g = os.environ['HOME']
+            	    os.chdir(g + "/arissploit")
 		    return ModuleError("Local file: "+file+": does not exist!")
+		g = os.environ['HOME']
+            	os.chdir(g + "/arissploit")
 		
 		for word in self.words:
 			if self.pwdh.pwd != None:
@@ -121,15 +129,23 @@ def run():
 	
 	dicti = variables["dict"][0]
 		
+	w = os.environ['OLDPWD']
+        os.chdir(w)
 	if os.path.exists(dicti):
 	    if os.path.isdir(dicti):
 		printError("Error: "+dicti+": is a directory!")
+		g = os.environ['HOME']
+            	os.chdir(g + "/arissploit")
 		return ModuleError("Error: "+dicti+": is a directory!")
 	    else:
 	        wordlist = open(dicti, "rb")
 	else:
 	    printError("Local file: "+dicti+": does not exist!")
+	    g = os.environ['HOME']
+            os.chdir(g + "/arissploit")
 	    return ModuleError("Local file: "+dicti+": does not exist!")
+	g = os.environ['HOME']
+        os.chdir(g + "/arissploit")
 		
 	printInfo("Reading wordlist...")
 	words = wordlist.read().splitlines()

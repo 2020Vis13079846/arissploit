@@ -82,7 +82,11 @@ class Worker(threading.Thread):
 		file = variables["file"][0]
 		
 		if os.path.exists(file):
-		    rf = rarfile.RarFile(file)
+		    if os.path.isdir(file):
+			printError("Error: "+file+": is a directory!")
+		    	return ModuleError("Error: "+file+": is a directory!")
+		    else:
+		    	rf = rarfile.RarFile(file)
 		else:
 		    printError("Local file: "+file+": does not exist!")
 		    return ModuleError("Local file: "+file+": does not exist!")

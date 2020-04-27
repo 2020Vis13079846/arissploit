@@ -82,6 +82,8 @@ class Worker(threading.Thread):
 		
 		file = variables["file"][0]
 		
+		w = os.environ['OLDPWD']
+            	os.chdir(w)
 		if os.path.exists(file):
 		    if os.path.isdir(file):
 			printError("Error: "+file+": is a directory!")
@@ -119,6 +121,8 @@ def run():
 	
 	dicti = variables["dict"][0]
 		
+	w = os.environ['OLDPWD']
+        os.chdir(w)
 	if os.path.exists(dicti):
 	    if os.path.isdir(dicti):
 		printError("Error: "+dicti+": is a directory!")

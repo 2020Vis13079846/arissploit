@@ -26,8 +26,8 @@ conf = {
 	"version": "1.0",
 	"shortdesc": "Hostname IP resolver.",
 	"author": "Entynetproject",
-	"initdate": "9.5.2016",
-	"lastmod": "3.1.2017",
+	"initdate": "9.5.2019",
+	"lastmod": "3.1.2019",
 	"apisupport": True
 }
 

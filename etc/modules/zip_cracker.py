@@ -32,8 +32,8 @@ conf = {
 	"version": "1.0", # Module version
 	"shortdesc": "Zip file brute-force attack using wordlist.", # Short description
 	"author": "Entynetproject", # Author
-	"initdate": "22.12.2016", # Initial date
-	"lastmod": "3.1.2017",
+	"initdate": "22.12.2019", # Initial date
+	"lastmod": "3.1.2019",
 	"apisupport": True, # Api support
 }
 

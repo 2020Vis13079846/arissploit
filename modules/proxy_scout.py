@@ -31,8 +31,8 @@ conf = {
 	"version": "1.0",
 	"shortdesc": "Http proxy checker.",
 	"author": "Entynetproject",
-	"initdate": "19.5.2016",
-	"lastmod": "29.12.2016",
+	"initdate": "19.5.2019",
+	"lastmod": "29.12.2019",
 	"apisupport": False
 
 }

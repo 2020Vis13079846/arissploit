@@ -27,8 +27,8 @@ conf = {
 	"version": "1.1",
 	"shortdesc": "Website directions scanner.",
 	"author": "Entynetproject",
-	"initdate": "24.2.2016",
-	"lastmod": "3.1.2017",
+	"initdate": "24.2.2019",
+	"lastmod": "3.1.2019",
 	"apisupport": True
 }
 

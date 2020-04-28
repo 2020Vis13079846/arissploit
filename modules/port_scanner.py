@@ -29,8 +29,8 @@ conf = {
 	"version": "1.0",
 	"shortdesc": "Website ports scanner.",
 	"author": "Entynetproject",
-	"initdate": "4.3.2016",
-	"lastmod": "3.1.2017",
+	"initdate": "4.3.2019",
+	"lastmod": "3.1.2019",
 	"apisupport": True
 }
 

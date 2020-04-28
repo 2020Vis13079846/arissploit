@@ -26,8 +26,8 @@ conf = {
 	"version": "1.0", # Module version
 	"shortdesc": "ARP packet monitor.", # Short description
 	"author": "Entynetproject", # Author
-	"initdate": "31.12.2016", # Initial date
-	"lastmod": "31.12.2016", # Last modification
+	"initdate": "31.12.2019", # Initial date
+	"lastmod": "31.12.2019", # Last modification
 	"apisupport": False, # Api support
 	"needroot": 1, # Alert user if root permissions not available (remove variable below if root permissions not needed)
 }

@@ -32,8 +32,8 @@ conf = {
 	"version": "1.0",
 	"shortdesc": "Network targets ARP spoofer.",
 	"author": "Entynetproject",
-	"initdate": "10.3.2016",
-	"lastmod": "3.1.2017",
+	"initdate": "10.3.2019",
+	"lastmod": "3.1.2019",
 	"apisupport": True,
 	"needroot": 1
 }

@@ -27,8 +27,8 @@ conf = {
 	"version": "1.0",
 	"shortdesc": "PHPMyAdmin login page scanner.",
 	"author": "Entynetproject",
-	"initdate": "1.3.2016",
-	"lastmod": "3.1.2017",
+	"initdate": "1.3.2019",
+	"lastmod": "3.1.2019",
 	"apisupport": True
 }
 

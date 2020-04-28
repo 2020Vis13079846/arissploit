@@ -29,8 +29,8 @@ conf = {
 	"version": "1.0",
 	"shortdesc": "TCP attack arranger.",
 	"author": "Entynetproject",
-	"initdate": "24.2.2016",
-	"lastmod": "29.12.2016",
+	"initdate": "24.2.2019",
+	"lastmod": "29.12.2019",
 	"apisupport": False,
 	"dependencies": ["dnsiff"]
 }

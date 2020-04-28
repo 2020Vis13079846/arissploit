@@ -30,8 +30,8 @@ conf = {
 	"version": "1.0", # Module version
 	"shortdesc": "DHCP denial of service.", # Short description
 	"author": "Entynetproject", # Author
-	"initdate": "01.01.2017", # Initial date
-	"lastmod": "01.01.2017", # Last modification
+	"initdate": "01.01.2019", # Initial date
+	"lastmod": "01.01.2019", # Last modification
 	"apisupport": False, # Api support
 	"needroot": 1, # Alert user if root permissions not available (remove variable below if root permissions not needed)
 }

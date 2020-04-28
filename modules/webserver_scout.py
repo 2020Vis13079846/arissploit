@@ -28,8 +28,8 @@ conf = {
 	"version": "1.0",
 	"shortdesc": "Webserver information thief.",
 	"author": "Entynetproject",
-	"initdate": "17.5.2016",
-	"lastmod": "3.1.2017",
+	"initdate": "17.5.2019",
+	"lastmod": "3.1.2019",
 	"apisupport": True
 }
 

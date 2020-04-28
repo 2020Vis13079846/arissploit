@@ -28,8 +28,8 @@ conf = {
 	"version": "1.0",
 	"shortdesc": "Man in the middle attack.",
 	"author": "Entynetproject",
-	"initdate": "26.4.2016",
-	"lastmod": "29.12.2016",
+	"initdate": "26.4.2019",
+	"lastmod": "29.12.2019",
 	"apisupport": False,
 	"needroot": 1,
 	"dependencies": ["xterm", "dsniff", "driftnet", "sslstrip"]

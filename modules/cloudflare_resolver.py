@@ -28,8 +28,8 @@ conf = {
 	"version": "2.2.1",
 	"shortdesc": "Subdomains IP resolver.",
 	"author": "Entynetproject",
-	"initdate": "24.2.2016",
-	"lastmod": "3.1.2017",
+	"initdate": "24.2.2019",
+	"lastmod": "3.1.2019",
 	"apisupport": True
 }
 

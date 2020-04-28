@@ -26,8 +26,8 @@ conf = {
 	"version": "1.0", # Module version
 	"shortdesc": "Whois query performer.", # Short description
 	"author": "Entynetproject", # Author
-	"initdate": "18.12.2016", # Initial date
-	"lastmod": "29.12.2016",
+	"initdate": "18.12.2019", # Initial date
+	"lastmod": "29.12.2019",
 	"apisupport": True
 }
 

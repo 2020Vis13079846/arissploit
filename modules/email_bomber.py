@@ -32,8 +32,8 @@ conf = {
 	"version": "1.0",
 	"shortdesc": "Target email bomber.",
 	"author": "Entynetproject",
-	"initdate": "5.4.2016",
-	"lastmod": "3.1.2017",
+	"initdate": "5.4.2019",
+	"lastmod": "3.1.2019",
 	"apisupport": True
 }
 

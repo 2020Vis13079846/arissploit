@@ -29,8 +29,8 @@ conf = {
 	"version": "1.0",
 	"shortdesc": "ARP cache denial of service.",
 	"author": "Entynetproject",
-	"initdate": "3.3.2016",
-	"lastmod": "31.12.2016",
+	"initdate": "3.3.2019",
+	"lastmod": "31.12.2019",
 	"needroot": 1,
 	"apisupport": False,
 	"dependencies": ["xterm", "ettercap"]

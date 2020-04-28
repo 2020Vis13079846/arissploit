@@ -41,8 +41,8 @@ conf = {
 	"version": "2.0",
 	"shortdesc": "Network targets DNS spoofer.",
 	"author": "Entynetproject",
-	"initdate": "29.4.2016",
-	"lastmod": "31.12.2016",
+	"initdate": "29.4.2019",
+	"lastmod": "31.12.2019",
 	"apisupport": False,
 	"needroot": 1,
 	"dependencies": ["libnetfilter-queue-dev", "python3.5-dev"]

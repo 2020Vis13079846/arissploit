@@ -32,8 +32,8 @@ conf = {
 	"version": "1.0",
 	"shortdesc": "MAC address changer.",
 	"author": "Entynetproject",
-	"initdate": "9.3.2016",
-	"lastmod": "3.1.2017",
+	"initdate": "9.3.2019",
+	"lastmod": "3.1.2019",
 	"apisupport": True,
 	"needroot": 1,
 	"dependencies": ["ethtool"]

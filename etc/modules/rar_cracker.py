@@ -76,28 +76,28 @@ class Worker(threading.Thread):
 
 	def run(self):
 		if variables["file"][0] == "":
-		    printError("No rar file specified!")
-		    return ModuleError("No rar file specified!")
+			printError("No rar file specified!")
+			return ModuleError("No rar file specified!")
 		
 		file = variables["file"][0]
 		
 		w = os.environ['OLDPWD']
-            	os.chdir(w)
+		os.chdir(w)
 		if os.path.exists(file):
-		    if os.path.isdir(file):
-			printError("Error: "+file+": is a directory!")
-			g = os.environ['HOME']
-            		os.chdir(g + "/arissploit")
-		    	return ModuleError("Error: "+file+": is a directory!")
-		    else:
-		    	rf = rarfile.RarFile(file)
+			if os.path.isdir(file):
+				printError("Error: "+file+": is a directory!")
+				g = os.environ['HOME']
+				os.chdir(g + "/arissploit")
+				return ModuleError("Error: "+file+": is a directory!")
+			else:
+				rf = rarfile.RarFile(file)
 		else:
-		    printError("Local file: "+file+": does not exist!")
-		    g = os.environ['HOME']
-            	    os.chdir(g + "/arissploit")
-		    return ModuleError("Local file: "+file+": does not exist!")
+			printError("Local file: "+file+": does not exist!")
+			g = os.environ['HOME']
+			os.chdir(g + "/arissploit")
+			return ModuleError("Local file: "+file+": does not exist!")
 		g = os.environ['HOME']
-            	os.chdir(g + "/arissploit")
+		os.chdir(g + "/arissploit")
 		
 		for word in self.words:
 			if self.pwdh.pwd != None:
@@ -124,28 +124,28 @@ class Worker(threading.Thread):
 
 def run():
 	if variables["dict"][0] == "":
-	    printError("No wordlist file specified!")
-	    return ModuleError("No wordlist file specified!")
+		printError("No wordlist file specified!")
+		return ModuleError("No wordlist file specified!")
 	
 	dicti = variables["dict"][0]
 		
 	w = os.environ['OLDPWD']
-        os.chdir(w)
+	os.chdir(w)
 	if os.path.exists(dicti):
-	    if os.path.isdir(dicti):
-		printError("Error: "+dicti+": is a directory!")
-		g = os.environ['HOME']
-            	os.chdir(g + "/arissploit")
-		return ModuleError("Error: "+dicti+": is a directory!")
-	    else:
-	        wordlist = open(dicti, "rb")
+		if os.path.isdir(dicti):
+			printError("Error: "+dicti+": is a directory!")
+			g = os.environ['HOME']
+			os.chdir(g + "/arissploit")
+			return ModuleError("Error: "+dicti+": is a directory!")
+		else:
+			wordlist = open(dicti, "rb")
 	else:
-	    printError("Local file: "+dicti+": does not exist!")
-	    g = os.environ['HOME']
-            os.chdir(g + "/arissploit")
-	    return ModuleError("Local file: "+dicti+": does not exist!")
+		printError("Local file: "+dicti+": does not exist!")
+		g = os.environ['HOME']
+		os.chdir(g + "/arissploit")
+		return ModuleError("Local file: "+dicti+": does not exist!")
 	g = os.environ['HOME']
-        os.chdir(g + "/arissploit")
+	os.chdir(g + "/arissploit")
 		
 	printInfo("Reading wordlist...")
 	words = wordlist.read().splitlines()

@@ -42,11 +42,6 @@ mv etc/modules/rar_cracker.py modules
 cp etc/.disabled/rar_cracker.py etc/modules
 rm -rf etc/.disabled
 mkdir etc/.disabled
-mv modules/wordlist_gen.py etc/.disabled
-mv etc/modules/wordlist_gen.py modules
-cp etc/.disabled/wordlist_gen.py etc/modules
-rm -rf etc/.disabled
-mkdir etc/.disabled
 mv core/cmethods.py etc/.disabled
 mv etc/core/cmethods.py core
 cp etc/.disabled/cmethods.py etc/core
@@ -69,11 +64,6 @@ mkdir etc/.disabled
 mv modules/rar_cracker.py etc/.disabled
 mv etc/modules/rar_cracker.py modules
 cp etc/.disabled/rar_cracker.py etc/modules
-rm -rf etc/.disabled
-mkdir etc/.disabled
-mv modules/wordlist_gen.py etc/.disabled
-mv etc/modules/wordlist_gen.py modules
-cp etc/.disabled/wordlist_gen.py etc/modules
 rm -rf etc/.disabled
 mkdir etc/.disabled
 mv core/cmethods.py etc/.disabled
@@ -104,11 +94,6 @@ mv etc/modules/rar_cracker.py modules
 cp etc/.disabled/rar_cracker.py etc/modules
 rm -rf etc/.disabled
 mkdir etc/.disabled
-mv modules/wordlist_gen.py etc/.disabled
-mv etc/modules/wordlist_gen.py modules
-cp etc/.disabled/wordlist_gen.py etc/modules
-rm -rf etc/.disabled
-mkdir etc/.disabled
 mv core/cmethods.py etc/.disabled
 mv etc/core/cmethods.py core
 cp etc/.disabled/cmethods.py etc/core
@@ -131,11 +116,6 @@ mkdir etc/.disabled
 mv modules/rar_cracker.py etc/.disabled
 mv etc/modules/rar_cracker.py modules
 cp etc/.disabled/rar_cracker.py etc/modules
-rm -rf etc/.disabled
-mkdir etc/.disabled
-mv modules/wordlist_gen.py etc/.disabled
-mv etc/modules/wordlist_gen.py modules
-cp etc/.disabled/wordlist_gen.py etc/modules
 rm -rf etc/.disabled
 mkdir etc/.disabled
 mv core/cmethods.py etc/.disabled

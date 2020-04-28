@@ -86,36 +86,36 @@ class Worker(threading.Thread):
 		
 		if os.path.isdir(outputfile):
 			if os.path.exists(outputfile):
-	    			if outputfile[-1:] == "/":
-                			outputfile = outputfile + 'output.txt'
+				if outputfile[-1:] == "/":
+					outputfile = outputfile + 'output.txt'
 					printInfo(colors.bold+"Generating wordlist..."+colors.end)
 					f = open(outputfile, "a")
 					printInfo(colors.bold+"Saving to "+outputfile+"..."+colors.end)
-            			else:
-                			outputfile = outputfile + '/output.txt'
+				else:
+					outputfile = outputfile + '/output.txt'
 					printInfo(colors.bold+"Generating wordlist..."+colors.end)
 					f = open(outputfile, "a")
 					printInfo(colors.bold+"Saving to "+outputfile+"..."+colors.end)
 			else:
-	    			printError("Local directory: "+outputfile+": does not exist!")
-		    		return ModuleError("Local directory: "+outputfile+": does not exist!")
-    		else:
+				printError("Local directory: "+outputfile+": does not exist!")
+				return ModuleError("Local directory: "+outputfile+": does not exist!")
+		else:
 			direct = os.path.split(outputfile)[0]
-        		if direct == "":
-            			direct = "."
-        		else:
-            			pass
+			if direct == "":
+				direct = "."
+			else:
+				pass
 			if os.path.exists(direct):
-            			if os.path.isdir(direct):
-                			printInfo(colors.bold+"Generating wordlist..."+colors.end)
+				if os.path.isdir(direct):
+					printInfo(colors.bold+"Generating wordlist..."+colors.end)
 					f = open(outputfile, "a")
 					printInfo(colors.bold+"Saving to "+outputfile+"..."+colors.end)
-            			else:
-                			printError("Error: "+direct+": not a directory!")
+				else:
+					printError("Error: "+direct+": not a directory!")
 					return ModuleError("Error: "+direct+": not a directory!")
 			else:
-	    			printError("Local directory: "+direct+": does not exist!")
-		    		return ModuleError("Local directory: "+direct+": does not exist!")
+				printError("Local directory: "+direct+": does not exist!")
+				return ModuleError("Local directory: "+direct+": does not exist!")
 		
 		for L in range(self.lenmin, self.lenmax):
 			for word in itertools.combinations_with_replacement(self.chars, L):

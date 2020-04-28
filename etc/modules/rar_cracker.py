@@ -47,10 +47,6 @@ variables = OrderedDict((
 # Simple changelog
 changelog = "Version 1.0:\nrelease"
 
-def init():
-	variables["exto"][0] = relpath(getpath.tmp(), getpath.main_module())
-	variables["dict"][0] = relpath(getpath.db() + "dazzlepod.txt", getpath.main_module())
-
 class PwdHolder:
 	pwd = None
 	error = None

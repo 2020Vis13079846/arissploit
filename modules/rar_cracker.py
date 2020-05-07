@@ -38,7 +38,7 @@ conf = {
 
 # List of the variables
 variables = OrderedDict((
-	("file", ["", "Target rar file."]),
+	("file", ["", "Input rar file."]),
 	("dict", ["", "Dictionary of words."]),
 	("tc", [8, "Thread count."]),
 	("exto", ["", "Extract directory."])
@@ -84,8 +84,8 @@ class Worker(threading.Thread):
 			else:
 				rf = rarfile.RarFile(file)
 		else:
-			printError("Local file: "+file+": does not exist!")
-			return ModuleError("Local file: "+file+": does not exist!")
+			printError("Input file: "+file+": does not exist!")
+			return ModuleError("Input file: "+file+": does not exist!")
 		
 		for word in self.words:
 			if self.pwdh.pwd != None:
@@ -124,8 +124,8 @@ def run():
 		else:
 			wordlist = open(dicti, "rb")
 	else:
-		printError("Local file: "+dicti+": does not exist!")
-		return ModuleError("Local file: "+dicti+": does not exist!")
+		printError("Input file: "+dicti+": does not exist!")
+		return ModuleError("Input file: "+dicti+": does not exist!")
 		
 	printInfo("Reading wordlist...")
 	words = wordlist.read().splitlines()

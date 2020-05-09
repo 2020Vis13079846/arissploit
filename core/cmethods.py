@@ -368,7 +368,7 @@ class Cmethods:
 	def update(self, args):
 		os.system("chmod +x etc/update.sh && etc/update.sh")
 
-	def dependencies(self, args):
+	def deps(self, args):
 		if self.mm.moduleLoaded == 0:
 			modules = glob.glob(getpath.modules()+"*.py")
 			dependencies = []
@@ -390,7 +390,7 @@ class Cmethods:
 				for dep in self.modadd.conf["dependencies"]:
 					print(dep)
 			except KeyError:
-				printInfo("This module doesn't require any dependencies")
+				printInfo("This module doesn't require any dependencies.")
 					
 	def init(self, args):
 		if self.mm.moduleLoaded == 1:

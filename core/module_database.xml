@@ -76,9 +76,4 @@
 			<shortdesc>Rar file brute-force attack using wordlist.</shortdesc>
 		</module>
 	</category>
-	<category key="generator_modules" name="Generator Modules">
-		<module name="wordlist_gen">
-			<shortdesc>Wordlist generator.</shortdesc>
-		</module>
-	</category>
 </data>

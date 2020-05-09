@@ -23,7 +23,7 @@
  </a>
 </p>
 
-![arissploit](https://user-images.githubusercontent.com/54115104/79979261-ea17f700-84a9-11ea-97e8-a219855ec555.png)
+![arissploit](https://user-images.githubusercontent.com/54115104/81477355-1c528400-9220-11ea-8bbc-42d3998ad65e.png)
 
 ***
 
@@ -93,7 +93,7 @@ bluetooth modules, web modules, network modules,
 file modules and generator modules.
 ```
  
-![modules](https://user-images.githubusercontent.com/54115104/79979282-eedcab00-84a9-11ea-86b8-8207517fd61d.png)
+![modules](https://user-images.githubusercontent.com/54115104/81477349-16f53980-9220-11ea-84fe-c405daf2b5b8.png)
 
 ***
     

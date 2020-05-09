@@ -38,7 +38,7 @@ variables = OrderedDict((
 ))
 
 # Additional notes to options
-option_notes = "This module doesn't have any options."
+option_notes = "This module does nothave any options."
 
 # Simple changelog
 changelog = "Version 1.0:\nrelease"

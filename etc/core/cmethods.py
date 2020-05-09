@@ -394,7 +394,7 @@ class Cmethods:
 				for dep in self.modadd.conf["dependencies"]:
 					print(dep)
 			except KeyError:
-				printInfo("This module doesn't require any dependencies.")
+				printInfo("This module does notrequire any dependencies.")
 					
 	def init(self, args):
 		if self.mm.moduleLoaded == 1:
@@ -402,7 +402,7 @@ class Cmethods:
 				self.modadd.init()
 				printSuccess("Module has been initialized!")
 			except AttributeError:
-				printError("This module doesn't have init function!")
+				printError("This module does nothave init function!")
 		else:
 			raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Unrecognized command!")
 

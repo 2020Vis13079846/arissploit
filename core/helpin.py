@@ -35,7 +35,6 @@ commands = [
 ["sky","Arissploit Framework sky."],
 ["update","Update Arissploit Framework."],
 ["use","Use specified module."],
-["version","Show Arissploit version."]
 ]
 
 mcommands = [
@@ -58,5 +57,4 @@ mcommands = [
 ["sky","Arissploit Framework sky."],
 ["update","Update Arissploit Framework."],
 ["use","Use specified module."],
-["version","Show module version."]
 ]

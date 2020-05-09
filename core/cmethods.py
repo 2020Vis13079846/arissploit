@@ -116,19 +116,6 @@ class Cmethods:
 				pass
 		print("")
 
-	def version(self, args):
-		if self.mm.moduleLoaded == 1:
-			try:
-				print(self.modadd.conf["name"]+" "+self.modadd.conf["version"])
-			except:
-				print("["+colors.bold+colors.red+"err"+colors.end+"] Unexpected error in module:\n")
-				traceback.print_exc(file=sys.stdout)
-				print(colors.end)
-				if api.enabled == True:
-					raise
-		else:
-			print("Arissploit Framework v3.0")
-
 	def ifconfig(self, args):
 		os.system("ifconfig"+" "+' '.join(args))
 

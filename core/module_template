@@ -9,7 +9,7 @@ conf = {
 #	"lastmod": "none", # Last modification
 	"apisupport": False, # Api support
 	"needroot": 1, # Alert user if root permissions not available (remove variable below if root permissions not needed)
-	"dependencies": [None] # Remove this if your module does nothave any dependencies
+	"dependencies": [None] # Remove this if your module does not have any dependencies
 }
 
 # List of the variables

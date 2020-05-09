@@ -394,7 +394,7 @@ class Cmethods:
 				for dep in self.modadd.conf["dependencies"]:
 					print(dep)
 			except KeyError:
-				printInfo("This module doesn't require any dependencies")
+				printInfo("This module doesn't require any dependencies.")
 					
 	def init(self, args):
 		if self.mm.moduleLoaded == 1:

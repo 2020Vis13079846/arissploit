@@ -120,8 +120,8 @@ class Cmethods:
 				pass
 		print("")
 
-	def ifconfig(self, args):
-		os.system("ifconfig"+" "+' '.join(args))
+	def netifs(self, args):
+		os.system("ifconfig")
 
 	def scan(self, args):
 		network_scanner = importlib.import_module("core.network_scanner")

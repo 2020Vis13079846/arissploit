@@ -45,20 +45,10 @@ then
    exit
 fi
 
-if [[ -d ~/arissploit ]]
-then
-sleep 0
-else
-cd ~
-{
-git clone https://github.com/entynetproject/arissploit.git
-} &> /dev/null
-fi
 sleep 0.5
 clear
 sleep 0.5
 echo
-cd ~/arissploit
 cat banner/banner.txt
 echo
 
@@ -288,17 +278,28 @@ xbps-install -y sslstrip
 xbps-install -y l2ping
 } &> /dev/null
 
+if [[ -d ~/arissploit ]]
+then
+sleep 0
+else
+cd ~
+{
+git clone https://github.com/entynetproject/arissploit.git
+} &> /dev/null
+fi
+
 {
 python3 -m pip install setuptools
 python3 -m pip install -r requirements.txt
 } &> /dev/null
 
 {
-cp bin/arissploit /bin
+cd bin
+cp arissploit /bin
 chmod +x /bin/arissploit
-cp bin/arissploit /usr/local/bin
+cp arissploit /usr/local/bin
 chmod +x /usr/local/bin/arissploit
-cp bin/arissploit /data/data/com.termux/files/usr/bin
+cp arissploit /data/data/com.termux/files/usr/bin
 chmod +x /data/data/com.termux/files/usr/bin/arissploit
 } &> /dev/null
 

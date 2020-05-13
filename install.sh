@@ -28,7 +28,7 @@ printf '\033]2;install.sh\a'
 
 if [[ $EUID -ne 0 ]]
 then
-   echo -e "["$RS"err"$CE"] This script must be run as root!" 1>&2
+   echo -e "["$RS"err"$CE"] This script must be run as root!"$CE""
    exit
 fi
 

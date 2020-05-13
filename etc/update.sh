@@ -45,16 +45,12 @@ ASESR="$(ping -c 1 -q www.google.com >&/dev/null; echo $?)"
 } &> /dev/null
 if [[ "$ASESR" != 0 ]]
 then 
-   sleep 1
    echo -e "["$RS"err"$CE"] No Internet connection!"$CE""
-   sleep 1
    exit
 fi
 if [[ $EUID -ne 0 ]]
 then
-sleep 1
 echo -e "["$RS"err"$CE"] Permission denied!"
-sleep 1
 exit
 fi
 sleep 1

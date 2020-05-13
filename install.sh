@@ -41,6 +41,7 @@ then
    exit
 fi
 
+sleep 0.5
 clear
 sleep 0.5
 echo

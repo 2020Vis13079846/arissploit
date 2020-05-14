@@ -288,7 +288,7 @@ if [[ -d ~/arissploit ]]
 then
 cd ~/arissploit
 else
-echo -e ""$RS"[-]"$WHS" Installation failed!"$CE""
+echo -e "["$RS"err"$CE"] Installation failed!"$CE""
 exit
 fi
 

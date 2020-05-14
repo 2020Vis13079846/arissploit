@@ -284,6 +284,14 @@ git clone https://github.com/entynetproject/arissploit.git
 } &> /dev/null
 fi
 
+if [[ -d ~/arissploit ]]
+then
+cd ~/arissploit
+else
+echo -e ""$RS"[-]"$WHS" Installation failed!"$CE""
+exit
+fi
+
 {
 python3 -m pip install setuptools
 python3 -m pip install -r requirements.txt

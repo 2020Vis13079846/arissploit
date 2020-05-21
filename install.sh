@@ -18,17 +18,15 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-BS="\033[1;34m"
-RS="\033[1;31m"
-YS="\033[1;33m"
-GNS="\033[1;32m"
-CE="\033[0m"
-
 printf '\033]2;install.sh\a'
+
+G="\033[0m[\033[1;34minf\033[0m] "
+S="\033[0m[\033[1;32msuc\033[0m] "
+E="\033[0m[\033[1;31merr\033[0m] "
 
 if [[ $EUID -ne 0 ]]
 then
-   echo -e "["$RS"err"$CE"] This script must be run as root!"$CE""
+   echo -e ""$E"This script must be run as root!"
    exit
 fi
 
@@ -37,7 +35,7 @@ ASESR="$(ping -c 1 -q www.google.com >&/dev/null; echo $?)"
 } &> /dev/null
 if [[ "$ASESR" != 0 ]]
 then 
-   echo -e "["$RS"err"$CE"] No Internet connection!"$CE""
+   echo -e ""$E"No Internet connection!"
    exit
 fi
 
@@ -49,7 +47,7 @@ cat banner/banner.txt
 echo
 
 sleep 1
-echo -e "["$BS"inf"$CE"] Installing dependencies..."
+echo -e ""$G"Installing dependencies..."
 sleep 1
 
 {
@@ -288,7 +286,7 @@ if [[ -d ~/arissploit ]]
 then
 cd ~/arissploit
 else
-echo -e "["$RS"err"$CE"] Installation failed!"$CE""
+echo -e ""$E"Installation failed!"
 exit
 fi
 
@@ -308,5 +306,5 @@ chmod +x /data/data/com.termux/files/usr/bin/arissploit
 } &> /dev/null
 
 sleep 1
-echo -e "["$GNS"suc"$CE"] Successfully installed!"
+echo -e ""$S"Successfully installed!"
 sleep 1

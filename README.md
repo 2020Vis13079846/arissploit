@@ -82,15 +82,14 @@ for you to master the Arissploit Framework.
 
 ```
 Arissploit Framework is a good platform to start 
-learning penetration testing tools development.
+mastering penetration testing tools development.
 ```
 
 * A lot of different modules.
 
 ```
-Arissploit Framework includes wireless modules,
-bluetooth modules, web modules, network modules, 
-file modules and generator modules.
+There are a lot of different modules in Arissploit 
+Framework such as apache_users and arp_dos modules.
 ```
  
 ![modules](https://user-images.githubusercontent.com/54115104/81477349-16f53980-9220-11ea-84fe-c405daf2b5b8.png)

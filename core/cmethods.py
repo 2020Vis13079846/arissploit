@@ -145,13 +145,13 @@ class Cmethods:
 						pass
 					try:
 						if self.modadd.conf["outdated"] == 1:
-							printWarning("This module is outdated and might not be working!")
+							printWarning("This module is outdated and might not be working.")
 					except KeyError:
 						pass
 					try:
 						if self.modadd.conf["needroot"] == 1:
 							if not os.geteuid() == 0:
-								printWarning("This module requires root permissions!")
+								printWarning("This module requires root permissions.")
 					except KeyError:
 						pass
 					if init == True:
@@ -291,7 +291,7 @@ class Cmethods:
 				print("["+colors.bold+colors.red+"err"+colors.end+"] Module terminated!"+colors.end)
 			except PermissionError:
 				printError("Permission denied!")
-				return "[err] Permission denied!"
+				return "[-] Permission denied!"
 			except:
 				print("["+colors.bold+colors.red+"err"+colors.end+"] Unexpected error in module:\n")
 				traceback.print_exc(file=sys.stdout)
@@ -390,7 +390,7 @@ class Cmethods:
 				for dep in self.modadd.conf["dependencies"]:
 					print(dep)
 			except KeyError:
-				printInfo("This module does not require any dependencies.")
+				printWarning("This module does not require any dependencies.")
 					
 	def init(self, args):
 		if self.mm.moduleLoaded == 1:

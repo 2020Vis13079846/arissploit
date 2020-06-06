@@ -87,10 +87,10 @@ def addtodb(modadd):
 							info.text = modadd.conf["shortdesc"]
 							new = False
 							tree.write(getpath.core()+"module_database.xml")
-							printSuccess("database updated")
+							printSuccess("Database updated!")
 							return
 	if new == True:
-		printInfo("Module "+modadd.conf["name"]+" does not exist in modules database!")
+		printWarning("Module "+modadd.conf["name"]+" does not exist in modules database!")
 		printInfo("Going to add this module to modules database...")
 		dome = input(colors.purple+"Add module to (old/new) "+colors.end).strip(" ").lower()
 		if dome == "old":
@@ -133,7 +133,7 @@ def addtodb(modadd):
 				break
 
 		if newcat == True:
-			printInfo("Category is not found!")
+			printWarning("Category is not found!")
 			printInfo("Going to add new category...")
 			catname = input(colors.purple+"Category: "+colors.end)
 			newcat = ElementTree.Element("category")

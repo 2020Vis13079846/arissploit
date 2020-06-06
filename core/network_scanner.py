@@ -64,4 +64,4 @@ def scan():
 		printSuccess("Scan completed!")
 		printSuccess("Scan duration: "+str(total_time))
 	except KeyboardInterrupt:
-		printInfo("Network scanner terminated!")
+		printWarning("Network scanner terminated.")

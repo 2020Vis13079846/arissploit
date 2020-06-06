@@ -83,7 +83,7 @@ def run():
 					print(' :'+colors.green+' proxy detected.'+colors.end)
 
 				except http.client.BadStatusLine:
-					printSuccess('\nProxy server detected.')
+					printSuccess('Proxy server detected!')
 					break
 
 				except urllib.error.URLError:
@@ -94,7 +94,7 @@ def run():
 				
 				except ConnectionResetError:
 					print(' :'+colors.green+' proxy detected.'+colors.end)
-			printSuccess('\ndone')
+			printSuccess('Done!')
 
 		if variables['use_range'][0] == '1':
 			ports = re.sub("-", " ",  variables['port_range'][0]).split()
@@ -111,7 +111,7 @@ def run():
 					print(' :'+colors.green+' proxy detected.'+colors.end)
 
 				except http.client.BadStatusLine:
-					printSuccess('\nProxy server detected.')
+					printSuccess('Proxy server detected!')
 					break
 
 				except urllib.error.URLError:
@@ -122,10 +122,10 @@ def run():
 				
 				except ConnectionResetError:
 					print(' :'+colors.green+' proxy detected.'+colors.end)
-			printSuccess('\nDone.')
+			printSuccess('Done!')
 
 	except http.client.BadStatusLine:
-		printSuccess('Proxy server detected.')
+		printSuccess('Proxy server detected!')
 
 	except urllib.error.URLError:
 		printError('URLError!')
@@ -134,4 +134,4 @@ def run():
 		printError('Timeout!')
 	
 	except ConnectionResetError:
-		printSuccess('Proxy server detected.')
+		printSuccess('Proxy server detected!')

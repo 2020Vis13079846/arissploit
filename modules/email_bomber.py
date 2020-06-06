@@ -111,7 +111,7 @@ def run():
 
 	if int(variables['amount'][0]) == 0:
 		printInfo("Starting infinite loop...")
-		printInfo("Ctrl + C to stop.")
+		printInform("Ctrl-C to stop.")
 		while True:
 			if int(variables['random_email'][0]) == 1:
 					fakemail = generate_random_email()

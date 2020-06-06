@@ -168,7 +168,7 @@ def run():
 			thread.join()
 	except KeyboardInterrupt:
 		pwdh.kill = True
-		printInfo("Brute-force attack terminated!")
+		printWarning("Brute-force attack terminated.")
 
 	if pwdh.pwd != None:
 		printSuccess("Password found: "+pwdh.pwd)

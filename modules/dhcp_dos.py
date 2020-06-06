@@ -90,4 +90,4 @@ def run():
 		printInfo("Kill signal received, stopping attack...")
 		for thread in threads:
 			thread.join()
-	printInfo("Attack stopped.")
+	printInform("Attack stopped.")

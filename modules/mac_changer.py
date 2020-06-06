@@ -65,12 +65,12 @@ def run():
 	xterm1 = "service network-manager stop"
 	xterm2 = "ifconfig "+variables['interface'][0]+" hw ether "+variables['fake_mac'][0]
 	xterm3 = "service network-manager start"
-	printInfo("Status: Changing MAC address...")
+	printInfo("Changing MAC address...")
 	os.system(xterm1)
-	printInfo("Status: Trying to set fake MAC address...")
+	printInfo("Trying to set fake MAC address...")
 	os.system(xterm2)
 	os.system(xterm3)
-	printSuccess("Status: Done!")
+	printSuccess("Done!")
 
 def scan(args):
 	network_scanner.scan()
@@ -94,13 +94,13 @@ def reset(args):
 		printError("Error!")
 		return ModuleError("Error!")
 	else:
-		printInfo("RealMAC: "+realmac)
+		printInform("RealMAC: "+realmac)
 		xterm1a = "service network-manager stop"
 		xterm2a = "ifconfig "+variables['interface'][0]+" hw ether "+realmac
 		xterm3a = "service network-manager start"
-		printInfo("Status: Changing MAC address...")
+		printInfo("Changing MAC address...")
 		os.system(xterm1a)
-		printInfo("Status: Trying to reset real MAC address...")
+		printInfo("Trying to reset real MAC address...")
 		os.system(xterm2a)
 		os.system(xterm3a)
-		printSuccess("Status: Done!")
+		printSuccess("Done!")

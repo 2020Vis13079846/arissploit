@@ -73,5 +73,5 @@ def run():
 	arp_spoofing2 = 'arpspoof -i ' + variables['interface'][0] + ' -t ' + variables['router'][0] +' '+ variables['target'][0]
 	subprocess.Popen(arp_spoofing2, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
 	printInfo("Starting sniffer...")
-	printInfo("Ctrl + C to stop.")
+	printInform("Ctrl-C to stop.")
 	os.system(selected_sniffer)

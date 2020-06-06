@@ -45,7 +45,7 @@ changelog = "Version 1.0:\nrelease\n\nVersion 1.1:\n+ added timeout variable."
 def run():
 	variables['target'][0] = variables['target'][0].replace("http://", "")
 	variables['target'][0] = variables['target'][0].replace("https://", "")
-	printInfo("Your target: " + variables['target'][0])
+	printInform("Your target: " + variables['target'][0])
 	paths = ['index',
 'images',
 'download',

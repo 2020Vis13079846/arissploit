@@ -18,9 +18,9 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-G="\033[0m[\033[1;34minf\033[0m] "
-S="\033[0m[\033[1;32msuc\033[0m] "
-E="\033[0m[\033[1;31merr\033[0m] "
+G="\033[1;34m[*] \033[0m"
+S="\033[1;32m[+] \033[0m"
+E="\033[1;31m[-] \033[0m"
         
 if [[ -d /data/data/com.termux ]]
 then

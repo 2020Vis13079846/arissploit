@@ -93,5 +93,5 @@ def run():
 	total =  t2 - t1
 
 	# Printing the information to screen
-	printInfo('Scanning completed in: '+ str(total))
+	printInform('Scanning completed in: '+ str(total))
 	return open_ports

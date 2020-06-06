@@ -26,8 +26,8 @@ E="\033[0m[\033[1;31merr\033[0m] "
 
 if [[ $(id -u) != 0 ]]
 then
-    echo -e ""$E"Permission denied!"
-    exit
+   echo -e ""$E"Permission denied!"
+   exit
 fi
 
 {

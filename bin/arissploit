@@ -96,6 +96,11 @@ mv etc/core/cmethods.py core
 cp etc/.disabled/cmethods.py etc/core
 rm -rf etc/.disabled
 } &> /dev/null
+if [[ ! -d ~/arissploit ]]
+then
+   echo -e ""$E"Execution failed!"
+   exit
+fi
 chmod +x arissploit
 ./arissploit
 {

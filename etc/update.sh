@@ -71,7 +71,8 @@ fi
 } &> /dev/null
 if [[ ! -d ~/arissploit ]]
 then
-echo -e ""$E"Installation failed!"
+   echo -e ""$E"Installation failed!"
+   exit
 fi
 echo -e ""$S"Successfully updated!"
 cd .

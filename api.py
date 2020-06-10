@@ -60,10 +60,10 @@ class arissploitapi:
 			self.ch.handle("use "+module)
 			modadd = sys.modules["modules."+module]
 			if modadd.conf['apisupport'] == False:
-				raise ApiNotSupported("["+colors.bold+colors.red+"err"+colors.end+"] This module does not support API!")
+				raise ApiNotSupported("\033[1;31m[-]\033[0m This module does not support API!")
 		except core.exceptions.ModuleNotFound:
 			self.enablePrint()
-			raise ModuleNotFound("["+colors.bold+colors.red+"err"+colors.end+"] Module is not found!")
+			raise ModuleNotFound("\033[1;31m[-]\033[0m Module is not found!")
 		except:
 			self.enablePrint()
 			raise
@@ -85,7 +85,7 @@ class arissploitapi:
 			self.ch.handle("set "+target+" "+value)
 		except core.exceptions.VariableError:
 			self.enablePrint()
-			raise VariableError("["+colors.bold+colors.red+"err"+colors.end+"] Variable is not found!")
+			raise VariableError("\033[1;31m[-]\033[0m Variable is not found!")
 		except:
 			self.enablePrint()
 			raise

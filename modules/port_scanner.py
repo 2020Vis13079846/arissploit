@@ -72,7 +72,7 @@ def run():
 				print(colors.green+"Port {}: Open".format(port)+colors.end)
 				open_ports.append(port)
 			else:
-				print("["+colors.bold+colors.red+"err"+colors.end+"] Port {}: Closed".format(port)+colors.end)
+				print("\033[1;31m[-]\033[0m Port {}: Closed".format(port)+colors.end)
 
 			sock.close()
 

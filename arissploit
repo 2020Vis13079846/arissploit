@@ -53,7 +53,7 @@ header.print_info()
 # Exception handling
 
 def fatalerror():
-	print("["+colors.bold+colors.red+"err"+colors.end+"] Unexpected error:")
+	print("\033[1;31m[-]\033[0m Unexpected error:")
 	traceback.print_exc()
 	print(colors.end)
 	main(0, None)

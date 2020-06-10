@@ -75,15 +75,15 @@ class Cmethods:
 				try:
 					return call(command[1:])
 				except Exception as e:
-					print("["+colors.bold+colors.red+"err"+colors.end+"] Unexpected error in module:\n")
+					print("\033[1;31m[-]\033[0m Unexpected error in module:\n")
 					traceback.print_exc(file=sys.stdout)
 					print(colors.end)
 					if api.enabled == True:
 						raise
 			else:
-				raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Unrecognized command!")
+				raise UnknownCommand("\033[1;31m[-]\033[0m Unrecognized command!")
 		except AttributeError:
-			raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Unrecognized command!")
+			raise UnknownCommand("\033[1;31m[-]\033[0m Unrecognized command!")
 
 	# Built-in commands
 	
@@ -164,19 +164,19 @@ class Cmethods:
 						except AttributeError:
 							pass
 				except ImportError:
-					print("["+colors.bold+colors.red+"err"+colors.end+"] Module is not found!")
-					raise ModuleNotFound("["+colors.bold+colors.red+"err"+colors.end+"] Module is not found!")
+					print("\033[1;31m[-]\033[0m Module is not found!")
+					raise ModuleNotFound("\033[1;31m[-]\033[0m Module is not found!")
 				except IndexError:
-					print("["+colors.bold+colors.red+"err"+colors.end+"] Module is not found!")
-					raise ModuleNotFound("["+colors.bold+colors.red+"err"+colors.end+"] Module is not found!")
+					print("\033[1;31m[-]\033[0m Module is not found!")
+					raise ModuleNotFound("\033[1;31m[-]\033[0m Module is not found!")
 				except:
-					print("["+colors.bold+colors.red+"err"+colors.end+"] Unexpected error in module:\n")
+					print("\033[1;31m[-]\033[0m Unexpected error in module:\n")
 					traceback.print_exc(file=sys.stdout)
 					print(colors.end)
 					if api.enabled == True:
 						raise
 			else:
-				print("["+colors.bold+colors.red+"err"+colors.end+"] Module already in use!")
+				print("\033[1;31m[-]\033[0m Module already in use!")
 
 	def modules(self, args):
 		t = PrettyTable([colors.bold+'Modules:', ''+colors.end])
@@ -204,7 +204,7 @@ class Cmethods:
 		try:
 			moduleop.printoptions(self.modadd)
 		except:
-			print("["+colors.bold+colors.red+"err"+colors.end+"] Unexpected error in module:\n")
+			print("\033[1;31m[-]\033[0m Unexpected error in module:\n")
 			traceback.print_exc(file=sys.stdout)
 			print(colors.end)
 			if api.enabled == True:
@@ -215,7 +215,7 @@ class Cmethods:
 			self.mm.moduleLoaded = 0
 			self.mm.moduleName = ""
 		else:
-			raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Unrecognized command!")
+			raise UnknownCommand("\033[1;31m[-]\033[0m Unrecognized command!")
 
 	def reload(self, args):
 		try:
@@ -280,7 +280,7 @@ class Cmethods:
 							pass
 						print("["+colors.bold+colors.green+"suc"+colors.end+"] Module "+ self.mm.moduleName +" reloaded!"+colors.end)
 		except:
-			print("["+colors.bold+colors.red+"err"+colors.end+"] Faced unexpected error during reimporting:\n")
+			print("\033[1;31m[-]\033[0m Faced unexpected error during reimporting:\n")
 			traceback.print_exc()
 			print(colors.end)
 			if api.enabled == True:
@@ -292,18 +292,18 @@ class Cmethods:
 				return self.modadd.run()
 
 			except KeyboardInterrupt:
-				print("["+colors.bold+colors.red+"err"+colors.end+"] Module terminated!"+colors.end)
+				print("\033[1;31m[-]\033[0m Module terminated!"+colors.end)
 			except PermissionError:
 				printError("Permission denied!")
 				return "[-] Permission denied!"
 			except:
-				print("["+colors.bold+colors.red+"err"+colors.end+"] Unexpected error in module:\n")
+				print("\033[1;31m[-]\033[0m Unexpected error in module:\n")
 				traceback.print_exc(file=sys.stdout)
 				print(colors.end)
 				if api.enabled == True:
 					raise
 		else:
-			raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Module is not loaded!")
+			raise UnknownCommand("\033[1;31m[-]\033[0m Module is not loaded!")
 
 	def set(self, args):
 		try:
@@ -311,13 +311,13 @@ class Cmethods:
 			print(colors.bold+args[0] +" ==> "+ str(args[1]) + colors.end)
 
 		except (NameError, KeyError):
-			print("["+colors.bold+colors.red+"err"+colors.end+"] Option is not found!")
-			raise VariableError("["+colors.bold+colors.red+"err"+colors.end+"] Option is not found!")
+			print("\033[1;31m[-]\033[0m Option is not found!")
+			raise VariableError("\033[1;31m[-]\033[0m Option is not found!")
 		except IndexError:
-			print("["+colors.bold+colors.red+"err"+colors.end+"] Invalid value!")
-			raise VariableError("["+colors.bold+colors.red+"err"+colors.end+"] Invalid value!")
+			print("\033[1;31m[-]\033[0m Invalid value!")
+			raise VariableError("\033[1;31m[-]\033[0m Invalid value!")
 		except:
-			print("["+colors.bold+colors.red+"err"+colors.end+"] Unexpected error in module:\n")
+			print("\033[1;31m[-]\033[0m Unexpected error in module:\n")
 			traceback.print_exc(file=sys.stdout)
 			print(colors.end)
 			if api.enabled == True:
@@ -328,7 +328,7 @@ class Cmethods:
 			try:
 				completeName = os.path.join(getpath.modules(), args[0]+".py")
 				if os.path.exists(completeName):
-					print("["+colors.bold+colors.red+"err"+colors.end+"] Module already exists!"+colors.end)
+					print("\033[1;31m[-]\033[0m Module already exists!"+colors.end)
 
 				else:
 					mfile = open(completeName, 'w')
@@ -352,7 +352,7 @@ class Cmethods:
 				printError("Something went wrong!")
 
 		except IndexError:
-			raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Unrecognized command!")
+			raise UnknownCommand("\033[1;31m[-]\033[0m Unrecognized command!")
 
 	def matrix(self, args):
 		try:
@@ -383,7 +383,7 @@ class Cmethods:
 						if dep not in dependencies:
 							dependencies.append(dep)
 				except ImportError:
-					print("["+colors.bold+colors.red+"err"+colors.end+"] ImportError: "+os.path.basename(module).replace(".py", "")+colors.end)
+					print("\033[1;31m[-]\033[0m ImportError: "+os.path.basename(module).replace(".py", "")+colors.end)
 					break
 				except KeyError:
 					pass
@@ -404,18 +404,18 @@ class Cmethods:
 			except AttributeError:
 				printError("This module does not have init function!")
 		else:
-			raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Unrecognized command!")
+			raise UnknownCommand("\033[1;31m[-]\033[0m Unrecognized command!")
 
 	def redb(self, args):
 		if self.mm.moduleLoaded == 1:
 			try:
 				moduleop.addtodb(self.modadd)
 			except PermissionError:
-				print("["+colors.bold+colors.red+"err"+colors.end+"] Permission denied!"+colors.end)
+				print("\033[1;31m[-]\033[0m Permission denied!"+colors.end)
 			except KeyboardInterrupt:
 				print()
 			except:
-				print("["+colors.bold+colors.red+"err"+colors.end+"] Faced unexpected:\n")
+				print("\033[1;31m[-]\033[0m Faced unexpected:\n")
 				traceback.print_exc(file=sys.stdout)
 				print(colors.end)
 				if api.enabled == True:
@@ -431,11 +431,11 @@ class Cmethods:
 							modadd = importlib.import_module("modules."+module)
 							moduleop.addtodb(modadd)
 				except PermissionError:
-					print("["+colors.bold+colors.red+"err"+colors.end+"] Permission denied!"+colors.end)
+					print("\033[1;31m[-]\033[0m Permission denied!"+colors.end)
 				except KeyboardInterrupt:
 					print()
 				except:
-					print("["+colors.bold+colors.red+"err"+colors.end+"] Faced unexpected:\n")
+					print("\033[1;31m[-]\033[0m Faced unexpected:\n")
 					traceback.print_exc(file=sys.stdout)
 					print(colors.end)
 					if api.enabled == True:

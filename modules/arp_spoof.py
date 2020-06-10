@@ -200,4 +200,4 @@ def get(args):
 		return ModuleError(controller.error)
 
 	else:
-		raise UnknownCommand("["+colors.bold+colors.red+"err"+colors.end+"] Unrecognized command!")
+		raise UnknownCommand("\033[1;31m[-]\033[0m Unrecognized command!")

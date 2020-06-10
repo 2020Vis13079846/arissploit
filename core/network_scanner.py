@@ -39,7 +39,7 @@ def scan():
 		print(colors.purple+"Interfaces:"+colors.end)
 		for iface in netifaces.interfaces():
 			print(colors.yellow+iface+colors.end)
-		interface = input(colors.purple+"Interface: "+colors.end).strip(" ")
+		interface = input("\033[1;77m[>]\033[0m Interface: ").strip(" ")
 		try:
 			ip = netifaces.ifaddresses(interface)[2][0]['addr']
 		except(ValueError, KeyError):

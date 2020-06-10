@@ -58,7 +58,7 @@ def printoptions(modadd):
 			pass
 
 	except Exception as error:
-		print("["+colors.bold+colors.red+"err"+colors.end+"] error: module is corrupted\n")
+		print("\033[1;31m[-]\033[0m error: module is corrupted\n")
 		traceback.print_exc(file=sys.stdout)
 		print(colors.end)
 
@@ -92,12 +92,12 @@ def addtodb(modadd):
 	if new == True:
 		printWarning("Module "+modadd.conf["name"]+" does not exist in modules database!")
 		printInfo("Going to add this module to modules database...")
-		dome = input(colors.purple+"Add module to (old/new) "+colors.end).strip(" ").lower()
+		dome = input("\033[1;77m[?]\033[0m Add module to old or new? (old/new) ").strip(" ").lower()
 		if dome == "old":
 			pass
 		if dome == "new":
 			printInfo("Going to add new category...")
-			catname = input(colors.purple+"Category: "+colors.end)
+			catname = input("\033[1;77m[>]\033[0m Category: ")
 			newcat = ElementTree.Element("category")
 			newcat.set("name", catname)
 			newcat.set("key", catname)
@@ -117,7 +117,7 @@ def addtodb(modadd):
 			if category.tag == "category":
 				print(category.attrib["key"])
 		print(colors.end, end="")
-		catkey = input(colors.purple+"Category: "+colors.end)
+		catkey = input("\033[1;77m[>]\033[0m Category: ")
 
 		for category in root:
 			if category.tag == "category" and category.attrib["key"] == catkey:
@@ -135,7 +135,7 @@ def addtodb(modadd):
 		if newcat == True:
 			printWarning("Category is not found!")
 			printInfo("Going to add new category...")
-			catname = input(colors.purple+"Category: "+colors.end)
+			catname = input("\033[1;77m[>]\033[0m Category: ")
 			newcat = ElementTree.Element("category")
 			newcat.set("name", catname)
 			newcat.set("key", catkey)

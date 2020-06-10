@@ -38,7 +38,7 @@ def check_module(modadd):
 	print(colors.yellow+'checking',modadd.conf["name"]+colors.green)
 	module = modadd.__name__.replace("modules.", "")
 	if modadd.conf["name"] != module:
-		print("["+colors.bold+colors.red+"err"+colors.end+"] \nmodules name doesn't match")
+		print("\033[1;31m[-]\033[0m \nmodules name doesn't match")
 	modadd.conf["version"]
 	if modadd.conf["shortdesc"] == 'none':
 		print(colors.red+'\ndesc variable has default value'+colors.green)
@@ -63,7 +63,7 @@ def check_module(modadd):
 
 	try:
 		if modadd.conf["dependencies"][0] == None:
-			print("["+colors.bold+colors.red+"err"+colors.end+"] \ndependencies has default value")
+			print("\033[1;31m[-]\033[0m \ndependencies has default value")
 			testfailed()
 	except KeyError:
 		pass
@@ -86,7 +86,7 @@ def check_customcommands(modadd):
 	for line in f:
 		for c in modadd.customcommands:
 			if c in line and "def" in line and "#" not in line and "args" not in line:
-				print("["+colors.bold+colors.red+"err"+colors.end+"] custom command function doesn't have args argument"+colors.end)
+				print("\033[1;31m[-]\033[0m custom command function doesn't have args argument"+colors.end)
 				testfailed()
 	f.close()
 
@@ -117,7 +117,7 @@ def check_cmethods():
 	for line in fcm:
 		if "self" not in line and "def " in line or "args" not in line and "def " in line:
 			if "__init__" not in line and "mcu" not in line and "#" not in line:
-				print("["+colors.bold+colors.red+"err"+colors.end+"] error in line "+str(linenum)+":\n"+colors.end)
+				print("\033[1;31m[-]\033[0m error in line "+str(linenum)+":\n"+colors.end)
 				print(colors.red+line+colors.end)
 				testfailed()
 		linenum += 1
@@ -145,11 +145,11 @@ def challenge():
 		sys.exit(e)
 
 	except:
-		print("["+colors.bold+colors.red+"err"+colors.end+"] \ntest not passed!\n")
+		print("\033[1;31m[-]\033[0m \ntest not passed!\n")
 		traceback.print_exc()
 		print(colors.end)
 		sys.exit(1)
 
 def testfailed():
-	print("["+colors.bold+colors.red+"err"+colors.end+"] \ntest not passed!\n"+colors.end)
+	print("\033[1;31m[-]\033[0m \ntest not passed!\n"+colors.end)
 	sys.exit(1)

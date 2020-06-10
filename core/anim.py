@@ -21,7 +21,7 @@
 import sys
 from core import colors
 
-errorstr = "["+colors.bold+colors.red+"err"+colors.end+"] "
+errorstr = "\033[1;31m[-]\033[0m "
 infostr = "["+colors.bold+colors.blue+"inf"+colors.end+"] "
 warningstr = "["+colors.bold+colors.yellow+"war"+colors.end+"] "
 successstr = "["+colors.bold+colors.green+"suc"+colors.end+"] "

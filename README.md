@@ -23,7 +23,7 @@
  </a>
 </p>
 
-![arissploit](https://user-images.githubusercontent.com/54115104/81477355-1c528400-9220-11ea-8bbc-42d3998ad65e.png)
+![arissploit](https://user-images.githubusercontent.com/54115104/86511947-4c746880-be06-11ea-8bb0-8f78866e58f6.png)
 
 ***
 
@@ -92,7 +92,7 @@ There are a lot of different modules in Arissploit
 Framework such as apache_users and arp_dos modules.
 ```
  
-![modules](https://user-images.githubusercontent.com/54115104/81477349-16f53980-9220-11ea-84fe-c405daf2b5b8.png)
+![modules](https://user-images.githubusercontent.com/54115104/86511952-5302e000-be06-11ea-8d48-33f64eab4164.png)
 
 ***
     

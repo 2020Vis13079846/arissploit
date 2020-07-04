@@ -70,10 +70,10 @@
 	</category>
 	<category key="file_modules" name="File Modules">
 		<module name="zip_cracker">
-			<shortdesc>Zip file brute-force attack using wordlist.</shortdesc>
+			<shortdesc>Zip file brute-force attack.</shortdesc>
 		</module>
 		<module name="rar_cracker">
-			<shortdesc>Rar file brute-force attack using wordlist.</shortdesc>
+			<shortdesc>Rar file brute-force attack.</shortdesc>
 		</module>
 	</category>
 </data>

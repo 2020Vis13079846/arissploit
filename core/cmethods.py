@@ -40,9 +40,6 @@ from core import helpin
 from core import colors
 from core import moduleop
 from prettytable import PrettyTable
-import core.cowsay
-import core.matrix
-import core.sky
 from core import mscop
 from core import value_holder
 from core import moddbparser
@@ -349,21 +346,6 @@ class Cmethods:
 
 		except IndexError:
 			raise UnknownCommand("\033[1;31m[-]\033[0m Unrecognized command!")
-
-	def matrix(self, args):
-		try:
-			core.matrix.main()
-		except KeyboardInterrupt:
-			curses.endwin()
-			curses.curs_set(1)
-			curses.reset_shell_mode()
-			curses.echo()
-			
-	def sky(self, args):
-		core.sky.main()
-
-	def cowsay(self, args):
-		print(core.cowsay.cowsay("Arissploit Framework"))
 
 	def update(self, args):
 		os.system("chmod +x etc/update.sh && etc/update.sh")

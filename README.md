@@ -22,7 +22,7 @@
     <img src="https://img.shields.io/badge/twitter-entynetproject-blue.svg">
  </a>
   <a href="https://github.com/4shadoww/hakkuframework">
-    <img src="https://img.shields.io/badge/based%20on-Hakku%20Framework-red.svg">
+    <img src="https://img.shields.io/badge/based%20on-Hakku-red.svg">
  </a>
 </p>
 

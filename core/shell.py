@@ -23,13 +23,7 @@ def run():
 
 			ch.handle(command)
 		except KeyboardInterrupt:
-			if mm.moduleLoaded == 0:
-				print()
-				sys.exit(0)
-			else:
-				print()
-				mm.moduleLoaded = 0
-				mm.moduleName = ""
+			sys.exit()
 
 def setFace():
 	global shellface

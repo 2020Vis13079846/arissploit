@@ -21,9 +21,6 @@
   <a href="https://twitter.com/entynetproject">
     <img src="https://img.shields.io/badge/twitter-entynetproject-blue.svg">
  </a>
-  <a href="https://github.com/4shadoww/hakkuframework">
-    <img src="https://img.shields.io/badge/based%20on-Hakku-red.svg">
- </a>
 </p>
 
 ![arissploit](https://user-images.githubusercontent.com/54115104/86511947-4c746880-be06-11ea-8bb0-8f78866e58f6.png)
